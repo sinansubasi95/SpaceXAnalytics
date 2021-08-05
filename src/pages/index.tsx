@@ -6,6 +6,8 @@ import {
   InboxIcon,
   UsersIcon,
 } from '@heroicons/react/outline';
+import React from 'react';
+import Anchor from '../components/atoms/Anchor/Anchor';
 
 const navigation = [
   { name: 'Dashboard', icon: HomeIcon, href: '#', current: true },
@@ -35,15 +37,15 @@ export default function Example() {
           <div className="mt-5 flex-grow flex flex-col">
             <nav className="flex-1 bg-white space-y-1" aria-label="Sidebar">
               {navigation.map((item) => (
-                <a
+                <Anchor
                   key={item.name}
-                  href={item.href}
                   className={classNames(
                     item.current
                       ? 'bg-indigo-50 border-indigo-600 text-indigo-600'
                       : 'border-transparent text-gray-600 hover:bg-gray-50 hover:text-gray-900',
                     'group flex items-center px-3 py-2 text-sm font-medium border-r-4'
                   )}
+                  href="/cat"
                 >
                   <item.icon
                     className={classNames(
@@ -55,7 +57,7 @@ export default function Example() {
                     aria-hidden="true"
                   />
                   {item.name}
-                </a>
+                </Anchor>
               ))}
             </nav>
           </div>
