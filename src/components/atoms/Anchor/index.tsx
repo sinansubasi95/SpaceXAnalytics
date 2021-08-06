@@ -28,14 +28,6 @@ const BaseAnchor = styled.a`
 `;
 
 const Anchor: React.FC<IAnchorProps> = ({ children, href }) => {
-  if (href) {
-    return (
-      <Link href={href}>
-        <BaseAnchor>{children}</BaseAnchor>
-      </Link>
-    );
-  }
-
   return (
     <Link href={href}>
       <BaseAnchor>{children}</BaseAnchor>

@@ -7,9 +7,10 @@ import {
   UsersIcon,
 } from '@heroicons/react/outline';
 import React from 'react';
-import Anchor from '../components/atoms/Anchor/Anchor';
+import Anchor from '../components/atoms/Anchor';
+import Navigation from '../components/molecules/Navigation';
 
-const navigation = [
+const links = [
   { name: 'Dashboard', icon: HomeIcon, href: '#', current: true },
   { name: 'Team', icon: UsersIcon, href: '#', current: false },
   { name: 'Projects', icon: FolderIcon, href: '#', current: false },
@@ -17,10 +18,6 @@ const navigation = [
   { name: 'Documents', icon: InboxIcon, href: '#', current: false },
   { name: 'Reports', icon: ChartBarIcon, href: '#', current: false },
 ];
-
-function classNames(...classes: any[]) {
-  return classes.filter(Boolean).join(' ');
-}
 
 export default function Example() {
   return (
@@ -35,22 +32,7 @@ export default function Example() {
             />
           </div>
           <div className="mt-5 flex-grow flex flex-col">
-            <nav className="flex-1 bg-white space-y-1" aria-label="Sidebar">
-              {navigation.map((item) => (
-                <Anchor key={item.name} href="/cat">
-                  <item.icon
-                    className={classNames(
-                      item.current
-                        ? 'text-indigo-500'
-                        : 'text-gray-400 group-hover:text-gray-500',
-                      'mr-3 flex-shrink-0 h-6 w-6'
-                    )}
-                    aria-hidden="true"
-                  />
-                  {item.name}
-                </Anchor>
-              ))}
-            </nav>
+            <Navigation links={links} />
           </div>
         </div>
       </div>
