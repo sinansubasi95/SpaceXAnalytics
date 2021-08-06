@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-// import tw from 'twin.macro';
+import tw from 'twin.macro';
 
 interface IAnchorProps {
   href: string;
@@ -9,7 +9,7 @@ interface IAnchorProps {
 
 const BaseAnchor = styled.a`
   color: red;
-  /* ${tw`
+  ${tw`
     border-transparent
     text-gray-600
     hover:bg-gray-50
@@ -24,7 +24,7 @@ const BaseAnchor = styled.a`
     active:bg-indigo-50
     active:border-indigo-600
     active:text-indigo-600
-  `} */
+  `}
 `;
 
 const Anchor: React.FC<IAnchorProps> = ({ children, href }) => {
