@@ -1,40 +1,57 @@
 import React from 'react';
-import Anchor from '../../atoms/Anchor';
-import styled from 'styled-components';
-import tw from 'twin.macro';
+import Anchor from '../../atoms/anchor';
+import {
+  Nav,
+  Container,
+  StyledHomeIcon,
+  StyledCalendarIcon,
+  StyledChartBarIcon,
+  StyledFolderIcon,
+  StyledInboxIcon,
+  StyledUsersIcon,
+} from './style';
 
-interface Link {
-  name: string;
-  icon: any;
-  href: string;
-  current: boolean;
-}
+// interface Link {
+//   name: string;
+//   icon: any;
+//   href: string;
+//   current: boolean;
+// }
 
-interface INavigationProps {
-  links: Link[];
-}
+// interface INavigationProps {
+//   links: Link[];
+// }
 
-const BaseNavigation = styled.a`
-  ${tw`
-    flex-1 
-    bg-white
-    space-y-1
-  `}
-`;
-
-const Navigation: React.FC<INavigationProps> = ({ links }) => {
+const Navigation: React.FC = () => {
   return (
-    <BaseNavigation aria-label="Sidebar">
-      {links.map((item) => (
-        <Anchor key={item.name} href="/cat">
-          <item.icon
-            aria-hidden="true"
-            className="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6"
-          />
-          {item.name}
+    <Container>
+      <Nav>
+        <Anchor href="#">
+          <StyledHomeIcon />
+          Dashboard
         </Anchor>
-      ))}
-    </BaseNavigation>
+        <Anchor href="#">
+          <StyledUsersIcon />
+          Team
+        </Anchor>
+        <Anchor href="#">
+          <StyledFolderIcon />
+          Projects
+        </Anchor>
+        <Anchor href="#">
+          <StyledCalendarIcon />
+          Calendar
+        </Anchor>
+        <Anchor href="#">
+          <StyledInboxIcon />
+          Documents
+        </Anchor>
+        <Anchor href="#">
+          <StyledChartBarIcon />
+          Reports
+        </Anchor>
+      </Nav>
+    </Container>
   );
 };
 
