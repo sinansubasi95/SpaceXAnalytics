@@ -10,9 +10,11 @@ import {
   MenuIcon,
   UsersIcon,
 } from '@heroicons/react/outline';
-import Drawer from '../organisms/drawer';
-import Sidebar from '../organisms/sidebar';
+import Drawer from '../../organisms/drawer';
+import Sidebar from '../../organisms/sidebar';
 // import Navigation from '../components/molecules/navigation';
+
+import { PageContainer, Wrapper } from './style';
 
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
@@ -27,17 +29,29 @@ function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function SidebarTemplate() {
+export default function PageTemplate() {
   // use state management library
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  return (
-    <div className="h-screen flex overflow-hidden bg-white">
-      <Drawer />
+  // const PageTemplate = ({
+  //   header, hero, sponsor, children, footer, ...props
+  // }) => {
+  //   return (
+  //     <Wrapper {...props}>
+  //       <Header>{header}</Header>
+  //       {hero && <Hero>{hero}</Hero>}
+  //       {sponsor && <Sponsor>{sponsor}</Sponsor>}
+  //       <Content>{children}</Content>
+  //       <Footer>{footer}</Footer>
+  //     </Wrapper>
+  //   )
+  // }
 
-      {/* Static sidebar for desktop */}
+  return (
+    <Wrapper>
+      <Drawer />
       <Sidebar />
-      <div className="flex flex-col w-0 flex-1 overflow-hidden">
+      <PageContainer>
         {/* Hamburger */}
         {/* <div className="md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3">
           <button
@@ -65,7 +79,7 @@ export default function SidebarTemplate() {
             </div>
           </div>
         </main>
-      </div>
-    </div>
+      </PageContainer>
+    </Wrapper>
   );
 }

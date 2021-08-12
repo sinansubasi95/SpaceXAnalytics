@@ -1,5 +1,5 @@
-import SidebarTemplate from '../components/templates/SidebarTemplate';
+import PageTemplate from '../components/templates/PageTemplate';
 
 export default function Example() {
-  return <SidebarTemplate></SidebarTemplate>;
+  return <PageTemplate></PageTemplate>;
 }
