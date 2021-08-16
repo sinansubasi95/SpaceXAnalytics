@@ -1,5 +1,5 @@
-import PageTemplate from '../components/templates/PageTemplate';
+import MainTemplate from '../components/templates/MainTemplate';
 
 export default function Example() {
-  return <PageTemplate></PageTemplate>;
+  return <MainTemplate></MainTemplate>;
 }
