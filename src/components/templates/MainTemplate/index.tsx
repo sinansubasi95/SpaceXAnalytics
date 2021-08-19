@@ -1,7 +1,26 @@
 import React, { useState } from 'react';
-import { MenuIcon } from '@heroicons/react/outline';
 
 import Sidebar from '../../organisms/sidebar';
+
+import {
+  CalendarIcon,
+  ChartBarIcon,
+  FolderIcon,
+  HomeIcon,
+  InboxIcon,
+  MenuIcon,
+  UsersIcon,
+  XIcon,
+} from '@heroicons/react/outline';
+
+const navigation = [
+  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
+  { name: 'Team', href: '#', icon: UsersIcon, current: false },
+  { name: 'Projects', href: '#', icon: FolderIcon, current: false },
+  { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
+  { name: 'Documents', href: '#', icon: InboxIcon, current: false },
+  { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
+];
 
 export default function MainTemplate() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -12,9 +31,14 @@ export default function MainTemplate() {
         isMobile={true}
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
+        navigation={navigation}
       />
 
-      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+      <Sidebar
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+        navigation={navigation}
+      />
 
       <div className="flex flex-col w-0 flex-1 overflow-hidden">
         <div className="md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3">
