@@ -10,7 +10,6 @@ import {
   InboxIcon,
   MenuIcon,
   UsersIcon,
-  XIcon,
 } from '@heroicons/react/outline';
 
 const navigation = [

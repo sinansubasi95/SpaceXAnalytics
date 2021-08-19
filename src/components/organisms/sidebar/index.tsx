@@ -4,6 +4,8 @@ import Navigation from '../../molecules/navigation';
 import logo from '../../../assets/logo.svg';
 import Logo from '../../molecules/logo';
 
+import { XIcon } from '@heroicons/react/outline';
+
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ');
 }
