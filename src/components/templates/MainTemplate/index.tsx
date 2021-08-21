@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Sidebar from '../../organisms/sidebar';
+import Sidebar from '../../organisms/Sidebar';
 
 import { MenuIcon } from '@heroicons/react/outline';
 

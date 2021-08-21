@@ -1,17 +1,10 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import Navigation from '../../molecules/navigation';
-import logo from '../../../assets/logo.svg';
-import Logo from '../../molecules/logo';
+import Navigation from '../../molecules/Navigation';
+import logoImg from '../../../assets/logo.svg';
+import Logo from '../../molecules/Logo';
 
 import { XIcon } from '@heroicons/react/outline';
-
-// type INav = {
-//   name: string;
-//   href: string;
-//   icon: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
-//   current: boolean;
-// };
 
 interface ISidebarProps {
   isMobile?: boolean;
@@ -75,7 +68,7 @@ const Sidebar: React.FC<ISidebarProps> = ({
                 </div>
               </Transition.Child>
               <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-                <Logo logo={logo} />
+                <Logo logo={logoImg} />
                 <Navigation isMobile={true} />
               </div>
             </div>
@@ -94,7 +87,7 @@ const Sidebar: React.FC<ISidebarProps> = ({
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex flex-col h-0 flex-1 border-r border-gray-200 bg-white">
           <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-            <Logo logo={logo} />
+            <Logo logo={logoImg} />
             <Navigation isMobile={false} />
           </div>
         </div>

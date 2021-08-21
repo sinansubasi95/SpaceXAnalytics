@@ -1,5 +1,5 @@
 import React from 'react';
-import Anchor from '../../atoms/anchor';
+import Anchor from '../../atoms/Anchor';
 import {
   Nav,
   Container,
