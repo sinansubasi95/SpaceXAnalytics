@@ -1,5 +1,5 @@
-import MainTemplate from '../components/templates/MainTemplate';
+import MainLayout from '../components/layouts/MainLayout';
 
 export default function Example() {
-  return <MainTemplate></MainTemplate>;
+  return <MainLayout></MainLayout>;
 }

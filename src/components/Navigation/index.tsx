@@ -1,16 +1,4 @@
 import React from 'react';
-import Anchor from '../../atoms/Anchor';
-import {
-  Nav,
-  Container,
-  StyledHomeIcon,
-  StyledCalendarIcon,
-  StyledChartBarIcon,
-  StyledFolderIcon,
-  StyledInboxIcon,
-  StyledUsersIcon,
-} from './style';
-
 import {
   CalendarIcon,
   ChartBarIcon,
@@ -19,17 +7,6 @@ import {
   InboxIcon,
   UsersIcon,
 } from '@heroicons/react/outline';
-
-// interface Link {
-//   name: string;
-//   icon: any;
-//   href: string;
-//   current: boolean;
-// }
-
-// interface INavigationProps {
-//   links: Link[];
-// }
 
 interface INavigationProps {
   isMobile?: boolean;
@@ -104,35 +81,6 @@ const Navigation: React.FC<INavigationProps> = ({ isMobile }) => {
         </a>
       ))}
     </nav>
-
-    // <Container>
-    //   <Nav>
-    //     <Anchor href="#">
-    //       <StyledHomeIcon />
-    //       Dashboard
-    //     </Anchor>
-    //     <Anchor href="#">
-    //       <StyledUsersIcon />
-    //       Team
-    //     </Anchor>
-    //     <Anchor href="#">
-    //       <StyledFolderIcon />
-    //       Projects
-    //     </Anchor>
-    //     <Anchor href="#">
-    //       <StyledCalendarIcon />
-    //       Calendar
-    //     </Anchor>
-    //     <Anchor href="#">
-    //       <StyledInboxIcon />
-    //       Documents
-    //     </Anchor>
-    //     <Anchor href="#">
-    //       <StyledChartBarIcon />
-    //       Reports
-    //     </Anchor>
-    //   </Nav>
-    // </Container>
   );
 };
 

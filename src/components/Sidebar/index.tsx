@@ -1,31 +1,28 @@
 import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import Navigation from '../../molecules/Navigation';
-import logoImg from '../../../assets/logo.svg';
-import Logo from '../../molecules/Logo';
+import Navigation from '../Navigation';
+import logoImg from '../../assets/logo.svg';
+import Logo from '../Logo';
 
 import { XIcon } from '@heroicons/react/outline';
 
+import store from '../../store';
+import { observer } from 'mobx-react';
+
 interface ISidebarProps {
   isMobile?: boolean;
-  sidebarOpen: boolean;
-  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Sidebar: React.FC<ISidebarProps> = ({
-  isMobile,
-  sidebarOpen,
-  setSidebarOpen,
-}) => {
+const Sidebar: React.FC<ISidebarProps> = ({ isMobile }) => {
   if (isMobile) {
     return (
-      <Transition.Root show={sidebarOpen} as={Fragment}>
+      <Transition.Root show={store.isActive} as={Fragment}>
         <Dialog
           as="div"
           static
           className="fixed inset-0 flex z-40 md:hidden"
-          open={sidebarOpen}
-          onClose={setSidebarOpen}
+          open={store.isActive}
+          onClose={() => store.toggleNav()}
         >
           <Transition.Child
             as={Fragment}
@@ -60,7 +57,7 @@ const Sidebar: React.FC<ISidebarProps> = ({
                 <div className="absolute top-0 right-0 -mr-12 pt-2">
                   <button
                     className="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                    onClick={() => setSidebarOpen(false)}
+                    onClick={() => store.toggleNav()}
                   >
                     <span className="sr-only">Close sidebar</span>
                     <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
@@ -96,4 +93,4 @@ const Sidebar: React.FC<ISidebarProps> = ({
   );
 };
 
-export default Sidebar;
+export default observer(Sidebar);
