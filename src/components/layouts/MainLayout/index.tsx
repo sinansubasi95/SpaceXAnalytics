@@ -8,13 +8,14 @@ import { MenuIcon } from '@heroicons/react/outline';
 import store from '../../../store';
 
 //  aynı siteyi bir de classları kullanarak yapmayı dene(?), fakat react artık class kullanımını önermiyor ve bu yüzden yaygın olarak kullanılmıyor.
-export default function MainLayout() {
+export default function MainLayout({children}: any) {
   return (
     <PageContainer>
       <Sidebar isMobile={true} />
 
       <Sidebar isMobile={false} />
 
+    {/* Burayı past-launches sayafsına taşı */}
       <ContentContainer>
         {/* HamburgerButtonContainer */}
         <div className="md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3">
