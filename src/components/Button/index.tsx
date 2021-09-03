@@ -1,19 +1,17 @@
 import React from 'react';
+import { StyledIconButton } from './style';
 
-interface IButtonProps {
-    size?: 'sm' | 'md' | 'lg';
+type Props = {
+    size?: 'small' | 'medium' | 'large';
     color?: 'string';
     children?: React.ReactElement;
     icon?: React.ReactElement;
-    onClick?: Function;
-}
+};
 
-const Button: React.FC<IButtonProps> = ({icon, size, color, onClick}) => {
+export const IconButton = (props: Props) => {
     return (
-        <div>
-            
-        </div>
+        <StyledIconButton {...props}>
+            {props.icon}
+        </StyledIconButton>
     )
 }
-
-export default Button;
