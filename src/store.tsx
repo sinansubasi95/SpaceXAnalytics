@@ -8,8 +8,8 @@ class NavUI {
         makeAutoObservable(this);
     }
 
-    toggleNav() {
-        this.isActive = !this.isActive;
+    toggleNav(state: boolean) {
+        this.isActive = state;
     }
 }
 
