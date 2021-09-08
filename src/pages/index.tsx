@@ -1,5 +1,5 @@
-import MainLayout from '../components/Layout';
+import {ThreeColumnLayout} from '../components/Layout/ThreeColumnLayout';
 
 export default function Example() {
-  return <MainLayout></MainLayout>;
+  return <ThreeColumnLayout></ThreeColumnLayout>;
 }

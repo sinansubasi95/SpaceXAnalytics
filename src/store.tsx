@@ -1,18 +1,18 @@
 import { makeAutoObservable } from "mobx";
 
 // MobX implementation
-class NavUI {
+class SidebarStore {
     isActive: boolean = false;
 
     constructor() {
         makeAutoObservable(this);
     }
 
-    toggleNav(state: boolean) {
+    toggleSidebar(state: boolean) {
         this.isActive = state;
     }
 }
 
-const store = new NavUI();
+const store = new SidebarStore();
 
 export default store;
