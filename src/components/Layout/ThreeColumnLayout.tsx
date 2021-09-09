@@ -2,15 +2,19 @@ import React from 'react';
 import {MenuIcon} from '@heroicons/react/outline';
 import logoImg from '../../assets/logo-textless.svg';
 
-import store from '../../store';
+import { useStores } from "../../stores";
 import { observer } from 'mobx-react';
 import {SidebarWithSecondaryNavigation} from '../Sidebar';
 import { LayoutProps } from '../../types';
 import {Logo} from '../Logo';
 
+console.log(useStores)
+
 // define function like defining varible
 // keep related components in same folder
 export const ThreeColumnLayout = observer((props: LayoutProps) => {
+  const { sidebarStore } = useStores();
+
   return (
     <div className="flex h-screen overflow-hidden bg-white">
         {/* Specific compatible layouts which you can change */}
@@ -25,7 +29,7 @@ export const ThreeColumnLayout = observer((props: LayoutProps) => {
               <button
                 type="button"
                 className="inline-flex items-center justify-center w-12 h-12 -mr-3 text-gray-500 rounded-md hover:text-gray-900"
-                onClick={() => store.toggleSidebar(!store.isActive)}
+                onClick={() => sidebarStore.toggleSidebar(!sidebarStore.isActive)}
               >
                 <span className="sr-only">Open sidebar</span>
                 <MenuIcon className="w-6 h-6" aria-hidden="true" />

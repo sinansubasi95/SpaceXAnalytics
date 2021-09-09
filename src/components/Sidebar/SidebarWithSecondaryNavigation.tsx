@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import {Dialog,Transition} from '@headlessui/react';
 import logoImg from '../../assets/logo.svg';
 import {Logo} from '../Logo';
-import store from '../../store';
+import store from '../../stores';
 import {observer} from 'mobx-react';
 import {
   CalendarIcon,
@@ -26,6 +26,8 @@ const navigation = [
 ];
 
 const MobileNav = () => {
+  const { sidebarStore } = useStores();
+
   return (
     <nav aria-label="Sidebar" className="mt-5">
       <div className="px-2 space-y-1">

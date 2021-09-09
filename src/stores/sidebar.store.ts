@@ -1,10 +1,12 @@
 import { makeAutoObservable } from "mobx";
 
 // MobX implementation
-class SidebarStore {
+class sidebarStore {
     isActive: boolean = false;
+    rootStore: any;
 
-    constructor() {
+    constructor(rootStore: any) {
+        this.rootStore = rootStore;
         makeAutoObservable(this);
     }
 
@@ -13,6 +15,4 @@ class SidebarStore {
     }
 }
 
-const store = new SidebarStore();
-
-export default store;
+export default sidebarStore;
