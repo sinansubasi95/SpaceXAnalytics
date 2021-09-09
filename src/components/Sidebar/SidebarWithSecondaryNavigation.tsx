@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import {Dialog,Transition} from '@headlessui/react';
 import logoImg from '../../assets/logo.svg';
 import {Logo} from '../Logo';
-import store from '../../stores';
+import { useStores } from "../../stores";
 import {observer} from 'mobx-react';
 import {
   CalendarIcon,
@@ -88,16 +88,17 @@ const DesktopNav = () => {
 }
 
 export const SidebarWithSecondaryNavigation = observer(() => {
+  const { sidebarStore } = useStores();
 
   return (
     <>
-      <Transition.Root show={store.isActive} as={Fragment}>
+      <Transition.Root show={sidebarStore.isActive} as={Fragment}>
         <Dialog
           as="div"
           static
           className="fixed inset-0 z-40 flex lg:hidden"
-          open={store.isActive}
-          onClose={() => store.toggleSidebar(!store.isActive)}
+          open={sidebarStore.isActive}
+          onClose={() => sidebarStore.toggleSidebar(!sidebarStore.isActive)}
         >
           <Transition.Child
             as={Fragment}
@@ -133,7 +134,7 @@ export const SidebarWithSecondaryNavigation = observer(() => {
                   <button
                     type="button"
                     className="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                    onClick={() => store.toggleSidebar(!store.isActive)}
+                    onClick={() => sidebarStore.toggleSidebar(!sidebarStore.isActive)}
                   >
                     <span className="sr-only">Close menu</span>
                     <XIcon className="w-6 h-6 text-white" aria-hidden="true" />

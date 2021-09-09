@@ -8,8 +8,6 @@ import {SidebarWithSecondaryNavigation} from '../Sidebar';
 import { LayoutProps } from '../../types';
 import {Logo} from '../Logo';
 
-console.log(useStores)
-
 // define function like defining varible
 // keep related components in same folder
 export const ThreeColumnLayout = observer((props: LayoutProps) => {
