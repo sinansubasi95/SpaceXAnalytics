@@ -1,91 +1,11 @@
 import React, { Fragment } from 'react';
-import Link from 'next/link'
-import clsx from 'clsx';
 import {Dialog,Transition} from '@headlessui/react';
 import logoImg from '../../assets/logo.svg';
 import {Logo} from '../Logo';
-import { useStores } from "../../stores";
+import {useStores} from "../../stores";
 import {observer} from 'mobx-react';
-import {
-  CalendarIcon,
-  HomeIcon,
-  MapIcon,
-  SearchCircleIcon,
-  SpeakerphoneIcon,
-  UserGroupIcon,
-  XIcon,
-} from '@heroicons/react/outline'
-
-const navigation = [
-  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-  { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Teams', href: '#', icon: UserGroupIcon, current: false },
-  { name: 'Direchrefry', href: '#', icon: SearchCircleIcon, current: false },
-  { name: 'Announcements', href: '#', icon: SpeakerphoneIcon, current: false },
-  { name: 'Office Map', href: '#', icon: MapIcon, current: false },
-];
-
-const MobileNav = () => {
-  const { sidebarStore } = useStores();
-
-  return (
-    <nav aria-label="Sidebar" className="mt-5">
-      <div className="px-2 space-y-1">
-        {navigation.map((item) => (
-          <a
-            key={item.name}
-            href={item.href}
-            className={clsx(
-              item.current
-                ? 'bg-gray-100 text-gray-900'
-                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
-              'group flex items-center px-2 py-2 text-base font-medium rounded-md'
-            )}
-          >
-            <item.icon
-              className={clsx(
-                item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500',
-                'mr-4 h-6 w-6'
-              )}
-              aria-hidden="true"
-            />
-            {item.name}
-          </a>
-        ))}
-      </div>
-    </nav>
-  )
-}
-
-const DesktopNav = () => {
-  return (
-    <nav className="flex-1 mt-5" aria-label="Sidebar">
-      <div className="px-2 space-y-1">
-        {navigation.map((item) => (
-          <Link key={item.name} href={item.href}>
-            <a
-              className={clsx(
-                item.current
-                  ? 'bg-gray-200 text-gray-900'
-                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
-                'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
-              )}
-            >
-              <item.icon
-                className={clsx(
-                  item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500',
-                  'mr-3 h-6 w-6'
-                )}
-                aria-hidden="true"
-              />
-              {item.name}
-            </a>
-          </Link>
-        ))}
-      </div>
-    </nav>
-  )
-}
+import {XIcon} from '@heroicons/react/outline'
+import { DesktopNav, MobileNav } from '../Navigation';
 
 export const SidebarWithSecondaryNavigation = observer(() => {
   const { sidebarStore } = useStores();

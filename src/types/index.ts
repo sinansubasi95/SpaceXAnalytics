@@ -5,6 +5,13 @@ export type LayoutProps = {
     icon?: React.ReactElement;
 };
 
+export type NavigationListT = {
+    name?: string;
+    href?: string;
+    icon?: any;
+    current?: boolean;
+};
+
 export type LogoProps = {
     src?: string;
 };

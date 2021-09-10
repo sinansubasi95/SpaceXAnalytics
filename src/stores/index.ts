@@ -1,12 +1,15 @@
-import React from "react";
-import SidebarStore from "./sidebar.store";
+import React from 'react';
+import SidebarStore from './sidebar.store';
+import NavigationStore from './navigation.store';
 
 class RootStore {
-    sidebarStore: any;
+  sidebarStore: any;
+  navigationStore: any;
 
-    constructor() {
-        this.sidebarStore = new SidebarStore(this)
-    }
+  constructor() {
+    this.sidebarStore = new SidebarStore(this);
+    this.navigationStore = new NavigationStore(this);
+  }
 }
 
 const StoresContext = React.createContext(new RootStore());

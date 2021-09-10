@@ -1,18 +1,18 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable } from 'mobx';
 
 // MobX implementation
 class sidebarStore {
-    isActive: boolean = false;
-    rootStore: any;
+  isActive: boolean = false;
+  rootStore: any;
 
-    constructor(rootStore: any) {
-        this.rootStore = rootStore;
-        makeAutoObservable(this);
-    }
+  constructor(rootStore: any) {
+    this.rootStore = rootStore;
+    makeAutoObservable(this);
+  }
 
-    toggleSidebar(state: boolean) {
-        this.isActive = state;
-    }
+  toggleSidebar(state: boolean) {
+    this.isActive = state;
+  }
 }
 
 export default sidebarStore;
