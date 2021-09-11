@@ -11,9 +11,10 @@ import { Logo } from '../Logo';
 // define function like defining varible
 // keep related components in same folder?
 // Formidable - RENATUR - physics based animation https://formidable.com/open-source/renature/
-// Formidable - VICTORY - odular charting and data visualization https://formidable.com/open-source/victory/
+// Formidable - VICTORY - modular charting and data visualization https://formidable.com/open-source/victory/
 // https://github.com/leighhalliday/urql-demo
 // apollo-graphql
+// Pass Multiple Children to a React Component with params
 export const ThreeColumnLayout = observer((props: LayoutProps) => {
   const { sidebarStore } = useStores();
 
