@@ -65,7 +65,9 @@ export const SidebarWithSecondaryNavigation = observer(() => {
                 <div className="flex items-center flex-shrink-0 px-4">
                   <Logo src={logoImg}/>
                 </div>
-                <MobileNav/>
+                <div className="mt-5 flex-grow flex flex-col">
+                  <MobileNav/>
+                </div>
               </div>
             </div>
           </Transition.Child>
@@ -80,11 +82,13 @@ export const SidebarWithSecondaryNavigation = observer(() => {
         <div className="flex flex-col w-64">
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex flex-col flex-1 h-0 bg-gray-100 border-r border-gray-200">
-            <div className="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
+            <div className="flex flex-col flex-grow border-r border-gray-200 pt-5 pb-4 bg-white overflow-y-auto">
               <div className="flex items-center flex-shrink-0 px-4">
                 <Logo src={logoImg}/>
               </div>
-              <DesktopNav/>
+              <div className="mt-5 flex-grow flex flex-col">
+                <DesktopNav/>
+              </div>
             </div>
           </div>
         </div>

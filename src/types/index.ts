@@ -1,15 +1,15 @@
 export type LayoutProps = {
-    size?: 'small' | 'medium' | 'large';
-    color?: string;
-    children?: React.ReactElement;
-    icon?: React.ReactElement;
+    side: React.ReactElement;
+    main: React.ReactElement;
+    // list
+    // details
 };
 
 export type NavigationListT = {
-    name?: string;
-    href?: string;
+    name: string;
+    href: string;
     icon?: any;
-    current?: boolean;
+    current: boolean;
 };
 
 export type LogoProps = {

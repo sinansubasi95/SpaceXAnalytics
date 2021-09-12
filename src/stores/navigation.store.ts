@@ -11,13 +11,16 @@ import { NavigationListT } from '../types';
 
 // MobX implementation
 class navigationStore {
-  navigation: NavigationListT[] = [
-    { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-    { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-    { name: 'Teams', href: '#', icon: UserGroupIcon, current: false },
-    { name: 'Direchrefry', href: '#', icon: SearchCircleIcon, current: false },
-    { name: 'Announcements', href: '#', icon: SpeakerphoneIcon, current: false },
-    { name: 'Office Map', href: '#', icon: MapIcon, current: false },
+  primaryNavigation: NavigationListT[] = [
+    { name: 'Upcoming Launches', href: '#', icon: HomeIcon, current: true },
+    { name: 'Past Launches', href: '#', icon: CalendarIcon, current: false },
+    { name: 'Statistics', href: '#', icon: UserGroupIcon, current: false },
+  ];
+  secondaryNavigation: NavigationListT[] = [
+    { name: 'Rockets', href: '#', current: true },
+    { name: 'Ships', href: '#', current: false },
+    { name: 'Cores', href: '#', current: false },
+    { name: 'Capsules', href: '#', current: false },
   ];
   rootStore: any;
 
@@ -28,3 +31,25 @@ class navigationStore {
 }
 
 export default navigationStore;
+
+  // navigation: NavigationListT[] = [
+  //   {
+  //     heading: "Launches",
+  //     icon: CalendarIcon,
+  //     links: [
+  //       { name: "Upcoming Launches", href: "#", current: true },
+  //       { name: "Past Launches", href: "#", current: false },
+  //       { name: "Statistics", href: "#", current: false },
+  //     ],
+  //   },
+  //   {
+  //     heading: "Vehicles",
+  //     icon: MapIcon,
+  //     links: [
+  //       { name: "Rockets", href: "#", current: false },
+  //       { name: "Ships", href: "#", current: false },
+  //       { name: "Cores", href: "#", current: false },
+  //       { name: "Capsules", href: "#", current: false },
+  //     ],
+  //   },
+  // ];
