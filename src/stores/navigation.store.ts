@@ -13,18 +13,18 @@ import { NavigationListT, CategorizedNavigationListT } from "../types";
 // MobX implementation
 class navigationStore {
   primaryNavigation: NavigationListT[] = [
-    { name: "Upcoming Launches", href: "#", icon: CalendarIcon, current: true },
-    { name: "Past Launches", href: "#", icon: CalendarIcon, current: false },
-    { name: "Statistics", href: "#", icon: ChartBarIcon, current: false },
+    { name: "Upcoming Launches", href: "/launches/upcoming-launches", icon: CalendarIcon, current: true },
+    { name: "Past Launches", href: "/launches/past-launches", icon: CalendarIcon, current: false },
+    { name: "Statistics", href: "/launches/statistics", icon: ChartBarIcon, current: false },
   ];
   secondaryNavigation: CategorizedNavigationListT[] = [
     {
       heading: "vehicles",
       list: [
-        { name: "Rockets", href: "#", current: true },
-        { name: "Ships", href: "#", current: false },
-        { name: "Cores", href: "#", current: false },
-        { name: "Capsules", href: "#", current: false },
+        { name: "Rockets", href: "/vehicles/rockets", current: true },
+        { name: "Ships", href: "/vehicles/ships", current: false },
+        { name: "Cores", href: "/vehicles/cores", current: false },
+        { name: "Capsules", href: "/vehicles/capsules", current: false },
       ],
     },
   ];
