@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
-import {Dialog,Transition} from '@headlessui/react';
+import { Dialog, Transition } from '@headlessui/react';
 import logoImg from '../../assets/logo.svg';
-import {Logo} from '../Logo';
-import {useStores} from "../../stores";
-import {observer} from 'mobx-react';
-import {XIcon} from '@heroicons/react/outline'
+import { Logo } from '../Logo';
+import { useStores } from '../../stores';
+import { observer } from 'mobx-react';
+import { XIcon } from '@heroicons/react/outline';
 import { DesktopNav, MobileNav } from '../Navigation';
 
 export const SidebarWithSecondaryNavigation = observer(() => {
@@ -54,7 +54,9 @@ export const SidebarWithSecondaryNavigation = observer(() => {
                   <button
                     type="button"
                     className="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                    onClick={() => sidebarStore.toggleSidebar(!sidebarStore.isActive)}
+                    onClick={() =>
+                      sidebarStore.toggleSidebar(!sidebarStore.isActive)
+                    }
                   >
                     <span className="sr-only">Close menu</span>
                     <XIcon className="w-6 h-6 text-white" aria-hidden="true" />
@@ -63,10 +65,10 @@ export const SidebarWithSecondaryNavigation = observer(() => {
               </Transition.Child>
               <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
                 <div className="flex items-center flex-shrink-0 px-4">
-                  <Logo src={logoImg}/>
+                  <Logo src={logoImg} />
                 </div>
-                <div className="mt-5 flex-grow flex flex-col">
-                  <MobileNav/>
+                <div className="flex flex-col flex-grow mt-5">
+                  <MobileNav />
                 </div>
               </div>
             </div>
@@ -82,12 +84,12 @@ export const SidebarWithSecondaryNavigation = observer(() => {
         <div className="flex flex-col w-64">
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex flex-col flex-1 h-0 bg-gray-100 border-r border-gray-200">
-            <div className="flex flex-col flex-grow border-r border-gray-200 pt-5 pb-4 bg-white overflow-y-auto">
+            <div className="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto bg-white border-r border-gray-200">
               <div className="flex items-center flex-shrink-0 px-4">
-                <Logo src={logoImg}/>
+                <Logo src={logoImg} />
               </div>
-              <div className="mt-5 flex-grow flex flex-col">
-                <DesktopNav/>
+              <div className="flex flex-col flex-grow mt-5">
+                <DesktopNav />
               </div>
             </div>
           </div>
@@ -95,6 +97,6 @@ export const SidebarWithSecondaryNavigation = observer(() => {
       </div>
     </>
   );
-})
+});
 
 // export default observer(SidebarWithSecondaryNavigation);

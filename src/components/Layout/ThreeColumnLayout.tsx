@@ -5,7 +5,7 @@ import logoImg from '../../assets/logo-textless.svg';
 import { useStores } from '../../stores';
 import { observer } from 'mobx-react';
 import { SidebarWithSecondaryNavigation } from '../Sidebar';
-import { LayoutProps } from '../../types';
+import { LayoutT } from '../../types';
 import { Logo } from '../Logo';
 
 // define function like defining varible
@@ -15,7 +15,7 @@ import { Logo } from '../Logo';
 // https://github.com/leighhalliday/urql-demo
 // apollo-graphql
 // Pass Multiple Children to a React Component with params
-export const ThreeColumnLayout = observer((props: LayoutProps) => {
+export const ThreeColumnLayout = observer((props: LayoutT) => {
   const { sidebarStore } = useStores();
 
   return (
@@ -43,19 +43,15 @@ export const ThreeColumnLayout = observer((props: LayoutProps) => {
           </div>
         </div>
         <div className="relative z-0 flex flex-1 overflow-hidden">
+          {/*main content*/}
           <main className="relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last">
-            {/* Start main area*/}
             <div className="absolute inset-0 px-4 py-6 sm:px-6 lg:px-8">
-              <div className="h-full border-2 border-gray-200 border-dashed rounded-lg" />
+              {props.mainContent}
             </div>
-            {/* End main area */}
           </main>
+          {/* Start secondary column (hidden on smaller screens) */}
           <aside className="relative flex-shrink-0 hidden border-r border-gray-200 xl:order-first xl:flex xl:flex-col w-96">
-            {/* Start secondary column (hidden on smaller screens) */}
-            <div className="absolute inset-0 px-4 py-6 sm:px-6 lg:px-8">
-              <div className="h-full border-2 border-gray-200 border-dashed rounded-lg" />
-            </div>
-            {/* End secondary column */}
+            {props.secondaryColumn}
           </aside>
         </div>
       </div>

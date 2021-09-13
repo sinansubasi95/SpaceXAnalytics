@@ -1,6 +1,6 @@
-export type LayoutProps = {
-    side: React.ReactElement;
-    main: React.ReactElement;
+export type LayoutT = {
+    mainContent: React.ReactElement;
+    secondaryColumn: React.ReactElement;
     // list
     // details
 };
@@ -12,6 +12,12 @@ export type NavigationListT = {
     current: boolean;
 };
 
-export type LogoProps = {
-    src?: string;
+export type CategorizedNavigationListT = {
+    heading: string;
+    list: Array<NavigationListT>;
+};
+
+
+export type LogoT = {
+    src: string;
 };

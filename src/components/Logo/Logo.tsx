@@ -1,6 +1,6 @@
 import React from 'react';
-import { LogoProps } from '../../types';
+import { LogoT } from '../../types';
 
-export const Logo = ({ src }: LogoProps) => {
+export const Logo = ({ src }: LogoT) => {
   return <img className="w-auto h-8" alt="SpaceX Analytics" src={src} />;
 };
