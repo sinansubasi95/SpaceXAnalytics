@@ -36,7 +36,7 @@ export const DesktopNav = () => {
       </div>
       <div className="space-y-1">
         {navigationStore.secondaryNavigation.map((item: CategorizedNavigationListT) => (
-          <>
+          <React.Fragment key={item.heading}>
             <h3
               className="px-3 text-xs font-semibold tracking-wider text-gray-500 uppercase"
               id="projects-headline"
@@ -45,12 +45,12 @@ export const DesktopNav = () => {
             </h3>
             {item.list.map((item: NavigationListT) => (
               <div
+                key={item.name}
                 className="space-y-1"
                 role="group"
                 aria-labelledby="projects-headline"
               >
                 <a
-                  key={item.name}
                   href={item.href}
                   className="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md group hover:text-gray-900 hover:bg-gray-50"
                 >
@@ -58,7 +58,7 @@ export const DesktopNav = () => {
                 </a>
               </div>
             ))}
-          </>
+          </React.Fragment>
         ))}
       </div>
     </nav>

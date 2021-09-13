@@ -36,7 +36,7 @@ export const MobileNav = () => {
 
       <div className="px-2 space-y-1">
         {navigationStore.secondaryNavigation.map((item: CategorizedNavigationListT) => (
-          <>
+          <React.Fragment key={item.heading}>
             <h3
               className="px-3 text-xs font-semibold tracking-wider text-gray-500 uppercase"
               id="projects-headline"
@@ -45,6 +45,7 @@ export const MobileNav = () => {
             </h3>
             {item.list.map((item: NavigationListT) => (
               <div
+                key={item.name}
                 className="space-y-1"
                 role="group"
                 aria-labelledby="projects-headline"
@@ -58,7 +59,7 @@ export const MobileNav = () => {
                 </a>
               </div>
             ))}
-          </>
+          </React.Fragment>
         ))}
       </div>
     </nav>
