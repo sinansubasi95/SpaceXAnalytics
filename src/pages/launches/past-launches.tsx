@@ -5,11 +5,9 @@ export default function PastLaunches() {
     <div>mainContent</div>
   )
 
-  const secondaryColumn = () => (
-    <div>secondayColumn</div>
-  )
-
   return (
-    <ThreeColumnLayout mainContent={mainContent()} secondaryColumn={secondaryColumn()}/>
+    <ThreeColumnLayout leftPanel={mainContent()}>
+      <div>test</div>
+    </ThreeColumnLayout>
   )
 }

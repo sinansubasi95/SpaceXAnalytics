@@ -15,7 +15,7 @@ import { Logo } from '../Logo';
 // https://github.com/leighhalliday/urql-demo
 // apollo-graphql
 // Pass Multiple Children to a React Component with params
-export const ThreeColumnLayout = observer((props: LayoutT) => {
+export const ThreeColumnLayout = observer((props: LayoutT, {children}) => {
   const { sidebarStore } = useStores();
 
   return (
@@ -46,12 +46,12 @@ export const ThreeColumnLayout = observer((props: LayoutT) => {
           {/*main content*/}
           <main className="relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last">
             <div className="absolute inset-0 px-4 py-6 sm:px-6 lg:px-8">
-              {props.mainContent}
+              {props.leftPanel}
             </div>
           </main>
           {/* Start secondary column (hidden on smaller screens) */}
           <aside className="relative flex-shrink-0 hidden border-r border-gray-200 xl:order-first xl:flex xl:flex-col w-96">
-            {props.secondaryColumn}
+            {children}
           </aside>
         </div>
       </div>

@@ -1,6 +1,6 @@
 export type LayoutT = {
-    mainContent: React.ReactElement;
-    secondaryColumn: React.ReactElement;
+    leftPanel: React.ReactElement;
+    children: React.ReactElement;
     // list
     // details
 };
