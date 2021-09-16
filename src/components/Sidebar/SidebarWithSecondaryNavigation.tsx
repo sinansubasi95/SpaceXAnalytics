@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import logoImg from '../../assets/logo.svg';
+// import logoImg from '../../assets/spacex-logo-black-and-white.png';
 import { Logo } from '../Logo';
 import { useStores } from '../../stores';
 import { observer } from 'mobx-react';
@@ -65,7 +65,7 @@ export const SidebarWithSecondaryNavigation = observer(() => {
               </Transition.Child>
               <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
                 <div className="flex items-center flex-shrink-0 px-4">
-                  <Logo src={logoImg} />
+                  <Logo src="/spacex-logo-black-and-white.png" />
                 </div>
                 <div className="flex flex-col flex-grow mt-5">
                   <MobileNav />
@@ -86,7 +86,7 @@ export const SidebarWithSecondaryNavigation = observer(() => {
           <div className="flex flex-col flex-1 h-0 bg-gray-100 border-r border-gray-200">
             <div className="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto bg-white border-r border-gray-200">
               <div className="flex items-center flex-shrink-0 px-4">
-                <Logo src={logoImg} />
+                <Logo src="/spacex-logo-black-and-white.png" />
               </div>
               <div className="flex flex-col flex-grow mt-5">
                 <DesktopNav />

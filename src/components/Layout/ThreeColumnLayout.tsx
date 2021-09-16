@@ -46,12 +46,12 @@ export const ThreeColumnLayout = observer((props: LayoutT, {children}) => {
           {/*main content*/}
           <main className="relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last">
             <div className="absolute inset-0 px-4 py-6 sm:px-6 lg:px-8">
-              {props.leftPanel}
+              {children}
             </div>
           </main>
           {/* Start secondary column (hidden on smaller screens) */}
-          <aside className="relative flex-shrink-0 hidden border-r border-gray-200 xl:order-first xl:flex xl:flex-col w-96">
-            {children}
+          <aside className="relative flex-shrink-0 hidden border-r border-gray-200 xl:order-first xl:flex xl:flex-col w-128">
+            {props.leftPanel}
           </aside>
         </div>
       </div>

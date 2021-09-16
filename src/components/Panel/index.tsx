@@ -1,1 +1,1 @@
-export * from './Launches';
+export * from './LaunchesPanel';

@@ -2,6 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .w-100 {
+    width: 25rem;
+  }
+
+  .w-104 {
+    width: 26rem;
+  }
+
+  .w-108 {
+    width: 27rem;
+  }
+
+  .w-112 {
+    width: 28rem;
+  }
+
+  .w-116 {
+    width: 29rem;
+  }
+
+  .w-120 {
+    width: 30rem;
+  }
+
+  .w-124 {
+    width: 31rem;
+  }
+
+  .w-128 {
+    width: 32rem;
+  }
+
+  .w-132 {
+    width: 33rem;
+  }
+
+  .w-136 {
+    width: 34rem;
+  }
+
+  .w-140 {
+    width: 35rem;
+  }
+}
+
 html,
 body {
   padding: 0;

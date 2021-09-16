@@ -1,8 +1,6 @@
 export type LayoutT = {
     leftPanel: React.ReactElement;
     children: React.ReactElement;
-    // list
-    // details
 };
 
 export type NavigationListT = {
@@ -19,5 +17,5 @@ export type CategorizedNavigationListT = {
 
 
 export type LogoT = {
-    src: string;
+    src: any;
 };
