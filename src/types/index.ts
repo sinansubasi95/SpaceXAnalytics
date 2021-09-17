@@ -17,5 +17,5 @@ export type CategorizedNavigationListT = {
 
 
 export type LogoT = {
-    src: any;
+    src: string;
 };
