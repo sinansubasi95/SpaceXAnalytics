@@ -2,16 +2,4 @@
     "presets": [
       "next/babel"
     ],
-    "plugins": [
-      [
-        "styled-components",
-        {
-          "ssr": true,
-          "displayName": true,
-          "preprocess": false
-        }
-      ],
-      ["babel-plugin-twin", {"debug": true}], 
-      "babel-plugin-macros"
-    ]
 }

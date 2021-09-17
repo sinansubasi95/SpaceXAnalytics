@@ -1,6 +1,5 @@
 import React from 'react';
 import { MenuIcon } from '@heroicons/react/outline';
-import logoImg from '../../assets/logo-textless.svg';
 
 import { useStores } from '../../stores';
 import { observer } from 'mobx-react';
@@ -26,7 +25,7 @@ export const ThreeColumnLayout = observer((props: LayoutT, {children}) => {
         <div className="lg:hidden">
           <div className="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-4 py-1.5">
             <div>
-              <Logo src={logoImg} />
+              <Logo src={"/assets/logo-textless.svg"} />
             </div>
             <div>
               <button
