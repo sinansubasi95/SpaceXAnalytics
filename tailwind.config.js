@@ -47,14 +47,26 @@ module.exports = {
         },
         ['teal-deer']: {
           DEFAULT: '#94FFB4'
+        },
+        ['dim-gray']: {
+          DEFAULT: '#6E6A64'
         }
       },
+      letterSpacing: {
+        ['custom-xl']: '3.5px'
+      },
+      fontFamily: {
+        quicksand: ['"Quicksand"', '"sans-serif"']
+      }
     },
   },
   variants: {
     extend: {},
   },
   plugins: [],
+  corePlugins: {
+   fontFamily: true,
+  }
 }
 
 /*

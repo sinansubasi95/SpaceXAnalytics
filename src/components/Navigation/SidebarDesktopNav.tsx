@@ -8,7 +8,7 @@ export const DesktopNav = () => {
   const { navigationStore } = useStores();
 
   return (
-    <nav className="flex-1 px-2 space-y-8 bg-white" aria-label="Sidebar">
+    <nav className="flex-1 space-y-8 bg-chinese-black-800" aria-label="Sidebar">
       <div className="space-y-1">
         {navigationStore.primaryNavigation.map((item: NavigationListT) => (
           <a
@@ -16,16 +16,16 @@ export const DesktopNav = () => {
             href={item.href}
             className={clsx(
               item.current
-                ? 'bg-gray-100 text-gray-900'
-                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
-              'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+                ? 'bg-smoky-black border-anti-flash-white text-anti-flash-white'
+                : 'border-transparent text-ash-gray hover:bg-smoky-black hover:text-anti-flash-white',
+              'group flex items-center px-3 py-2 text-sm font-medium border-l-4'
             )}
           >
             <item.icon
               className={clsx(
                 item.current
-                  ? 'text-gray-500'
-                  : 'text-gray-400 group-hover:text-gray-500',
+                  ? 'text-anti-flash-white'
+                  : 'text-ash-gray group-hover:text-anti-flash-white',
                 'mr-3 flex-shrink-0 h-6 w-6'
               )}
               aria-hidden="true"
@@ -38,7 +38,7 @@ export const DesktopNav = () => {
         {navigationStore.secondaryNavigation.map((item: CategorizedNavigationListT) => (
           <React.Fragment key={item.heading}>
             <h3
-              className="px-3 text-xs font-semibold tracking-wider text-gray-500 uppercase"
+              className="px-3 text-xs font-semibold tracking-wider uppercase text-dim-gray"
               id="projects-headline"
             >
               {item.heading}
@@ -52,7 +52,7 @@ export const DesktopNav = () => {
               >
                 <a
                   href={item.href}
-                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md group hover:text-gray-900 hover:bg-gray-50"
+                  className="flex items-center px-3 py-2 text-sm font-medium text-ash-gray group hover:text-anti-flash-white hover:bg-smoky-black"
                 >
                   <span className="truncate">{item.name}</span>
                 </a>

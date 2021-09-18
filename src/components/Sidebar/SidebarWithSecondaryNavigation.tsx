@@ -83,9 +83,10 @@ export const SidebarWithSecondaryNavigation = observer(() => {
         <div className="flex flex-col w-64">
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex flex-col flex-1 h-0 bg-gray-100 border-r border-gray-200">
-            <div className="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto bg-white border-r border-gray-200">
-              <div className="flex items-center flex-shrink-0 px-4">
+            <div className="flex flex-col flex-grow pb-4 overflow-y-auto border-r border-gray-200 bg-chinese-black-800">
+              <div className="flex flex-col items-center justify-center flex-shrink-0 h-16 px-4 bg-center bg-no-repeat bg-cover" style={{backgroundImage: "url('/assets/outer-space-image.jpg')"}}>
                 <Logo src="/assets/spacex-logo-black-and-white.png" />
+                <span className="mr-4 text-xs tracking-custom-xl text-anti-flash-white font-quicksand">Analytics</span>
               </div>
               <div className="flex flex-col flex-grow mt-5">
                 <DesktopNav />
