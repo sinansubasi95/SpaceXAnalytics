@@ -51,13 +51,15 @@ export const DesktopNav = () => {
                 role="group"
                 aria-labelledby="projects-headline"
               >
-                <a
-                  href={item.href}
-                  className="flex items-center px-3 py-2 text-sm font-medium text-ash-gray group hover:text-anti-flash-white hover:bg-smoky-black"
-                  onClick={() => navigationStore.activateLink(item.href)}
-                >
-                  <span className="truncate">{item.name}</span>
-                </a>
+                <Link href={item.href} key={item.name}>
+                  <a
+                    href={item.href}
+                    className="flex items-center px-3 py-2 text-sm font-medium text-ash-gray group hover:text-anti-flash-white hover:bg-smoky-black"
+                    onClick={() => navigationStore.activateLink(item.href)}
+                  >
+                    <span className="truncate">{item.name}</span>
+                  </a>
+                </Link>
               </div>
             ))}
           </React.Fragment>
