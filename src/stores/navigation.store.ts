@@ -34,28 +34,26 @@ class navigationStore {
     this.rootStore = rootStore;
     makeAutoObservable(this);
   }
+
+  activateLink(activateHref: string) {
+    this.primaryNavigation.map(link => {
+      if(link.href !== activateHref) {
+        link.current = false;
+      } else {
+        link.current = true;
+      }
+    })
+
+    this.secondaryNavigation.forEach(category => {
+      category.list.map(link => {
+        if(link.href !== activateHref) {
+          link.current = false;
+        } else {
+          link.current = true;
+        }
+      })
+    })
+  }
 }
 
 export default navigationStore;
-
-// navigation: NavigationListT[] = [
-//   {
-//     heading: "Launches",
-//     icon: CalendarIcon,
-//     links: [
-//       { name: "Upcoming Launches", href: "#", current: true },
-//       { name: "Past Launches", href: "#", current: false },
-//       { name: "Statistics", href: "#", current: false },
-//     ],
-//   },
-//   {
-//     heading: "Vehicles",
-//     icon: MapIcon,
-//     links: [
-//       { name: "Rockets", href: "#", current: false },
-//       { name: "Ships", href: "#", current: false },
-//       { name: "Cores", href: "#", current: false },
-//       { name: "Capsules", href: "#", current: false },
-//     ],
-//   },
-// ];

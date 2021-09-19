@@ -11,27 +11,28 @@ export const DesktopNav = () => {
     <nav className="flex-1 space-y-8 bg-chinese-black-800" aria-label="Sidebar">
       <div className="space-y-1">
         {navigationStore.primaryNavigation.map((item: NavigationListT) => (
-          <a
-            key={item.name}
-            href={item.href}
-            className={clsx(
-              item.current
-                ? 'bg-smoky-black border-anti-flash-white text-anti-flash-white'
-                : 'border-transparent text-ash-gray hover:bg-smoky-black hover:text-anti-flash-white',
-              'group flex items-center px-3 py-2 text-sm font-medium border-l-4'
-            )}
-          >
-            <item.icon
+          <Link href={item.href} key={item.name}>
+            <a
               className={clsx(
                 item.current
-                  ? 'text-anti-flash-white'
-                  : 'text-ash-gray group-hover:text-anti-flash-white',
-                'mr-3 flex-shrink-0 h-6 w-6'
+                  ? 'bg-smoky-black border-anti-flash-white text-anti-flash-white'
+                  : 'border-transparent text-ash-gray hover:bg-smoky-black hover:text-anti-flash-white',
+                'group flex items-center px-3 py-2 text-sm font-medium border-l-4'
               )}
-              aria-hidden="true"
-            />
-            {item.name}
-          </a>
+              onClick={() => navigationStore.activateLink(item.href)}
+            >
+              <item.icon
+                className={clsx(
+                  item.current
+                    ? 'text-anti-flash-white'
+                    : 'text-ash-gray group-hover:text-anti-flash-white',
+                  'mr-3 flex-shrink-0 h-6 w-6'
+                )}
+                aria-hidden="true"
+              />
+              {item.name}
+            </a>
+          </Link>
         ))}
       </div>
       <div className="space-y-1">
@@ -53,6 +54,7 @@ export const DesktopNav = () => {
                 <a
                   href={item.href}
                   className="flex items-center px-3 py-2 text-sm font-medium text-ash-gray group hover:text-anti-flash-white hover:bg-smoky-black"
+                  onClick={() => navigationStore.activateLink(item.href)}
                 >
                   <span className="truncate">{item.name}</span>
                 </a>
