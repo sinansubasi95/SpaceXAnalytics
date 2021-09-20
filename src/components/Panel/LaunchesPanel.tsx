@@ -10,7 +10,8 @@ const messages = [
     details:
       'SpaceX will launch Sentinel-6 Michael Freilich into low Earth orbit for NASA, NOAA, ESA, and the European Organization for the Exploitation of Meteorological Satellites aboard a Falcon 9 from SLC-4E, Vandenberg Air Force Station. Sentinel-6(A) is an ocean observation satellite providing radar ocean surface altimetry data and also atmospheric temperature profiles as a secondary mission. The booster for this mission is will land at LZ-4.',
     links: {
-      mission_patch: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
+      mission_patch:
+        'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
     },
   },
   {
@@ -24,7 +25,8 @@ const messages = [
     details:
       "SpaceX will launch the first operational mission of its Crew Dragon vehicle as part of NASA's Commercial Crew Transportation Capability Program (CCtCap), carrying 3 NASA astronauts and 1 JAXA astronaut to the International Space Station. This mission will be the second crewed flight to launch from the United States since the end of the Space Shuttle program in 2011.",
     links: {
-      mission_patch: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
+      mission_patch:
+        'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
     },
   },
   {
@@ -38,7 +40,8 @@ const messages = [
     details:
       'SpaceX will launch GPS Block III Space Vehicle 04 from SLC-40, Cape Canaveral AFS aboard a Falcon 9. GPS III is owned and operated by the US Air Force and produced by Lockheed Martin. This will be the fourth GPS III satellite launched and the third launched by SpaceX. The satellite will be delivered into a MEO transfer orbit. The booster for this mission will land on an ASDS.',
     links: {
-      mission_patch: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
+      mission_patch:
+        'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
     },
   },
   {
@@ -52,7 +55,38 @@ const messages = [
     details:
       'This mission will launch the fourteenth batch of operational Starlink satellites, which are expected to be version 1.0, from SLC-40, Kennedy Space Center. It is the fifteenth Starlink launch overall. The satellites will be delivered to low Earth orbit and will spend a few weeks maneuvering to their operational altitude of 550 km. The booster for this mission is expected to land on JRTI.',
     links: {
-      mission_patch: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
+      mission_patch:
+        'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
+    },
+  },
+  {
+    id: '105',
+    mission_name: 'Starlink-14 (v1.0)',
+    rocket: {
+      rocket_name: 'Falcon 9',
+    },
+    launch_date_utc: '2020-10-24T15:31:00.000Z',
+    launch_success: true,
+    details:
+      'This mission will launch the fourteenth batch of operational Starlink satellites, which are expected to be version 1.0, from SLC-40, Kennedy Space Center. It is the fifteenth Starlink launch overall. The satellites will be delivered to low Earth orbit and will spend a few weeks maneuvering to their operational altitude of 550 km. The booster for this mission is expected to land on JRTI.',
+    links: {
+      mission_patch:
+        'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
+    },
+  },
+  {
+    id: '105',
+    mission_name: 'Starlink-14 (v1.0)',
+    rocket: {
+      rocket_name: 'Falcon 9',
+    },
+    launch_date_utc: '2020-10-24T15:31:00.000Z',
+    launch_success: true,
+    details:
+      'This mission will launch the fourteenth batch of operational Starlink satellites, which are expected to be version 1.0, from SLC-40, Kennedy Space Center. It is the fifteenth Starlink launch overall. The satellites will be delivered to low Earth orbit and will spend a few weeks maneuvering to their operational altitude of 550 km. The booster for this mission is expected to land on JRTI.',
+    links: {
+      mission_patch:
+        'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
     },
   },
 ];
@@ -92,7 +126,10 @@ const LaunchesPanel = () => {
                   />
                 </div>
                 <div className="min-w-0 min-h-full mr-auto">
-                  <a href={`/launches/past-launches/${message.id}`} className="flex flex-col justify-between min-h-full focus:outline-none">
+                  <a
+                    href={`/launches/past-launches/${message.id}`}
+                    className="flex flex-col justify-between min-h-full focus:outline-none"
+                  >
                     <span className="absolute inset-0" aria-hidden="true" />
                     <p className="text-sm font-normal truncate text-quick-silver">
                       Flight {message.id}
@@ -114,7 +151,7 @@ const LaunchesPanel = () => {
               </div>
               <div className="mt-1">
                 <p className="text-sm leading-6 text-anti-flash-white line-clamp-2">
-                  {message.details.split(/\s+/).slice(0,28).join(" ")}...
+                  {message.details.split(/\s+/).slice(0, 28).join(' ')}...
                 </p>
               </div>
             </li>
