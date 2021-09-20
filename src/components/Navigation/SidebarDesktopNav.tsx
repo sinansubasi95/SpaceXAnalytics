@@ -39,7 +39,7 @@ export const DesktopNav = () => {
         {navigationStore.secondaryNavigation.map((item: CategorizedNavigationListT) => (
           <Fragment key={item.heading}>
             <h3
-              className="px-3 text-xs font-semibold tracking-wider uppercase text-dim-gray"
+              className="px-4 text-xs font-semibold tracking-wider uppercase text-dim-gray"
               id="projects-headline"
             >
               {item.heading}

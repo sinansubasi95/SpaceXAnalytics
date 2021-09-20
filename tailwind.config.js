@@ -56,7 +56,14 @@ module.exports = {
         ['custom-xl']: '3.5px'
       },
       fontFamily: {
-        quicksand: ['"Quicksand"', '"sans-serif"']
+        quicksand: ['"Quicksand"', '"sans-serif"'],
+        ['roboto-condensed']: 'roboto condensed'
+      },
+      width: {
+        '18': '4.5rem'
+      },
+      height: {
+        '18': '4.5rem'
       }
     },
   },
