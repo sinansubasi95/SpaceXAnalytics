@@ -86,7 +86,7 @@ export const SidebarWithSecondaryNavigation = observer(() => {
             <div className="flex flex-col flex-grow pb-4 overflow-y-auto border-r border-gray-200 bg-chinese-black-800">
               <div className="flex flex-col items-center justify-center flex-shrink-0 h-16 px-4 bg-center bg-no-repeat bg-cover" style={{backgroundImage: "url('/assets/outer-space-image.jpg')"}}>
                 <Logo src="/assets/spacex-logo-black-and-white.png" />
-                <span className="mr-4 text-xs tracking-custom-xl text-anti-flash-white font-quicksand">Analytics</span>
+                {/* <span className="mr-4 text-xs tracking-custom-xl text-anti-flash-white font-quicksand">Analytics</span> */}
               </div>
               <div className="flex flex-col flex-grow mt-5">
                 <DesktopNav />

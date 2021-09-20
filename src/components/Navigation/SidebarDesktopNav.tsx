@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useStores } from '../../stores';
@@ -37,7 +37,7 @@ export const DesktopNav = () => {
       </div>
       <div className="space-y-1">
         {navigationStore.secondaryNavigation.map((item: CategorizedNavigationListT) => (
-          <React.Fragment key={item.heading}>
+          <Fragment key={item.heading}>
             <h3
               className="px-3 text-xs font-semibold tracking-wider uppercase text-dim-gray"
               id="projects-headline"
@@ -54,7 +54,12 @@ export const DesktopNav = () => {
                 <Link href={item.href} key={item.name}>
                   <a
                     href={item.href}
-                    className="flex items-center px-3 py-2 text-sm font-medium text-ash-gray group hover:text-anti-flash-white hover:bg-smoky-black"
+                    className={clsx(
+                      item.current
+                        ? 'bg-smoky-black border-anti-flash-white text-anti-flash-white'
+                        : 'border-transparent text-ash-gray hover:bg-smoky-black hover:text-anti-flash-white',
+                      'group flex items-center px-3 py-2 text-sm font-medium border-l-4'
+                    )}
                     onClick={() => navigationStore.activateLink(item.href)}
                   >
                     <span className="truncate">{item.name}</span>
@@ -62,7 +67,7 @@ export const DesktopNav = () => {
                 </Link>
               </div>
             ))}
-          </React.Fragment>
+          </Fragment>
         ))}
       </div>
     </nav>

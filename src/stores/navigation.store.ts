@@ -13,9 +13,10 @@ import { NavigationListT, CategorizedNavigationListT } from "../types";
 // MobX implementation
 class navigationStore {
   primaryNavigation: NavigationListT[] = [
+    { name: "Overview", href: "/", icon: CalendarIcon, current: true },
     { name: "Upcoming Launches", href: "/launches/upcoming-launches", icon: CalendarIcon, current: true },
     { name: "Past Launches", href: "/launches/past-launches", icon: CalendarIcon, current: false },
-    { name: "Statistics", href: "/launches/statistics", icon: ChartBarIcon, current: false },
+    // { name: "Statistics", href: "/launches/statistics", icon: ChartBarIcon, current: false },
   ];
   secondaryNavigation: CategorizedNavigationListT[] = [
     {
