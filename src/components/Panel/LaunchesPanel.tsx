@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const messages = [
   {
     id: '108',
@@ -141,7 +143,7 @@ const LaunchesPanel = () => {
                       dateTime={message.launch_date_utc}
                       className="flex-shrink-0 text-sm text-quick-silver"
                     >
-                      {message.launch_date_utc}
+                      {moment.utc(message.launch_date_utc).format('DD.MM.YYYY, hh:mm')}
                     </time>
                   </a>
                 </div>
