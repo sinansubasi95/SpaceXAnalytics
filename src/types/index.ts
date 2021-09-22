@@ -1,3 +1,8 @@
+// use interface
+// somehow seperate api types and ui types
+// use interface instead of type?
+// learn what declare is and its advantages
+
 export type LayoutT = {
     leftPanel: React.ReactElement;
     children: React.ReactElement;
