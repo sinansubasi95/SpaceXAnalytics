@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useStores } from '../../stores';
-import { CategorizedNavigationListT, NavigationListT } from '../../types';
+import { ICategorizedNavigationList, INavigationList } from '../../interfaces/ui';
 
 export const DesktopNav = () => {
   const { navigationStore } = useStores();
@@ -10,7 +10,7 @@ export const DesktopNav = () => {
   return (
     <nav className="flex-1 space-y-8 bg-chinese-black-800" aria-label="Sidebar">
       <div className="space-y-1">
-        {navigationStore.primaryNavigation.map((item: NavigationListT) => (
+        {navigationStore.primaryNavigation.map((item: INavigationList) => (
           <Link href={item.href} key={item.name}>
             <a
               className={clsx(
@@ -36,7 +36,7 @@ export const DesktopNav = () => {
         ))}
       </div>
       <div className="space-y-1">
-        {navigationStore.secondaryNavigation.map((item: CategorizedNavigationListT) => (
+        {navigationStore.secondaryNavigation.map((item: ICategorizedNavigationList) => (
           <Fragment key={item.heading}>
             <h3
               className="px-4 text-xs font-semibold tracking-wider uppercase text-dim-gray"
@@ -44,7 +44,7 @@ export const DesktopNav = () => {
             >
               {item.heading}
             </h3>
-            {item.list.map((item: NavigationListT) => (
+            {item.list.map((item: INavigationList) => (
               <div
                 key={item.name}
                 className="space-y-1"

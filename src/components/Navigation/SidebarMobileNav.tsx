@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { useStores } from '../../stores';
-import { CategorizedNavigationListT, NavigationListT } from '../../types';
+import { ICategorizedNavigationList, INavigationList } from '../../interfaces/ui';
 
 export const MobileNav = () => {
   const { navigationStore } = useStores();
@@ -9,7 +9,7 @@ export const MobileNav = () => {
   return (
     <nav className="flex-1 px-2 space-y-8 bg-white" aria-label="Sidebar">
       <div className="px-2 space-y-1">
-        {navigationStore.primaryNavigation.map((item: NavigationListT) => (
+        {navigationStore.primaryNavigation.map((item: INavigationList) => (
           <a
             key={item.name}
             href={item.href}
@@ -35,7 +35,7 @@ export const MobileNav = () => {
       </div>
 
       <div className="px-2 space-y-1">
-        {navigationStore.secondaryNavigation.map((item: CategorizedNavigationListT) => (
+        {navigationStore.secondaryNavigation.map((item: ICategorizedNavigationList) => (
           <React.Fragment key={item.heading}>
             <h3
               className="px-3 text-xs font-semibold tracking-wider text-gray-500 uppercase"
@@ -43,7 +43,7 @@ export const MobileNav = () => {
             >
               {item.heading}
             </h3>
-            {item.list.map((item: NavigationListT) => (
+            {item.list.map((item: INavigationList) => (
               <div
                 key={item.name}
                 className="space-y-1"

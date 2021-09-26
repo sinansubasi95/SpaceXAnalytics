@@ -4,7 +4,7 @@ import { MenuIcon } from '@heroicons/react/outline';
 import { useStores } from '../../stores';
 import { observer } from 'mobx-react';
 import { SidebarWithSecondaryNavigation } from '../Sidebar';
-import { LayoutT } from '../../types';
+import { IThreeColumnLayout } from '../../interfaces/ui';
 import { Logo } from '../Logo';
 
 // define function like defining varible
@@ -13,7 +13,7 @@ import { Logo } from '../Logo';
 // https://github.com/leighhalliday/urql-demo
 // apollo-graphql
 // find a better solution for types/interfaces
-export const ThreeColumnLayout = observer((props: LayoutT) => {
+export const ThreeColumnLayout = observer((props: IThreeColumnLayout) => {
   const { sidebarStore } = useStores();
 
   return (
