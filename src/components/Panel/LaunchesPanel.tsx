@@ -97,7 +97,7 @@ const LaunchesPanel = () => {
   return (
     <div className="relative flex flex-col h-full bg-gray-100 border-r border-gray-200 w-128">
       <div className="flex-shrink-0">
-        <div className="flex flex-col items-center justify-center flex-shrink-0 h-16 px-4 bg-center bg-no-repeat bg-cover border-b-2 border-jet bg-eerie-black">
+        <div className="flex flex-col justify-center flex-shrink-0 h-16 px-6 font-medium border-b-2 border-jet bg-eerie-black">
           <h2 className="text-lg text-anti-flash-white">Past Launches</h2>
         </div>
         {/* <div className="px-6 py-2 text-sm font-medium text-gray-500 border-t border-b border-gray-200 bg-gray-50">
