@@ -7,12 +7,11 @@ import { SidebarWithSecondaryNavigation } from '../Sidebar';
 import { IThreeColumnLayout } from '../../interfaces/ui';
 import { Logo } from '../Logo';
 
-// define function like defining varible
+// define function like defining variable?
 // Formidable - RENATUR - physics based animation https://formidable.com/open-source/renature/
 // Formidable - VICTORY - modular charting and data visualization https://formidable.com/open-source/victory/
 // https://github.com/leighhalliday/urql-demo
 // apollo-graphql
-// find a better solution for types/interfaces
 export const ThreeColumnLayout = observer((props: IThreeColumnLayout) => {
   const { sidebarStore } = useStores();
 
@@ -24,7 +23,7 @@ export const ThreeColumnLayout = observer((props: IThreeColumnLayout) => {
         <div className="lg:hidden">
           <div className="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-4 py-1.5">
             <div>
-              <Logo src={"/assets/logo-textless.svg"} />
+              <Logo src="/assets/logo-textless.svg" />
             </div>
             <div>
               <button

@@ -97,16 +97,8 @@ const LaunchesPanel = () => {
   return (
     <div className="relative flex flex-col h-full bg-gray-100 border-r border-gray-200 w-128">
       <div className="flex-shrink-0">
-        <div
-          className="flex flex-col items-center justify-center flex-shrink-0 h-16 px-4 bg-center bg-no-repeat bg-cover"
-          style={{
-            background:
-              'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/assets/launches.jpg) 50% 46% / 100% no-repeat',
-          }}
-        >
-          <h2 className="text-lg uppercase text-anti-flash-white font-roboto-condensed">
-            Past Launches
-          </h2>
+        <div className="flex flex-col items-center justify-center flex-shrink-0 h-16 px-4 bg-center bg-no-repeat bg-cover border-b-2 border-jet bg-eerie-black">
+          <h2 className="text-lg text-anti-flash-white">Past Launches</h2>
         </div>
         {/* <div className="px-6 py-2 text-sm font-medium text-gray-500 border-t border-b border-gray-200 bg-gray-50">
           Sorted by date
@@ -143,7 +135,9 @@ const LaunchesPanel = () => {
                       dateTime={message.launch_date_utc}
                       className="flex-shrink-0 text-sm text-quick-silver"
                     >
-                      {moment.utc(message.launch_date_utc).format('DD.MM.YYYY, hh:mm')}
+                      {moment
+                        .utc(message.launch_date_utc)
+                        .format('DD.MM.YYYY, hh:mm')}
                     </time>
                   </a>
                 </div>

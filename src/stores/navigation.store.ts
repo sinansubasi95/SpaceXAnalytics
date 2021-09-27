@@ -1,31 +1,33 @@
-import { makeAutoObservable } from "mobx";
-import {
-  CalendarIcon,
-  HomeIcon,
-  MapIcon,
-  SearchCircleIcon,
-  SpeakerphoneIcon,
-  ChartBarIcon,
-  UserGroupIcon,
-} from "@heroicons/react/outline";
-import { NavigationListT, CategorizedNavigationListT } from "../types";
+import { makeAutoObservable } from 'mobx';
+import { CalendarIcon } from '@heroicons/react/outline';
+import { INavigationList, ICategorizedNavigationList } from '../interfaces/ui';
 
 // MobX implementation
 class navigationStore {
-  primaryNavigation: NavigationListT[] = [
-    { name: "Overview", href: "/", icon: CalendarIcon, current: true },
-    { name: "Upcoming Launches", href: "/launches/upcoming-launches", icon: CalendarIcon, current: true },
-    { name: "Past Launches", href: "/launches/past-launches", icon: CalendarIcon, current: false },
+  primaryNavigation: INavigationList[] = [
+    { name: 'Overview', href: '/', icon: CalendarIcon, current: true },
+    {
+      name: 'Upcoming Launches',
+      href: '/launches/upcoming-launches',
+      icon: CalendarIcon,
+      current: true,
+    },
+    {
+      name: 'Past Launches',
+      href: '/launches/past-launches',
+      icon: CalendarIcon,
+      current: false,
+    },
     // { name: "Statistics", href: "/launches/statistics", icon: ChartBarIcon, current: false },
   ];
-  secondaryNavigation: CategorizedNavigationListT[] = [
+  secondaryNavigation: ICategorizedNavigationList[] = [
     {
-      heading: "vehicles",
+      heading: 'vehicles',
       list: [
-        { name: "Rockets", href: "/vehicles/rockets", current: true },
-        { name: "Ships", href: "/vehicles/ships", current: false },
-        { name: "Cores", href: "/vehicles/cores", current: false },
-        { name: "Capsules", href: "/vehicles/capsules", current: false },
+        { name: 'Rockets', href: '/vehicles/rockets', current: true },
+        { name: 'Ships', href: '/vehicles/ships', current: false },
+        { name: 'Cores', href: '/vehicles/cores', current: false },
+        { name: 'Capsules', href: '/vehicles/capsules', current: false },
       ],
     },
   ];
@@ -37,23 +39,23 @@ class navigationStore {
   }
 
   activateLink(activateHref: string) {
-    this.primaryNavigation.map(link => {
-      if(link.href !== activateHref) {
+    this.primaryNavigation.map((link) => {
+      if (link.href !== activateHref) {
         link.current = false;
       } else {
         link.current = true;
       }
-    })
+    });
 
-    this.secondaryNavigation.forEach(category => {
-      category.list.map(link => {
-        if(link.href !== activateHref) {
+    this.secondaryNavigation.forEach((category) => {
+      category.list.map((link) => {
+        if (link.href !== activateHref) {
           link.current = false;
         } else {
           link.current = true;
         }
-      })
-    })
+      });
+    });
   }
 }
 

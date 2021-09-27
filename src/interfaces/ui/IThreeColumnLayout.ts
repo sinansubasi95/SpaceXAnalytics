@@ -1,4 +1,4 @@
 export interface IThreeColumnLayout {
-    leftPanel?: React.ReactElement;
+    leftPanel: React.ReactElement;
     children: React.ReactElement;
 };
