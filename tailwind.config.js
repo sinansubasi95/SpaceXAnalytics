@@ -50,6 +50,10 @@ module.exports = {
         },
         ['dim-gray']: {
           DEFAULT: '#6E6A64'
+        },
+        ['custom-scrollbar']: {
+          DEFAULT: '#10B981',
+          light: '#D1FAE5'
         }
       },
       letterSpacing: {
@@ -70,7 +74,9 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')
+  ],
   corePlugins: {
    fontFamily: true,
   }
