@@ -16,12 +16,12 @@ export const ThreeColumnLayout = observer((props: IThreeColumnLayout) => {
   const { sidebarStore } = useStores();
 
   return (
-    <div className="flex h-screen overflow-hidden bg-white">
+    <div className="flex h-screen overflow-hidden">
       {/* Specific compatible layouts which you can change */}
       <SidebarWithSecondaryNavigation />
       <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
         <div className="lg:hidden">
-          <div className="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-4 py-1.5">
+          <div className="flex items-center justify-between px-4 py-1.5">
             <div>
               <Logo src="/assets/logo-textless.svg" />
             </div>

@@ -82,8 +82,8 @@ export const SidebarWithSecondaryNavigation = observer(() => {
       <div className="hidden lg:flex lg:flex-shrink-0">
         <div className="flex flex-col w-64">
           {/* Sidebar component, swap this element with another sidebar if you like */}
-          <div className="flex flex-col flex-1 h-0 bg-gray-100 border-r border-jet">
-            <div className="flex flex-col flex-grow pb-4 overflow-y-auto border-r border-jet bg-chinese-black-800">
+          <div className="flex flex-col flex-1 h-0 border-r-2 bg-chinese-black-800 border-jet">
+            <div className="flex flex-col flex-grow pb-4 overflow-y-auto">
               <div className="flex flex-col items-center justify-center flex-shrink-0 h-16 px-4 bg-center bg-no-repeat bg-cover border-b-2 border-jet bg-chinese-black-800 ">
                 <Logo src="/assets/spacex-logo-black-and-white.png" />
                 {/* <span className="mr-4 text-xs tracking-custom-xl text-anti-flash-white font-quicksand">Analytics</span> */}

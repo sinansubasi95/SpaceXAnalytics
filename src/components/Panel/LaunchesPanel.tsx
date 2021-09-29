@@ -94,9 +94,10 @@ const messages = [
 ];
 
 // Make this component reusable
+// use urql
 const LaunchesPanel = () => {
   return (
-    <div className="relative flex flex-col h-full bg-gray-100 border-r border-gray-200 w-128">
+    <div className="relative flex flex-col h-full border-r-2 bg-chinese-black-800 border-jet w-128">
       <div className="flex-shrink-0">
         <div className="flex flex-col justify-center flex-shrink-0 h-16 px-6 font-medium border-b-2 border-jet bg-eerie-black">
           <h2 className="text-lg text-anti-flash-white">Past Launches</h2>
