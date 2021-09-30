@@ -51,9 +51,8 @@ module.exports = {
         ['dim-gray']: {
           DEFAULT: '#6E6A64'
         },
-        ['custom-scrollbar']: {
-          DEFAULT: '#10B981',
-          light: '#D1FAE5'
+        arsenic: {
+          DEFAULT: '#424242'
         }
       },
       letterSpacing: {

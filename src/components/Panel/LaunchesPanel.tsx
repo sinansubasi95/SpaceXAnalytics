@@ -106,7 +106,7 @@ const LaunchesPanel = () => {
           Sorted by date
         </div> */}
       </div>
-      <nav aria-label="Message list" className="flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar scrollbar-thumb-quick-silver scrollbar-track-jet">
+      <nav aria-label="Message list" className="flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar scrollbar-thumb-dim-gray scrollbar-track-arsenic">
         <ul className="border-b border-gray-200 divide-y divide-jet">
           {messages.map((message) => (
             <li
