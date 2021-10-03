@@ -93,6 +93,23 @@ const messages = [
   },
 ];
 
+/*
+https://www.usingenglish.com/forum/threads/54795-It-this-is-the-first-time
+https://www.youtube.com/watch?v=Miock1yWkCQ
+https://github.com/leighhalliday/urql-demo/blob/main/src/urqlClient.js
+https://github.com/benawad/dogehouse/blob/584055ad407bc37fa35cdf36ebb271622e29d436/kibbeh/src/modules/user/UserPage.tsx#L15
+https://www.google.com/search?q=urql+example+reddit&rlz=1C1GCEU_trTR968TR968&ei=V6BVYcTgL9HzkwWR64SYBA&oq=urql+example+reddit&gs_lcp=Cgdnd3Mtd2l6EAMyBwghEAoQoAE6BwgAEEcQsAM6BQghEKABSgQIQRgAUL1nWKxsYOJsaAJwAngAgAGjAYgBsQWSAQMwLjWYAQCgAQHIAQjAAQE&sclient=gws-wiz&ved=0ahUKEwiE6I3vzKbzAhXR-aQKHZE1AUMQ4dUDCA4&uact=5
+https://formidable.com/open-source/urql/docs/basics/react-preact/#pausing-usequery
+
+
+https://www.reddit.com/r/graphql/comments/o0m5bz/urql_query_component_example/
+https://www.reddit.com/r/reactjs/comments/m6mftl/urql_or_reactquery/
+https://www.reddit.com/r/graphql/comments/mcwpma/what_to_return_in_graphql_operations_to_optimize/
+https://atlassian.design/components/button/examples
+https://blog.openreplay.com/redux-is-dead-long-live-redux-toolkit
+https://old.reddit.com/r/reactjs/
+*/
+
 // Make this component reusable
 // use urql
 const LaunchesPanel = () => {

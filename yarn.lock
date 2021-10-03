@@ -107,7 +107,7 @@
 
 "@graphql-typed-document-node/core@^3.1.0":
   version "3.1.0"
-  resolved "https://registry.npmjs.org/@graphql-typed-document-node/core/-/core-3.1.0.tgz"
+  resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.0.tgz#0eee6373e11418bfe0b5638f654df7a4ca6a3950"
   integrity sha512-wYn6r8zVZyQJ6rQaALBEln5B1pzxb9shV5Ef97kTvn6yVGrqyXVnDqnU24MXnFubR+rZjBY9NWuxX3FB2sTsjg==
 
 "@hapi/accept@5.0.2":
@@ -332,10 +332,10 @@
     "@typescript-eslint/types" "4.28.5"
     eslint-visitor-keys "^2.0.0"
 
-"@urql/core@^2.1.4":
-  version "2.1.5"
-  resolved "https://registry.npmjs.org/@urql/core/-/core-2.1.5.tgz"
-  integrity sha512-iX30xZ6exdJbajv2S4gxVP+1ZEh57x9gEuUrpOCLWZp84970XDSo82xoz+11I+NGWiQNZfbIs6LTLaie/iG3OQ==
+"@urql/core@^2.3.2":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@urql/core/-/core-2.3.3.tgz#e4777b95c31d8ad0ba21ea1f5c851cbbe1d0ac17"
+  integrity sha512-Bi9mafTFu0O1XZmI7/HrEk12LHZW+Fs/V1FqSJoUDgYIhARIJW6cCh3Havy1dJJ0FETxYmmQQXPf6kst+IP2qQ==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.0"
     wonka "^4.0.14"
@@ -1694,6 +1694,11 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0:
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.6.tgz"
   integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
 
+graphql@^15.6.0:
+  version "15.6.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.6.0.tgz#e69323c6a9780a1a4b9ddf7e35ca8904bb04df02"
+  integrity sha512-WJR872Zlc9hckiEPhXgyUftXH48jp2EjO5tgBBOyNMRJZ9fviL2mJBD6CAysk6N5S0r9BTs09Qk39nnJBkvOXQ==
+
 has-bigints@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/has-bigints/-/has-bigints-1.0.1.tgz"
@@ -2389,10 +2394,10 @@ next-images@^1.8.1:
     file-loader "^6.2.0"
     url-loader "^4.1.0"
 
-next-urql@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.npmjs.org/next-urql/-/next-urql-3.1.1.tgz"
-  integrity sha512-IkspufSuCOoSkkfuElgyz6HNhxY/W4SsU4LhUH1xbcOWwiPZJN4ppTL0ebbqcOURwFDEc1oOmQMbQ2gyH0czeQ==
+next-urql@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/next-urql/-/next-urql-3.2.1.tgz#ad2857c6ef577c36d3f29004d14d19d6cb8be1dc"
+  integrity sha512-b8KhQCSZGfxkBKdKMmDihi0m/sYa+i6r8CtgkjqeZrAUdksC7p/gQyCiknZOGJSVyNIc4FHUcnLsKoWqqHGrYQ==
   dependencies:
     react-ssr-prepass "^1.4.0"
 
@@ -3028,7 +3033,7 @@ react-refresh@0.8.3:
 
 react-ssr-prepass@^1.4.0:
   version "1.4.0"
-  resolved "https://registry.npmjs.org/react-ssr-prepass/-/react-ssr-prepass-1.4.0.tgz"
+  resolved "https://registry.yarnpkg.com/react-ssr-prepass/-/react-ssr-prepass-1.4.0.tgz#33a3db19414f0f8f9f3f781c88f760ae366b4f51"
   integrity sha512-0SzdmiQUtHvhxCabHg9BI/pkJfijGkQ0jQL6fC4YFy7idaDOuaiQLsajIkkNxffFXtJFHIWFITlve2WB88e0Jw==
 
 react@17.0.2:
@@ -3774,12 +3779,12 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
-urql@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/urql/-/urql-2.0.4.tgz"
-  integrity sha512-ARITb+l+DsGbK/y3mxQjbC4lw8Z4IqFfk4Va8Eg1rDpN1HhOkMTxFA/YvGZoQIU1re/SsARLe//TEBtsgH0/CQ==
+urql@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/urql/-/urql-2.0.5.tgz#ab56bdc659fc0f4b3bc5b286359a354c74817bdb"
+  integrity sha512-UOl37CkNO1sfhw8jPihq+9NKUpTLnsRjpK7vmOVqPceqSO0rYXHOAEJp2TWDhyLjn2lYDlDlAfDaxNyK5m1FOA==
   dependencies:
-    "@urql/core" "^2.1.4"
+    "@urql/core" "^2.3.2"
     wonka "^4.0.14"
 
 use-subscription@1.5.1:
@@ -3892,7 +3897,7 @@ which@^2.0.1:
 
 wonka@^4.0.14:
   version "4.0.15"
-  resolved "https://registry.npmjs.org/wonka/-/wonka-4.0.15.tgz"
+  resolved "https://registry.yarnpkg.com/wonka/-/wonka-4.0.15.tgz#9aa42046efa424565ab8f8f451fcca955bf80b89"
   integrity sha512-U0IUQHKXXn6PFo9nqsHphVCE5m3IntqZNB9Jjn7EB1lrR7YTDY3YWgFvEvwniTzXSvOH/XMzAZaIfJF/LvHYXg==
 
 word-wrap@^1.2.3:
