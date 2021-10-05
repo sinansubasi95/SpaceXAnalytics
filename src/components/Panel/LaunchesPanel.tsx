@@ -1,97 +1,6 @@
+import clsx from 'clsx';
 import moment from 'moment';
-
-const messages = [
-  {
-    id: '108',
-    mission_name: 'Sentinel-6 Michael Freilich',
-    rocket: {
-      rocket_name: 'Falcon 9',
-    },
-    launch_date_utc: '2020-11-21T17:17:00.000Z',
-    launch_success: true,
-    details:
-      'SpaceX will launch Sentinel-6 Michael Freilich into low Earth orbit for NASA, NOAA, ESA, and the European Organization for the Exploitation of Meteorological Satellites aboard a Falcon 9 from SLC-4E, Vandenberg Air Force Station. Sentinel-6(A) is an ocean observation satellite providing radar ocean surface altimetry data and also atmospheric temperature profiles as a secondary mission. The booster for this mission is will land at LZ-4.',
-    links: {
-      mission_patch:
-        'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
-    },
-  },
-  {
-    id: '107',
-    mission_name: 'Crew-1',
-    rocket: {
-      rocket_name: 'Falcon 9',
-    },
-    launch_date_utc: '2020-11-16T00:27:00.000Z',
-    launch_success: true,
-    details:
-      "SpaceX will launch the first operational mission of its Crew Dragon vehicle as part of NASA's Commercial Crew Transportation Capability Program (CCtCap), carrying 3 NASA astronauts and 1 JAXA astronaut to the International Space Station. This mission will be the second crewed flight to launch from the United States since the end of the Space Shuttle program in 2011.",
-    links: {
-      mission_patch:
-        'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
-    },
-  },
-  {
-    id: '106',
-    mission_name: 'GPS III SV04 (Sacagawea)',
-    rocket: {
-      rocket_name: 'Falcon 9',
-    },
-    launch_date_utc: '2020-11-05T23:24:00.000Z',
-    launch_success: true,
-    details:
-      'SpaceX will launch GPS Block III Space Vehicle 04 from SLC-40, Cape Canaveral AFS aboard a Falcon 9. GPS III is owned and operated by the US Air Force and produced by Lockheed Martin. This will be the fourth GPS III satellite launched and the third launched by SpaceX. The satellite will be delivered into a MEO transfer orbit. The booster for this mission will land on an ASDS.',
-    links: {
-      mission_patch:
-        'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
-    },
-  },
-  {
-    id: '105',
-    mission_name: 'Starlink-14 (v1.0)',
-    rocket: {
-      rocket_name: 'Falcon 9',
-    },
-    launch_date_utc: '2020-10-24T15:31:00.000Z',
-    launch_success: true,
-    details:
-      'This mission will launch the fourteenth batch of operational Starlink satellites, which are expected to be version 1.0, from SLC-40, Kennedy Space Center. It is the fifteenth Starlink launch overall. The satellites will be delivered to low Earth orbit and will spend a few weeks maneuvering to their operational altitude of 550 km. The booster for this mission is expected to land on JRTI.',
-    links: {
-      mission_patch:
-        'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
-    },
-  },
-  {
-    id: '105',
-    mission_name: 'Starlink-14 (v1.0)',
-    rocket: {
-      rocket_name: 'Falcon 9',
-    },
-    launch_date_utc: '2020-10-24T15:31:00.000Z',
-    launch_success: true,
-    details:
-      'This mission will launch the fourteenth batch of operational Starlink satellites, which are expected to be version 1.0, from SLC-40, Kennedy Space Center. It is the fifteenth Starlink launch overall. The satellites will be delivered to low Earth orbit and will spend a few weeks maneuvering to their operational altitude of 550 km. The booster for this mission is expected to land on JRTI.',
-    links: {
-      mission_patch:
-        'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
-    },
-  },
-  {
-    id: '105',
-    mission_name: 'Starlink-14 (v1.0)',
-    rocket: {
-      rocket_name: 'Falcon 9',
-    },
-    launch_date_utc: '2020-10-24T15:31:00.000Z',
-    launch_success: true,
-    details:
-      'This mission will launch the fourteenth batch of operational Starlink satellites, which are expected to be version 1.0, from SLC-40, Kennedy Space Center. It is the fifteenth Starlink launch overall. The satellites will be delivered to low Earth orbit and will spend a few weeks maneuvering to their operational altitude of 550 km. The booster for this mission is expected to land on JRTI.',
-    links: {
-      mission_patch:
-        'https://upload.wikimedia.org/wikipedia/commons/a/ac/SpaceX_CRS-6_Patch.png',
-    },
-  },
-];
+import { ILaunchesPanel } from '../../interfaces/ui/ILaunchesPanel';
 
 /*
 https://www.usingenglish.com/forum/threads/54795-It-this-is-the-first-time
@@ -110,65 +19,98 @@ https://blog.openreplay.com/redux-is-dead-long-live-redux-toolkit
 https://old.reddit.com/r/reactjs/
 */
 
+// https://www.graphql-code-generator.com/docs/plugins/typescript-urql
+// https://github.com/not-stirred
+// https://stackoverflow.com/questions/38527759/how-to-check-for-broken-images-in-react-js
+// https://www.youtube.com/watch?v=1PVrZNi3sb8
+// https://github.com/leighhalliday/apollo-generating-types
+// https://the-guild.dev/blog/graphql-codegen-best-practices
+// generate typescript types for urql
+
+// --- NEW ---
+// https://www.youtube.com/watch?v=1PVrZNi3sb8
+// https://github.com/dotansimha/graphql-code-generator
+// https://www.graphql-code-generator.com/docs/getting-started/index
+// https://formidable.com/open-source/urql/docs/graphcache/schema-awareness/
+// https://github.com/benawad/lireddit/tree/master/web/src
+
 // Make this component reusable
 // use urql
-const LaunchesPanel = () => {
+const LaunchesPanel = (props: ILaunchesPanel) => {
   return (
     <div className="relative flex flex-col h-full border-r-2 bg-chinese-black-800 border-jet w-128">
       <div className="flex-shrink-0">
         <div className="flex flex-col justify-center flex-shrink-0 h-16 px-6 font-medium border-b-2 border-jet bg-eerie-black">
-          <h2 className="text-lg text-anti-flash-white">Past Launches</h2>
+          <h2 className="text-lg text-anti-flash-white">{props.heading}</h2>
         </div>
         {/* <div className="px-6 py-2 text-sm font-medium text-gray-500 border-t border-b border-gray-200 bg-gray-50">
           Sorted by date
         </div> */}
       </div>
-      <nav aria-label="Message list" className="flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar scrollbar-thumb-dim-gray scrollbar-track-arsenic">
+      <nav
+        aria-label="Message list"
+        className="flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar scrollbar-thumb-dim-gray scrollbar-track-arsenic"
+      >
         <ul className="border-b border-gray-200 divide-y divide-jet">
-          {messages.map((message) => (
+          {props.list.map((launch) => (
             <li
-              key={message.id}
+              key={launch.id}
               className="relative px-6 py-5 bg-eerie-black hover:bg-black"
             >
-              <div className="flex justify-between mb-4">
-                <div className="flex-shrink-0 mr-4">
-                  <img
-                    className="rounded-full w-18 h-18"
-                    src={message.links.mission_patch}
-                    alt="mission patch"
-                  />
-                </div>
+              <div
+                className={clsx(
+                  launch.details !== null
+                    ? 'flex justify-between h-18 mb-4'
+                    : 'flex justify-between h-18'
+                )}
+              >
+                {launch.links.mission_patch !== null && (
+                  <div className="flex-shrink-0 mr-4">
+                    <img
+                      className="rounded-full w-18 h-18"
+                      src={launch.links.mission_patch}
+                      alt="mission patch"
+                    />
+                  </div>
+                )}
                 <div className="min-w-0 min-h-full mr-auto">
                   <a
-                    href={`/launches/past-launches/${message.id}`}
+                    href={`/launches/past-launches/${launch.id}`}
                     className="flex flex-col justify-between min-h-full focus:outline-none"
                   >
                     <span className="absolute inset-0" aria-hidden="true" />
                     <p className="text-sm font-normal truncate text-quick-silver">
-                      Flight {message.id}
+                      Flight {launch.id}
                     </p>
                     <p className="text-lg font-medium leading-none truncate text-anti-flash-white">
-                      {message.mission_name}
+                      {launch.mission_name}
                     </p>
                     <time
-                      dateTime={message.launch_date_utc}
+                      dateTime={launch.launch_date_utc}
                       className="flex-shrink-0 text-sm text-quick-silver"
                     >
                       {moment
-                        .utc(message.launch_date_utc)
+                        .utc(launch.launch_date_utc)
                         .format('DD.MM.YYYY, hh:mm')}
                     </time>
                   </a>
                 </div>
                 <p className="flex-shrink-0 text-sm text-quick-silver whitespace-nowrap">
-                  {message.rocket.rocket_name}
+                  {launch.rocket.rocket_name}
                 </p>
               </div>
-              <div className="mt-1">
-                <p className="text-sm leading-6 text-anti-flash-white line-clamp-2">
-                  {message.details.split(/\s+/).slice(0, 28).join(' ')}...
-                </p>
-              </div>
+              {launch.details !== null && (
+                <div className="mt-1">
+                  <p className="text-sm leading-6 text-anti-flash-white line-clamp-2">
+                    {launch.details === null
+                      ? ''
+                      : `${launch.details
+                          .split(/\s+/)
+                          ?.slice(0, 28)
+                          ?.join(' ')}...`}
+                  </p>
+                </div>
+              )}
             </li>
           ))}
         </ul>
