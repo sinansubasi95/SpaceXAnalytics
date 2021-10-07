@@ -34,6 +34,10 @@ https://old.reddit.com/r/reactjs/
 // https://formidable.com/open-source/urql/docs/graphcache/schema-awareness/
 // https://github.com/benawad/lireddit/tree/master/web/src
 
+/*
+  THIS: https://www.youtube.com/watch?v=I6ypD7qv3Z8&t=8301s&ab_channel=BenAwad
+*/
+
 // Make this component reusable
 // use urql
 const LaunchesPanel = (props: ILaunchesPanel) => {
@@ -52,60 +56,60 @@ const LaunchesPanel = (props: ILaunchesPanel) => {
         className="flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar scrollbar-thumb-dim-gray scrollbar-track-arsenic"
       >
         <ul className="border-b border-gray-200 divide-y divide-jet">
-          {props.list.map((launch) => (
+          {props?.launches?.launchesPast?.map((launch) => (
             <li
-              key={launch.id}
+              key={launch?.id}
               className="relative px-6 py-5 bg-eerie-black hover:bg-black"
             >
               <div
                 className={clsx(
-                  launch.details !== null
+                  launch?.details !== null
                     ? 'flex justify-between h-18 mb-4'
                     : 'flex justify-between h-18'
                 )}
               >
-                {launch.links.mission_patch !== null && (
+                {launch?.links?.mission_patch !== null && (
                   <div className="flex-shrink-0 mr-4">
                     <img
                       className="rounded-full w-18 h-18"
-                      src={launch.links.mission_patch}
+                      src={launch?.links?.mission_patch}
                       alt="mission patch"
                     />
                   </div>
                 )}
                 <div className="min-w-0 min-h-full mr-auto">
                   <a
-                    href={`/launches/past-launches/${launch.id}`}
+                    href={`/launches/past-launches/${launch?.id}`}
                     className="flex flex-col justify-between min-h-full focus:outline-none"
                   >
                     <span className="absolute inset-0" aria-hidden="true" />
                     <p className="text-sm font-normal truncate text-quick-silver">
-                      Flight {launch.id}
+                      Flight {launch?.id}
                     </p>
                     <p className="text-lg font-medium leading-none truncate text-anti-flash-white">
-                      {launch.mission_name}
+                      {launch?.mission_name}
                     </p>
                     <time
-                      dateTime={launch.launch_date_utc}
+                      dateTime={launch?.launch_date_utc}
                       className="flex-shrink-0 text-sm text-quick-silver"
                     >
                       {moment
-                        .utc(launch.launch_date_utc)
+                        .utc(launch?.launch_date_utc)
                         .format('DD.MM.YYYY, hh:mm')}
                     </time>
                   </a>
                 </div>
                 <p className="flex-shrink-0 text-sm text-quick-silver whitespace-nowrap">
-                  {launch.rocket.rocket_name}
+                  {launch?.rocket?.rocket_name}
                 </p>
               </div>
-              {launch.details !== null && (
+              {launch?.details !== null && (
                 <div className="mt-1">
                   <p className="text-sm leading-6 text-anti-flash-white line-clamp-2">
-                    {launch.details === null
+                    {launch?.details === null
                       ? ''
-                      : `${launch.details
-                          .split(/\s+/)
+                      : `${launch?.details
+                          ?.split(/\s+/)
                           ?.slice(0, 28)
                           ?.join(' ')}...`}
                   </p>

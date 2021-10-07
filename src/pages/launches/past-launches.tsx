@@ -2,27 +2,11 @@ import { ThreeColumnLayout } from '../../components/Layout/ThreeColumnLayout';
 import LaunchesPanel from '../../components/Panel/LaunchesPanel';
 import { useQuery } from 'urql';
 import { client, ssrCache } from '../../utils/createUrqlClient';
-
-const PastLaunchesQuery = `
-  query launchesPast($limit: Int!) {
-    launchesPast(limit: $limit) {
-      mission_name
-      launch_date_utc
-      rocket {
-        rocket_name
-      }
-      links {
-        mission_patch
-      }
-      id
-      details
-    }
-  }
-`;
+import { LaunchesPastDocument } from '../../generated/graphql';
 
 export default function PastLaunches() {
   const [result] = useQuery({
-    query: PastLaunchesQuery,
+    query: LaunchesPastDocument,
     variables: { limit: 0 },
   });
 
@@ -34,7 +18,7 @@ export default function PastLaunches() {
   return (
     <ThreeColumnLayout
       leftPanel={
-        <LaunchesPanel heading="Past Launches" list={data.launchesPast} />
+        <LaunchesPanel heading="Past Launches" launches={data} />
       }
     >
       <div>test</div>

@@ -1,6 +1,6 @@
-import { IPastLaunchesQuery } from "../gql/IPastLaunchesQuery";
+import { LaunchesPastQuery } from "../../generated/graphql";
 
 export interface ILaunchesPanel {
     heading: string;
-    list: Array<IPastLaunchesQuery>
+    launches: LaunchesPastQuery;
 };
