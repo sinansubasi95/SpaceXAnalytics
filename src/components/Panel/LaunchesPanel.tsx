@@ -3,49 +3,24 @@ import moment from 'moment';
 import { ILaunchesPanel } from '../../interfaces/ui/ILaunchesPanel';
 
 /*
-https://www.usingenglish.com/forum/threads/54795-It-this-is-the-first-time
-https://www.youtube.com/watch?v=Miock1yWkCQ
-https://github.com/leighhalliday/urql-demo/blob/main/src/urqlClient.js
-https://github.com/benawad/dogehouse/blob/584055ad407bc37fa35cdf36ebb271622e29d436/kibbeh/src/modules/user/UserPage.tsx#L15
-https://www.google.com/search?q=urql+example+reddit&rlz=1C1GCEU_trTR968TR968&ei=V6BVYcTgL9HzkwWR64SYBA&oq=urql+example+reddit&gs_lcp=Cgdnd3Mtd2l6EAMyBwghEAoQoAE6BwgAEEcQsAM6BQghEKABSgQIQRgAUL1nWKxsYOJsaAJwAngAgAGjAYgBsQWSAQMwLjWYAQCgAQHIAQjAAQE&sclient=gws-wiz&ved=0ahUKEwiE6I3vzKbzAhXR-aQKHZE1AUMQ4dUDCA4&uact=5
 https://formidable.com/open-source/urql/docs/basics/react-preact/#pausing-usequery
-
-
-https://www.reddit.com/r/graphql/comments/o0m5bz/urql_query_component_example/
-https://www.reddit.com/r/reactjs/comments/m6mftl/urql_or_reactquery/
-https://www.reddit.com/r/graphql/comments/mcwpma/what_to_return_in_graphql_operations_to_optimize/
 https://atlassian.design/components/button/examples
 https://blog.openreplay.com/redux-is-dead-long-live-redux-toolkit
-https://old.reddit.com/r/reactjs/
+https://the-guild.dev/blog/graphql-codegen-best-practices
+https://stackoverflow.com/questions/38527759/how-to-check-for-broken-images-in-react-js
+https://github.com/typescript-cheatsheets/react/blob/main/README.md#basic-cheatsheet-table-of-contents
+
+https://github.com/dotansimha/graphql-code-generator
+https://www.graphql-code-generator.com/docs/getting-started/index
+https://formidable.com/open-source/urql/docs/graphcache/schema-awareness/
 */
 
-// https://www.graphql-code-generator.com/docs/plugins/typescript-urql
-// https://github.com/not-stirred
-// https://stackoverflow.com/questions/38527759/how-to-check-for-broken-images-in-react-js
-// https://www.youtube.com/watch?v=1PVrZNi3sb8
-// https://github.com/leighhalliday/apollo-generating-types
-// https://the-guild.dev/blog/graphql-codegen-best-practices
-// generate typescript types for urql
-
-// --- NEW ---
-// https://www.youtube.com/watch?v=1PVrZNi3sb8
-// https://github.com/dotansimha/graphql-code-generator
-// https://www.graphql-code-generator.com/docs/getting-started/index
-// https://formidable.com/open-source/urql/docs/graphcache/schema-awareness/
-// https://github.com/benawad/lireddit/tree/master/web/src
-
-/*
-  THIS: https://www.youtube.com/watch?v=I6ypD7qv3Z8&t=8301s&ab_channel=BenAwad
-*/
-
-// Make this component reusable
-// use urql
-const LaunchesPanel = (props: ILaunchesPanel) => {
+const LaunchesPanel = ({heading, launches}: ILaunchesPanel) => {
   return (
     <div className="relative flex flex-col h-full border-r-2 bg-chinese-black-800 border-jet w-128">
       <div className="flex-shrink-0">
         <div className="flex flex-col justify-center flex-shrink-0 h-16 px-6 font-medium border-b-2 border-jet bg-eerie-black">
-          <h2 className="text-lg text-anti-flash-white">{props.heading}</h2>
+          <h2 className="text-lg text-anti-flash-white">{heading}</h2>
         </div>
         {/* <div className="px-6 py-2 text-sm font-medium text-gray-500 border-t border-b border-gray-200 bg-gray-50">
           Sorted by date
@@ -56,7 +31,7 @@ const LaunchesPanel = (props: ILaunchesPanel) => {
         className="flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar scrollbar-thumb-dim-gray scrollbar-track-arsenic"
       >
         <ul className="border-b border-gray-200 divide-y divide-jet">
-          {props?.launches?.launchesPast?.map((launch) => (
+          {launches?.launchesPast?.map((launch) => (
             <li
               key={launch?.id}
               className="relative px-6 py-5 bg-eerie-black hover:bg-black"

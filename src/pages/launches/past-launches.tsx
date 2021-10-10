@@ -1,7 +1,6 @@
 import { ThreeColumnLayout } from '../../components/Layout/ThreeColumnLayout';
 import LaunchesPanel from '../../components/Panel/LaunchesPanel';
 import { useQuery } from 'urql';
-import { client, ssrCache } from '../../utils/createUrqlClient';
 import { LaunchesPastDocument } from '../../generated/graphql';
 
 export default function PastLaunches() {
@@ -21,7 +20,7 @@ export default function PastLaunches() {
         <LaunchesPanel heading="Past Launches" launches={data} />
       }
     >
-      <div>test</div>
+      <div>Past Launch</div>
     </ThreeColumnLayout>
   );
 }
