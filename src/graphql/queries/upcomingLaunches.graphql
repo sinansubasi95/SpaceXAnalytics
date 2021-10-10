@@ -1,0 +1,14 @@
+query launchesUpcoming($limit: Int!) {
+    launchesUpcoming(limit: $limit) {
+        id
+        details
+        links {
+            mission_patch
+        }
+        rocket {
+            rocket_name
+        }
+        launch_date_utc
+        mission_name
+    }
+}

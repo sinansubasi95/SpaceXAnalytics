@@ -1326,6 +1326,13 @@ export type LaunchesPastQueryVariables = Exact<{
 
 export type LaunchesPastQuery = { __typename?: 'Query', launchesPast?: Array<{ __typename?: 'Launch', mission_name?: string | null | undefined, launch_date_utc?: any | null | undefined, id?: string | null | undefined, details?: string | null | undefined, rocket?: { __typename?: 'LaunchRocket', rocket_name?: string | null | undefined } | null | undefined, links?: { __typename?: 'LaunchLinks', mission_patch?: string | null | undefined } | null | undefined } | null | undefined> | null | undefined };
 
+export type LaunchesUpcomingQueryVariables = Exact<{
+  limit: Scalars['Int'];
+}>;
+
+
+export type LaunchesUpcomingQuery = { __typename?: 'Query', launchesUpcoming?: Array<{ __typename?: 'Launch', id?: string | null | undefined, details?: string | null | undefined, launch_date_utc?: any | null | undefined, mission_name?: string | null | undefined, links?: { __typename?: 'LaunchLinks', mission_patch?: string | null | undefined } | null | undefined, rocket?: { __typename?: 'LaunchRocket', rocket_name?: string | null | undefined } | null | undefined } | null | undefined> | null | undefined };
+
 
 export const LaunchesPastDocument = gql`
     query launchesPast($limit: Int!) {
@@ -1346,4 +1353,24 @@ export const LaunchesPastDocument = gql`
 
 export function useLaunchesPastQuery(options: Omit<Urql.UseQueryArgs<LaunchesPastQueryVariables>, 'query'> = {}) {
   return Urql.useQuery<LaunchesPastQuery>({ query: LaunchesPastDocument, ...options });
+};
+export const LaunchesUpcomingDocument = gql`
+    query launchesUpcoming($limit: Int!) {
+  launchesUpcoming(limit: $limit) {
+    id
+    details
+    links {
+      mission_patch
+    }
+    rocket {
+      rocket_name
+    }
+    launch_date_utc
+    mission_name
+  }
+}
+    `;
+
+export function useLaunchesUpcomingQuery(options: Omit<Urql.UseQueryArgs<LaunchesUpcomingQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<LaunchesUpcomingQuery>({ query: LaunchesUpcomingDocument, ...options });
 };
