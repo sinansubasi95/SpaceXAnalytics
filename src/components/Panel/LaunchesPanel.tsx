@@ -31,7 +31,7 @@ const LaunchesPanel = ({heading, launches}: ILaunchesPanel) => {
         className="flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar scrollbar-thumb-dim-gray scrollbar-track-arsenic"
       >
         <ul className="border-b border-gray-200 divide-y divide-jet">
-          {launches?.launchesPast?.map((launch) => (
+          {launches?.map((launch) => (
             <li
               key={launch?.id}
               className="relative px-6 py-5 bg-eerie-black hover:bg-black"
