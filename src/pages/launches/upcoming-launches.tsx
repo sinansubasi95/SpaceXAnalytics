@@ -13,11 +13,11 @@ export default function UpcomingLaunches() {
 
   if (fetching) return 'Fetching';
   if (error) return 'Error';
-  console.log(data);
+
   return (
     <ThreeColumnLayout
       leftPanel={
-        <LaunchesPanel heading="Upcoming Launches" launches={data} />
+        <LaunchesPanel heading="Upcoming Launches" data={data?.launchesUpcoming} />
       }
     >
       <div>Upcoming Launch</div>

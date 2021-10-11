@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import moment from 'moment';
+import React from 'react';
 import { ILaunchesPanel } from '../../interfaces/ui/ILaunchesPanel';
 
 /*
@@ -15,7 +16,9 @@ https://www.graphql-code-generator.com/docs/getting-started/index
 https://formidable.com/open-source/urql/docs/graphcache/schema-awareness/
 */
 
-const LaunchesPanel = ({heading, launches}: ILaunchesPanel) => {
+// LaunchesPastQuery['launchesPast']
+
+const LaunchesPanel: React.FC<ILaunchesPanel<T>> = ({ heading, data }) => {
   return (
     <div className="relative flex flex-col h-full border-r-2 bg-chinese-black-800 border-jet w-128">
       <div className="flex-shrink-0">
@@ -30,8 +33,8 @@ const LaunchesPanel = ({heading, launches}: ILaunchesPanel) => {
         aria-label="Message list"
         className="flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar scrollbar-thumb-dim-gray scrollbar-track-arsenic"
       >
-        <ul className="border-b border-gray-200 divide-y divide-jet">
-          {launches?.map((launch) => (
+        <ul className="border-b-2 divide-y border-jet divide-jet">
+          {data?.map((launch) => (
             <li
               key={launch?.id}
               className="relative px-6 py-5 bg-eerie-black hover:bg-black"

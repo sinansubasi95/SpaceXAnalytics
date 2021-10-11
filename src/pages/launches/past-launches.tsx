@@ -1,7 +1,7 @@
 import { ThreeColumnLayout } from '../../components/Layout/ThreeColumnLayout';
 import LaunchesPanel from '../../components/Panel/LaunchesPanel';
 import { useQuery } from 'urql';
-import { LaunchesPastDocument } from '../../generated/graphql';
+import { LaunchesPastDocument, LaunchesPastQuery } from '../../generated/graphql';
 
 export default function PastLaunches() {
   const [result] = useQuery({
@@ -17,7 +17,7 @@ export default function PastLaunches() {
   return (
     <ThreeColumnLayout
       leftPanel={
-        <LaunchesPanel heading="Past Launches" launches={data} />
+        <LaunchesPanel<{data<LaunchesPastQuery['launchesPast']>}> heading="Past Launches" data={data?.launchesPast} />
       }
     >
       <div>Past Launch</div>
