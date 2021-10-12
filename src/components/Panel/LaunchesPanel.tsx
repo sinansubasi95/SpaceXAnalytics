@@ -18,7 +18,7 @@ https://formidable.com/open-source/urql/docs/graphcache/schema-awareness/
 
 // LaunchesPastQuery['launchesPast']
 
-const LaunchesPanel: React.FC<ILaunchesPanel<T>> = ({ heading, data }) => {
+const LaunchesPanel = <T extends any[]>({ heading, data }: ILaunchesPanel<T>) => {
   return (
     <div className="relative flex flex-col h-full border-r-2 bg-chinese-black-800 border-jet w-128">
       <div className="flex-shrink-0">
