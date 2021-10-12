@@ -1,9 +1,10 @@
-import {ThreeColumnLayout} from '../components/Layout/ThreeColumnLayout';
+import React from 'react';
+import { SidebarLayout } from '../components/Layout/SidebarLayout';
 
 export default function Example() {
   return (
-    <ThreeColumnLayout>
+    <SidebarLayout>
       <div>homepage</div>
-    </ThreeColumnLayout>
+    </SidebarLayout>
   )
 }

@@ -1,8 +1,11 @@
-import { LaunchesPastQuery } from "../../generated/graphql";
+import {
+  LaunchesPastQuery,
+  LaunchesUpcomingQuery,
+} from '../../generated/graphql';
 
-export interface ILaunchesPanel<T> {
-    heading: string;
-    data: T
-};
-
-// check types on runtime
+export interface ILaunchesPanel {
+  heading: string;
+  data:
+    | LaunchesPastQuery['launchesPast']
+    | LaunchesUpcomingQuery['launchesUpcoming'];
+}

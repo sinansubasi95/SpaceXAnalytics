@@ -1,4 +1,4 @@
-import {ThreeColumnLayout} from '../../components/Layout/ThreeColumnLayout';
+import { ThreeColumnLayout } from '../../components/Layout/ThreeColumnLayout';
 import LaunchesPanel from '../../components/Panel/LaunchesPanel';
 import { useQuery } from 'urql';
 import { LaunchesUpcomingDocument } from '../../generated/graphql';
@@ -17,10 +17,13 @@ export default function UpcomingLaunches() {
   return (
     <ThreeColumnLayout
       leftPanel={
-        <LaunchesPanel heading="Upcoming Launches" data={data?.launchesUpcoming} />
+        <LaunchesPanel
+          heading="Upcoming Launches"
+          data={data?.launchesUpcoming}
+        />
       }
     >
       <div>Upcoming Launch</div>
     </ThreeColumnLayout>
-  )
+  );
 }
