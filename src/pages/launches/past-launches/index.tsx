@@ -1,7 +1,7 @@
-import { ThreeColumnLayout } from '../../components/Layout/ThreeColumnLayout';
-import LaunchesPanel from '../../components/Panel/LaunchesPanel';
+import { ThreeColumnLayout } from '../../../components/Layout/ThreeColumnLayout';
+import LaunchesPanel from '../../../components/Panel/LaunchesPanel';
 import { useQuery } from 'urql';
-import { LaunchesPastDocument } from '../../generated/graphql';
+import { LaunchesPastDocument } from '../../../generated/graphql';
 
 export default function PastLaunches() {
   const [result] = useQuery({

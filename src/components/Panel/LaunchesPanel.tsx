@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import moment from 'moment';
 import React from 'react';
 import { ILaunchesPanel } from '../../interfaces/ui/ILaunchesPanel';
+import Link from 'next/link';
 
 /*
 https://formidable.com/open-source/urql/docs/basics/react-preact/#pausing-usequery
@@ -54,26 +55,25 @@ const LaunchesPanel = ({ heading, data }: ILaunchesPanel) => {
                   </div>
                 )}
                 <div className="min-w-0 min-h-full mr-auto">
-                  <a
-                    href={`/launches/past-launches/${launch?.id}`}
-                    className="flex flex-col justify-between min-h-full focus:outline-none"
-                  >
-                    <span className="absolute inset-0" aria-hidden="true" />
-                    <p className="text-sm font-normal truncate text-quick-silver">
-                      Flight {launch?.id}
-                    </p>
-                    <p className="text-lg font-medium leading-none truncate text-anti-flash-white">
-                      {launch?.mission_name}
-                    </p>
-                    <time
-                      dateTime={launch?.launch_date_utc}
-                      className="flex-shrink-0 text-sm text-quick-silver"
-                    >
-                      {moment
-                        .utc(launch?.launch_date_utc)
-                        .format('DD.MM.YYYY, hh:mm')}
-                    </time>
-                  </a>
+                  <Link href={`/launches/past-launches/${launch?.id}`}>
+                    <a className="flex flex-col justify-between min-h-full focus:outline-none">
+                      <span className="absolute inset-0" aria-hidden="true" />
+                      <p className="text-sm font-normal truncate text-quick-silver">
+                        Flight {launch?.id}
+                      </p>
+                      <p className="text-lg font-medium leading-none truncate text-anti-flash-white">
+                        {launch?.mission_name}
+                      </p>
+                      <time
+                        dateTime={launch?.launch_date_utc}
+                        className="flex-shrink-0 text-sm text-quick-silver"
+                      >
+                        {moment
+                          .utc(launch?.launch_date_utc)
+                          .format('DD.MM.YYYY, hh:mm')}
+                      </time>
+                    </a>
+                  </Link>
                 </div>
                 <p className="flex-shrink-0 text-sm text-quick-silver whitespace-nowrap">
                   {launch?.rocket?.rocket_name}
