@@ -18,7 +18,10 @@ export default function UpcomingLaunches() {
     <ThreeColumnLayout
       leftPanel={
         <LaunchesPanel
-          ui={{heading: "Upcoming Launches", path: "/launches/upcoming-launches"}}
+          ui={{
+            heading: 'Upcoming Launches',
+            path: '/launches/upcoming-launches',
+          }}
           data={data?.launchesUpcoming}
         />
       }

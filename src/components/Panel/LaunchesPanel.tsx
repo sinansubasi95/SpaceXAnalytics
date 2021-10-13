@@ -3,6 +3,7 @@ import moment from 'moment';
 import React from 'react';
 import { ILaunchesPanel } from '../../interfaces/ui/ILaunchesPanel';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 /*
 https://formidable.com/open-source/urql/docs/basics/react-preact/#pausing-usequery
@@ -36,7 +37,11 @@ const LaunchesPanel = ({ ui, data }: ILaunchesPanel) => {
           {data?.map((launch) => (
             <li
               key={launch?.id}
-              className="relative px-6 py-5 bg-eerie-black hover:bg-black"
+              className={clsx(
+                launch?.id === ui?.id
+                  ? 'relative px-6 py-5 bg-black'
+                  : 'relative px-6 py-5 bg-eerie-black hover:bg-black'
+              )}
             >
               <div
                 className={clsx(
@@ -55,7 +60,7 @@ const LaunchesPanel = ({ ui, data }: ILaunchesPanel) => {
                   </div>
                 )}
                 <div className="min-w-0 min-h-full mr-auto">
-                  <Link href={`${ui.path+launch?.id}`}>
+                  <Link href={`${ui.path}/${launch?.id}`}>
                     <a className="flex flex-col justify-between min-h-full focus:outline-none">
                       <span className="absolute inset-0" aria-hidden="true" />
                       <p className="text-sm font-normal truncate text-quick-silver">

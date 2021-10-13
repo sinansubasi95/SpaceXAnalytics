@@ -21,7 +21,14 @@ export default function PastLaunches() {
   return (
     <ThreeColumnLayout
       leftPanel={
-        <LaunchesPanel ui={{heading: "Past Launches", path: "/launches/past-launches/"}} data={data?.launchesPast} />
+        <LaunchesPanel
+          ui={{
+            heading: 'Past Launches',
+            path: '/launches/past-launches',
+            id: typeof id === 'string' ? id : '',
+          }}
+          data={data?.launchesPast}
+        />
       }
     >
       <div>{id}</div>
