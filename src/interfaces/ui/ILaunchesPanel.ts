@@ -4,7 +4,7 @@ import {
 } from '../../generated/graphql';
 
 export interface ILaunchesPanel {
-  heading: string;
+  ui: {heading: string, path: string};
   data:
     | LaunchesPastQuery['launchesPast']
     | LaunchesUpcomingQuery['launchesUpcoming'];

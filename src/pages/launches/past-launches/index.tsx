@@ -17,7 +17,7 @@ export default function PastLaunches() {
   return (
     <ThreeColumnLayout
       leftPanel={
-        <LaunchesPanel heading="Past Launches" data={data?.launchesPast} />
+        <LaunchesPanel ui={{heading: "Past Launches", path: "/launches/past-launches/"}} data={data?.launchesPast} />
       }
     >
       <div>Past Launch</div>

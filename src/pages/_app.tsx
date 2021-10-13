@@ -9,7 +9,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   // Handle navigation on load
   const { pathname } = useRouter();
   const { navigationStore } = useStores();
-  navigationStore.activateLink(pathname)
+  navigationStore.activateLink(pathname);
+
+  // check if query param exists, and check active link conditionally among nav menu
 
   return (
     <Provider value={client}>

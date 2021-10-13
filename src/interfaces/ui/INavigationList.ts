@@ -3,4 +3,5 @@ export interface INavigationList {
     href: string;
     icon?: any;
     current: boolean;
+    exact: boolean;
 };

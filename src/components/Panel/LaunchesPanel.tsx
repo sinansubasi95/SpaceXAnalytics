@@ -17,12 +17,12 @@ https://www.graphql-code-generator.com/docs/getting-started/index
 https://formidable.com/open-source/urql/docs/graphcache/schema-awareness/
 */
 
-const LaunchesPanel = ({ heading, data }: ILaunchesPanel) => {
+const LaunchesPanel = ({ ui, data }: ILaunchesPanel) => {
   return (
     <div className="relative flex flex-col h-full border-r-2 bg-chinese-black-800 border-jet w-128">
       <div className="flex-shrink-0">
         <div className="flex flex-col justify-center flex-shrink-0 h-16 px-6 font-medium border-b-2 border-jet bg-eerie-black">
-          <h2 className="text-lg text-anti-flash-white">{heading}</h2>
+          <h2 className="text-lg text-anti-flash-white">{ui.heading}</h2>
         </div>
         {/* <div className="px-6 py-2 text-sm font-medium text-gray-500 border-t border-b border-gray-200 bg-gray-50">
           Sorted by date
@@ -55,7 +55,7 @@ const LaunchesPanel = ({ heading, data }: ILaunchesPanel) => {
                   </div>
                 )}
                 <div className="min-w-0 min-h-full mr-auto">
-                  <Link href={`/launches/past-launches/${launch?.id}`}>
+                  <Link href={`${ui.path+launch?.id}`}>
                     <a className="flex flex-col justify-between min-h-full focus:outline-none">
                       <span className="absolute inset-0" aria-hidden="true" />
                       <p className="text-sm font-normal truncate text-quick-silver">

@@ -5,8 +5,8 @@ import { LaunchesPastDocument } from '../../../generated/graphql';
 import { useRouter } from 'next/router';
 
 export default function PastLaunches() {
-  const router = useRouter()
-  const { id } = router.query
+  const router = useRouter();
+  const { id } = router.query;
 
   const [result] = useQuery({
     query: LaunchesPastDocument,
@@ -21,7 +21,7 @@ export default function PastLaunches() {
   return (
     <ThreeColumnLayout
       leftPanel={
-        <LaunchesPanel heading="Past Launches" data={data?.launchesPast} />
+        <LaunchesPanel ui={{heading: "Past Launches", path: "/launches/past-launches/"}} data={data?.launchesPast} />
       }
     >
       <div>{id}</div>
