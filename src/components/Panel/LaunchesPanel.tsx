@@ -3,20 +3,6 @@ import moment from 'moment';
 import React from 'react';
 import { ILaunchesPanel } from '../../interfaces/ui/ILaunchesPanel';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-
-/*
-https://formidable.com/open-source/urql/docs/basics/react-preact/#pausing-usequery
-https://atlassian.design/components/button/examples
-https://blog.openreplay.com/redux-is-dead-long-live-redux-toolkit
-https://the-guild.dev/blog/graphql-codegen-best-practices
-https://stackoverflow.com/questions/38527759/how-to-check-for-broken-images-in-react-js
-https://github.com/typescript-cheatsheets/react/blob/main/README.md#basic-cheatsheet-table-of-contents
-
-https://github.com/dotansimha/graphql-code-generator
-https://www.graphql-code-generator.com/docs/getting-started/index
-https://formidable.com/open-source/urql/docs/graphcache/schema-awareness/
-*/
 
 const LaunchesPanel = ({ ui, data }: ILaunchesPanel) => {
   return (
