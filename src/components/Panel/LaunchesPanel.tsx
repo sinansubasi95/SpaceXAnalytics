@@ -4,6 +4,44 @@ import React from 'react';
 import { ILaunchesPanel } from '../../interfaces/ui/ILaunchesPanel';
 import Link from 'next/link';
 
+/*
+{
+  launchesPast(limit: 1) {
+    mission_name
+    launch_site {
+      site_name_long
+    }
+    links {
+      video_link
+      wikipedia
+      mission_patch
+    }
+    rocket {
+      rocket_name
+      rocket_type
+      first_stage {
+        cores {
+          gridfins
+          flight
+          block
+          land_success
+        }
+      }
+      second_stage {
+        payloads {
+          payload_type
+          payload_mass_kg
+          orbit
+          manufacturer
+          payload_mass_lbs
+        }
+      }
+    }
+    launch_date_utc
+  }
+}
+*/
+
 const LaunchesPanel = ({ ui, data }: ILaunchesPanel) => {
   return (
     <div className="relative flex flex-col h-full border-r-2 bg-chinese-black-800 border-jet w-128">
