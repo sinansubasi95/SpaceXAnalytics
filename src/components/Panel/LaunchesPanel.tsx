@@ -6,7 +6,11 @@ import Link from 'next/link';
 
 /*
 {
-  launchesPast(limit: 1) {
+  launch(id: "109") {
+    id
+    details
+    launch_date_utc
+    launch_success
     mission_name
     launch_site {
       site_name_long
@@ -18,12 +22,12 @@ import Link from 'next/link';
     }
     rocket {
       rocket_name
-      rocket_type
+      rocket_type ---
       first_stage {
         cores {
-          gridfins
+          gridfins ---
           flight
-          block
+          block 
           land_success
         }
       }
@@ -33,13 +37,33 @@ import Link from 'next/link';
           payload_mass_kg
           orbit
           manufacturer
-          payload_mass_lbs
         }
       }
     }
-    launch_date_utc
   }
 }
+
+Backup date
+Static fire
+Spacecraft Commander
+Pilot
+Mission Specialist
+Customer
+Payload
+Payload mass
+Destination orbit
+Launch vehicle
+Core
+Past flights of this core
+Capsule
+Duration of visit
+Launch site
+Landing
+Mission success criteria
+Images
+
+
+ingilizce: https://blog.cambly.com/tr/ingilizce-zamanlar/
 */
 
 const LaunchesPanel = ({ ui, data }: ILaunchesPanel) => {

@@ -1,0 +1,5 @@
+1) Should I separate Launches file/page into two different files/pages?
+2) Create GraphQL Query to fetch id specific launch.
+3) Create table component for id specific launch page.
+4) SpaceX patch placeholder
+5) index.tsx must be .ts
