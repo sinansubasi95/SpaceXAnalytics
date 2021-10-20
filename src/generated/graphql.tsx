@@ -1319,6 +1319,13 @@ export type Uuid_Comparison_Exp = {
   _nin?: Maybe<Array<Scalars['uuid']>>;
 };
 
+export type LaunchQueryVariables = Exact<{
+  id: Scalars['ID'];
+}>;
+
+
+export type LaunchQuery = { __typename?: 'Query', launch?: { __typename?: 'Launch', id?: string | null | undefined, details?: string | null | undefined, static_fire_date_utc?: any | null | undefined, launch_date_utc?: any | null | undefined, launch_success?: boolean | null | undefined, mission_name?: string | null | undefined, launch_site?: { __typename?: 'LaunchSite', site_name_long?: string | null | undefined } | null | undefined, links?: { __typename?: 'LaunchLinks', video_link?: string | null | undefined, wikipedia?: string | null | undefined, mission_patch?: string | null | undefined } | null | undefined, rocket?: { __typename?: 'LaunchRocket', rocket_name?: string | null | undefined, first_stage?: { __typename?: 'LaunchRocketFirstStage', cores?: Array<{ __typename?: 'LaunchRocketFirstStageCore', flight?: number | null | undefined, block?: number | null | undefined, land_success?: boolean | null | undefined } | null | undefined> | null | undefined } | null | undefined, second_stage?: { __typename?: 'LaunchRocketSecondStage', payloads?: Array<{ __typename?: 'Payload', payload_type?: string | null | undefined, payload_mass_kg?: number | null | undefined, orbit?: string | null | undefined, manufacturer?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined } | null | undefined } | null | undefined };
+
 export type LaunchesPastQueryVariables = Exact<{
   limit: Scalars['Int'];
 }>;
@@ -1334,6 +1341,48 @@ export type LaunchesUpcomingQueryVariables = Exact<{
 export type LaunchesUpcomingQuery = { __typename?: 'Query', launchesUpcoming?: Array<{ __typename?: 'Launch', id?: string | null | undefined, details?: string | null | undefined, launch_date_utc?: any | null | undefined, mission_name?: string | null | undefined, links?: { __typename?: 'LaunchLinks', mission_patch?: string | null | undefined } | null | undefined, rocket?: { __typename?: 'LaunchRocket', rocket_name?: string | null | undefined } | null | undefined } | null | undefined> | null | undefined };
 
 
+export const LaunchDocument = gql`
+    query launch($id: ID!) {
+  launch(id: $id) {
+    id
+    details
+    static_fire_date_utc
+    launch_date_utc
+    launch_success
+    mission_name
+    launch_site {
+      site_name_long
+    }
+    links {
+      video_link
+      wikipedia
+      mission_patch
+    }
+    rocket {
+      rocket_name
+      first_stage {
+        cores {
+          flight
+          block
+          land_success
+        }
+      }
+      second_stage {
+        payloads {
+          payload_type
+          payload_mass_kg
+          orbit
+          manufacturer
+        }
+      }
+    }
+  }
+}
+    `;
+
+export function useLaunchQuery(options: Omit<Urql.UseQueryArgs<LaunchQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<LaunchQuery>({ query: LaunchDocument, ...options });
+};
 export const LaunchesPastDocument = gql`
     query launchesPast($limit: Int!) {
   launchesPast(limit: $limit) {

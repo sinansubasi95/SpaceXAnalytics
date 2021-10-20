@@ -61,12 +61,9 @@ Launch site
 Landing
 Mission success criteria
 Images
-
-
-ingilizce: https://blog.cambly.com/tr/ingilizce-zamanlar/
 */
 
-const LaunchesPanel = ({ ui, data }: ILaunchesPanel) => {
+export const LaunchesPanel = ({ ui, data }: ILaunchesPanel) => {
   return (
     <div className="relative flex flex-col h-full border-r-2 bg-chinese-black-800 border-jet w-128">
       <div className="flex-shrink-0">
@@ -151,5 +148,3 @@ const LaunchesPanel = ({ ui, data }: ILaunchesPanel) => {
     </div>
   );
 };
-
-export default LaunchesPanel;

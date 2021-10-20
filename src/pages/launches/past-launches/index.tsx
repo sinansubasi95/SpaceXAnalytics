@@ -1,5 +1,5 @@
 import { ThreeColumnLayout } from '../../../components/Layout/ThreeColumnLayout';
-import LaunchesPanel from '../../../components/Panel/LaunchesPanel';
+import { LaunchesPanel } from '../../../components/Panel';
 import { useQuery } from 'urql';
 import { LaunchesPastDocument } from '../../../generated/graphql';
 
