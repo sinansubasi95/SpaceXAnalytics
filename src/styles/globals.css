@@ -46,6 +46,25 @@
   .w-140 {
     width: 35rem;
   }
+
+  tbody > tr:nth-child(n) {
+    background-color: #2D3036;
+  }
+  tbody > tr:nth-child(2n) {
+    background-color: #35383E;
+  }
+
+  .border-spacing-0 {
+    border-spacing: 0;
+  }
+
+  .border-spacing-1 {
+    border-spacing: 1px;
+  }
+
+  .border-spacing-2 {
+    border-spacing: 2px;
+  }
 }
 
 html,

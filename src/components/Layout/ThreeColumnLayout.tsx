@@ -42,7 +42,12 @@ export const ThreeColumnLayout = observer((props: IThreeColumnLayout) => {
         <div className="relative z-0 flex flex-1 overflow-hidden">
           {/*main content*/}
           <main className="relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last">
-            <div className="absolute inset-0 px-4 py-6 sm:px-6 lg:px-8">
+            <div className="flex-shrink-0">
+              <div className="flex flex-col justify-center flex-shrink-0 h-16 px-6 font-medium border-b-2 border-jet bg-eerie-black">
+                <h2 className="text-lg text-anti-flash-white">{props?.ui?.content?.heading}</h2>
+              </div>
+            </div>
+            <div className="inset-0 px-6 py-5">
               {props.children}
             </div>
           </main>

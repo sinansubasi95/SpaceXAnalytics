@@ -21,6 +21,11 @@ export default function PastLaunches() {
 
   return (
     <ThreeColumnLayout
+      ui={{
+        content: {
+          heading: "Starlink-9 (v1.0) & BlackSky Global 5-6",
+        },
+      }}
       leftPanel={
         <LaunchesPanel
           ui={{
@@ -32,7 +37,7 @@ export default function PastLaunches() {
         />
       }
     >
-      <LaunchTable/>
+      <LaunchTable />
     </ThreeColumnLayout>
   );
 }

@@ -1,4 +1,5 @@
 export interface IThreeColumnLayout {
-    leftPanel: React.ReactElement;
-    children: React.ReactElement;
-};
+  ui?: { content: { heading: string } };
+  leftPanel: React.ReactElement;
+  children: React.ReactElement;
+}

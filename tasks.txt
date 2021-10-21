@@ -3,3 +3,6 @@
 3) Create table component for id specific launch page.
 4) SpaceX patch placeholder
 5) index.tsx must be .ts
+6) Should layouts have ui attr or not? Alternatively, components can be created in children.
+The reason that I asked this question is related to ThreeColumnLayout component and its header.
+7) Multiple queries in one request
