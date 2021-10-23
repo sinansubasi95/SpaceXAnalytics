@@ -6,3 +6,4 @@
 6) Should layouts have ui attr or not? Alternatively, components can be created in children.
 The reason that I asked this question is related to ThreeColumnLayout component and its header.
 7) Multiple queries in one request
+7.1) Or call query from a service or component?
