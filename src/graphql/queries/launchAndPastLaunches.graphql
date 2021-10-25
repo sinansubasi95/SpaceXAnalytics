@@ -1,0 +1,51 @@
+query launchAndPastLaunches($launchID: ID!, $pastLaunchesLimit: Int!) {
+    launch(id: $launchID) {
+        id
+        details
+        static_fire_date_utc
+        launch_date_utc
+        launch_success
+        mission_name
+        launch_site {
+            site_name_long
+        }
+        links {
+            video_link
+            wikipedia
+            mission_patch
+        }
+        rocket {
+            rocket_name
+            first_stage {
+                cores {
+                    flight
+                    block 
+                    land_success
+                    core {
+                        id
+                    }
+                }
+        }
+        second_stage {
+            payloads {
+                payload_type
+                payload_mass_kg
+                orbit
+                manufacturer
+            }
+        }
+    }
+    },
+        launchesPast(limit: $pastLaunchesLimit) {
+            mission_name
+            launch_date_utc
+            rocket {
+                rocket_name
+            }
+            links {
+                mission_patch
+            }
+            id
+            details
+    }
+}

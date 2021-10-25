@@ -1,7 +1,7 @@
 import { ThreeColumnLayout } from '../../../components/Layout/ThreeColumnLayout';
 import { LaunchesPanel } from '../../../components/Panel';
 import { useQuery } from 'urql';
-import { LaunchesPastDocument } from '../../../generated/graphql';
+import { LaunchAndPastLaunchesDocument } from '../../../generated/graphql';
 import { useRouter } from 'next/router';
 import { LaunchTable } from '../../../components/Table';
 
@@ -10,12 +10,15 @@ export default function PastLaunches() {
   const { id } = router.query;
 
   const [result] = useQuery({
-    query: LaunchesPastDocument,
-    variables: { limit: 0 },
+    query: LaunchAndPastLaunchesDocument,
+    variables: { launchID: id, pastLaunchesLimit: 0 },
   });
 
   const { data, fetching, error } = result;
 
+  console.log(data);
+
+  // Use same layout for fetching and error
   if (fetching) return 'Fetching';
   if (error) return 'Error';
 
@@ -23,7 +26,7 @@ export default function PastLaunches() {
     <ThreeColumnLayout
       ui={{
         content: {
-          heading: "Starlink-9 (v1.0) & BlackSky Global 5-6",
+          heading: 'Starlink-9 (v1.0) & BlackSky Global 5-6',
         },
       }}
       leftPanel={
@@ -37,7 +40,7 @@ export default function PastLaunches() {
         />
       }
     >
-      <LaunchTable />
+      <LaunchTable data={data?.launch} />
     </ThreeColumnLayout>
   );
 }

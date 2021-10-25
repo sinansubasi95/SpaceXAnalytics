@@ -1,15 +1,13 @@
 import React from 'react';
+import { ILaunchTable } from '../../interfaces/ui/ILaunchTable';
+import moment from 'moment';
 
-export const LaunchTable = () => {
+export const LaunchTable = ({ data }: ILaunchTable) => {
   return (
     <table className="min-w-full border-collapse table-auto">
       <thead className="font-medium border-2 text-metallic-silver bg-onyx border-chinese-black-900">
         <tr>
-          <th
-            scope="col"
-            colSpan={2}
-            className="px-4 py-2 text-sm text-left "
-          >
+          <th scope="col" colSpan={2} className="px-4 py-2 text-sm text-left ">
             General Launch Informations
           </th>
         </tr>
@@ -23,7 +21,7 @@ export const LaunchTable = () => {
             Launched(UTC)
           </th>
           <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-            30.07.2021 19:30:00
+            {moment(data?.launch_date_utc).format('LLLL')}
           </td>
         </tr>
         <tr>
@@ -34,7 +32,7 @@ export const LaunchTable = () => {
             Location
           </th>
           <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-            CCAFS SLC-40
+            {data?.launch_site?.site_name_long}
           </td>
         </tr>
         <tr>
@@ -45,20 +43,22 @@ export const LaunchTable = () => {
             Mission
           </th>
           <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-            Transporter-2
+            {data?.mission_name}
           </td>
         </tr>
-        <tr>
-          <th
-            scope="row"
-            className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-          >
-            Orbit
-          </th>
-          <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-            SSO
-          </td>
-        </tr>
+        {data?.rocket?.second_stage?.payloads?.map((item, i) => (
+          <tr key={i}>
+            <th
+              scope="row"
+              className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
+            >
+              Payload Orbit - {i + 1}
+            </th>
+            <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
+              {item?.orbit}
+            </td>
+          </tr>
+        ))}
         <tr>
           <th
             scope="row"
@@ -67,7 +67,7 @@ export const LaunchTable = () => {
             Launch Status
           </th>
           <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-            SUCCESS
+            {data?.launch_success ? 'SUCCESS' : 'FAILURE'}
           </td>
         </tr>
         <tr>
@@ -78,32 +78,36 @@ export const LaunchTable = () => {
             Rocket
           </th>
           <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-            Falcon 9
+            {data?.rocket?.rocket_name}
           </td>
         </tr>
-        <tr>
-          <th
-            scope="row"
-            className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-          >
-            Booster
-          </th>
-          <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-            B5 B1060.8
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-            className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-          >
-            Booster Landing
-          </th>
-          <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-            SUCCESS
-          </td>
-        </tr>
-        <tr>
+        {data?.rocket?.first_stage?.cores?.map((item, i) => (
+          <>
+            <tr key={i}>
+              <th
+                scope="row"
+                className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
+              >
+                Booster - {i + 1}
+              </th>
+              <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
+                {item?.core?.id}
+              </td>
+            </tr>
+            <tr>
+              <th
+                scope="row"
+                className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
+              >
+                Booster Landing - {i + 1}
+              </th>
+              <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
+                {item?.land_success ? 'SUCCESS' : 'FAILURE'}
+              </td>
+            </tr>
+          </>
+        ))}
+        {/* <tr>
           <th
             scope="row"
             className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
@@ -113,7 +117,7 @@ export const LaunchTable = () => {
           <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
             LZ1
           </td>
-        </tr>
+        </tr> */}
       </tbody>
     </table>
   );
