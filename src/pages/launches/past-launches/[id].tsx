@@ -16,8 +16,6 @@ export default function PastLaunches() {
 
   const { data, fetching, error } = result;
 
-  console.log(data);
-
   // Use same layout for fetching and error
   if (fetching) return 'Fetching';
   if (error) return 'Error';

@@ -1,6 +1,5 @@
 import React from 'react';
 import { MenuIcon } from '@heroicons/react/outline';
-
 import { useStores } from '../../stores';
 import { observer } from 'mobx-react';
 import { SidebarWithSecondaryNavigation } from '../Sidebar';

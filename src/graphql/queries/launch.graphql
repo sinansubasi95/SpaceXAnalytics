@@ -18,9 +18,17 @@ query launch($id: ID!) {
       rocket_name
       first_stage {
         cores {
-          flight
-          block 
+          core {
+            id
+            original_launch
+            reuse_count
+          }
           land_success
+          landing_intent
+          landing_type
+          landing_vehicle
+          reused
+          block
         }
       }
       second_stage {

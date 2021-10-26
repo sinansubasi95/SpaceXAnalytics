@@ -16,23 +16,43 @@ query launchAndPastLaunches($launchID: ID!, $pastLaunchesLimit: Int!) {
         }
         rocket {
             rocket_name
+            rocket {
+                engines {
+                    version
+                    number
+                    layout
+                    type
+                }
+                cost_per_launch
+            }
             first_stage {
                 cores {
-                    flight
-                    block 
-                    land_success
                     core {
                         id
+                        original_launch
+                        reuse_count
                     }
+                    land_success
+                    landing_intent
+                    landing_type
+                    landing_vehicle
+                    reused
+                    block
                 }
         }
         second_stage {
             payloads {
-                payload_type
-                payload_mass_kg
-                orbit
+                id
                 manufacturer
+                customers
+                nationality
+                norad_id
+                orbit
+                payload_mass_kg
+                payload_type
+                reused
             }
+            block
         }
     }
     },
