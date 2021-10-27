@@ -1,0 +1,71 @@
+query launchAndUpcomingLaunches($launchID: ID!, $upcomingLaunchesLimit: Int!) {
+    launch(id: $launchID) {
+        id
+        details
+        static_fire_date_utc
+        launch_date_utc
+        launch_success
+        mission_name
+        launch_site {
+            site_name_long
+        }
+        links {
+            video_link
+            wikipedia
+            mission_patch
+        }
+        rocket {
+            rocket_name
+            rocket {
+                engines {
+                    version
+                    number
+                    layout
+                    type
+                }
+                cost_per_launch
+            }
+            first_stage {
+                cores {
+                    core {
+                        id
+                        original_launch
+                        reuse_count
+                    }
+                    land_success
+                    landing_intent
+                    landing_type
+                    landing_vehicle
+                    reused
+                    block
+                }
+        }
+        second_stage {
+            payloads {
+                id
+                manufacturer
+                customers
+                nationality
+                norad_id
+                orbit
+                payload_mass_kg
+                payload_type
+                reused
+            }
+            block
+        }
+    }
+    },
+    launchesUpcoming(limit: $upcomingLaunchesLimit) {
+        id
+        details
+        links {
+            mission_patch
+        }
+        rocket {
+            rocket_name
+        }
+        launch_date_utc
+        mission_name
+    }
+}

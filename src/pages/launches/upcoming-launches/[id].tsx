@@ -1,16 +1,17 @@
 import { ThreeColumnLayout } from '../../../components/Layout/ThreeColumnLayout';
 import { LaunchesPanel } from '../../../components/Panel';
 import { useQuery } from 'urql';
-import { LaunchesUpcomingDocument } from '../../../generated/graphql';
+import { LaunchAndUpcomingLaunchesDocument } from '../../../generated/graphql';
 import { useRouter } from 'next/router';
+import { LaunchTable } from '../../../components/Table';
 
 export default function UpcomingLaunches() {
   const router = useRouter();
   const { id } = router.query;
 
   const [result] = useQuery({
-    query: LaunchesUpcomingDocument,
-    variables: { limit: 0 },
+    query: LaunchAndUpcomingLaunchesDocument,
+    variables: { launchID: id, upcomingLaunchesLimit: 0 },
   });
 
   const { data, fetching, error } = result;
@@ -20,17 +21,23 @@ export default function UpcomingLaunches() {
 
   return (
     <ThreeColumnLayout
+      ui={{
+        content: {
+          heading: data?.launch?.mission_name,
+        },
+      }}
       leftPanel={
         <LaunchesPanel
           ui={{
             heading: 'Upcoming Launches',
             path: '/launches/upcoming-launches',
+            id: typeof id === 'string' ? id : '',
           }}
           data={data?.launchesUpcoming}
         />
       }
     >
-      <div>{id}</div>
+      <LaunchTable data={data?.launch} />
     </ThreeColumnLayout>
   );
 }

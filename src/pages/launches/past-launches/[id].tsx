@@ -24,7 +24,7 @@ export default function PastLaunches() {
     <ThreeColumnLayout
       ui={{
         content: {
-          heading: 'Starlink-9 (v1.0) & BlackSky Global 5-6',
+          heading: data?.launch?.mission_name,
         },
       }}
       leftPanel={
