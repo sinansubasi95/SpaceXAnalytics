@@ -234,10 +234,10 @@ export const LaunchTable = ({ data }: ILaunchTable) => {
                   {item?.block}
                 </td>
                 <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.landing_intent ? 'YES' : 'NO'}
+                  {item?.landing_intent ? 'YES' : isNil(item?.landing_intent) || 'NO'}
                 </td>
                 <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.land_success ? 'SUCCESS' : 'FAILURE'}
+                  {item?.land_success ? 'SUCCESS' : isNil(item?.land_success) || 'FAILURE'}
                 </td>
                 <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
                   {item?.landing_vehicle}
@@ -246,7 +246,7 @@ export const LaunchTable = ({ data }: ILaunchTable) => {
                   {item?.landing_type}
                 </td>
                 <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.reused ? 'YES' : 'NO'}
+                  {item?.reused ? 'YES' : isNil(item?.reused) || 'NO'}
                 </td>
                 <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
                   {item?.core?.reuse_count}
@@ -346,7 +346,7 @@ export const LaunchTable = ({ data }: ILaunchTable) => {
                   {item?.orbit}
                 </td>
                 <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.reused ? 'YES' : 'NO'}
+                  {item?.reused ? 'YES' : isNil(item?.reused) || 'NO'}
                 </td>
                 <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
                   {data?.rocket?.second_stage?.block}
@@ -359,6 +359,3 @@ export const LaunchTable = ({ data }: ILaunchTable) => {
     </>
   );
 };
-
-// https://tailwindcss.com/docs/table-layout
-// https://tailwindui.com/components/application-ui/lists/tables
