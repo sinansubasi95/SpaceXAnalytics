@@ -2,9 +2,9 @@ import React from 'react';
 import { MenuIcon } from '@heroicons/react/outline';
 import { useStores } from '../../stores';
 import { observer } from 'mobx-react';
-import { SidebarWithSecondaryNavigation } from '../Sidebar';
-import { IThreeColumnLayout } from '../../interfaces/ui';
-import { Logo } from '../Logo';
+import { SidebarWithSecondaryNavigation } from '@/components/Sidebar';
+import { IThreeColumnLayout } from '@/interfaces/ui';
+import { Logo } from '@/components/Logo';
 
 // define function like defining variable?
 // Formidable - RENATUR - physics based animation https://formidable.com/open-source/renature/
@@ -43,12 +43,12 @@ export const ThreeColumnLayout = observer((props: IThreeColumnLayout) => {
           <main className="relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last">
             <div className="flex-shrink-0">
               <div className="flex flex-col justify-center flex-shrink-0 h-16 px-6 font-medium border-b-2 border-jet bg-eerie-black">
-                <h2 className="text-lg text-anti-flash-white">{props?.ui?.content?.heading}</h2>
+                <h2 className="text-lg text-anti-flash-white">
+                  {props?.ui?.content?.heading}
+                </h2>
               </div>
             </div>
-            <div className="inset-0 px-6 py-5">
-              {props.children}
-            </div>
+            <div className="inset-0 px-6 py-5">{props.children}</div>
           </main>
           {/* Start secondary column (hidden on smaller screens) */}
           <aside className="relative flex-shrink-0 hidden border-r border-gray-200 xl:order-first xl:flex xl:flex-col w-128">

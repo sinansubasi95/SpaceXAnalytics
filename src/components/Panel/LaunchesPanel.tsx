@@ -1,67 +1,8 @@
 import clsx from 'clsx';
 import moment from 'moment';
 import React from 'react';
-import { ILaunchesPanel } from '../../interfaces/ui/ILaunchesPanel';
+import { ILaunchesPanel } from '@/interfaces/ui/ILaunchesPanel';
 import Link from 'next/link';
-
-/*
-{
-  launch(id: "109") {
-    id
-    details
-    launch_date_utc
-    launch_success
-    mission_name
-    launch_site {
-      site_name_long
-    }
-    links {
-      video_link
-      wikipedia
-      mission_patch
-    }
-    rocket {
-      rocket_name
-      rocket_type ---
-      first_stage {
-        cores {
-          gridfins ---
-          flight
-          block 
-          land_success
-        }
-      }
-      second_stage {
-        payloads {
-          payload_type
-          payload_mass_kg
-          orbit
-          manufacturer
-        }
-      }
-    }
-  }
-}
-
-Backup date
-Static fire
-Spacecraft Commander
-Pilot
-Mission Specialist
-Customer
-Payload
-Payload mass
-Destination orbit
-Launch vehicle
-Core
-Past flights of this core
-Capsule
-Duration of visit
-Launch site
-Landing
-Mission success criteria
-Images
-*/
 
 export const LaunchesPanel = ({ ui, data }: ILaunchesPanel) => {
   return (

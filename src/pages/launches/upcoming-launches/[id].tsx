@@ -1,9 +1,9 @@
-import { ThreeColumnLayout } from '../../../components/Layout/ThreeColumnLayout';
-import { LaunchesPanel } from '../../../components/Panel';
 import { useQuery } from 'urql';
 import { LaunchAndUpcomingLaunchesDocument } from '../../../generated/graphql';
 import { useRouter } from 'next/router';
-import { LaunchTable } from '../../../components/Table';
+import { ThreeColumnLayout } from '@/components/Layout/ThreeColumnLayout';
+import { LaunchesPanel } from '@/components/Panel';
+import { LaunchTable } from '@/components/Table';
 
 export default function UpcomingLaunches() {
   const router = useRouter();

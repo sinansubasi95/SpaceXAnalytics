@@ -1,19 +1,19 @@
 import {
-    createClient,
-    ssrExchange,
-    dedupExchange,
-    cacheExchange,
-    fetchExchange,
-} from "urql";
+  createClient,
+  ssrExchange,
+  dedupExchange,
+  cacheExchange,
+  fetchExchange,
+} from 'urql';
 
-const isServerSide = typeof window === "undefined";
+const isServerSide = typeof window === 'undefined';
 const ssrCache = ssrExchange({ isClient: !isServerSide });
 const client = createClient({
-    url: "https://api.spacex.land/graphql/",
-    exchanges: [dedupExchange, cacheExchange, ssrCache, fetchExchange],
-    fetchOptions: () => {
-        return { headers: {} };
-    },
+  url: 'https://api.spacex.land/graphql/',
+  exchanges: [dedupExchange, cacheExchange, ssrCache, fetchExchange],
+  fetchOptions: () => {
+    return { headers: {} };
+  },
 });
 
 export { client, ssrCache };

@@ -1,3 +1,3 @@
 export interface ISidebarLayout {
-    children: React.ReactElement;
-};
+  children: React.ReactElement;
+}

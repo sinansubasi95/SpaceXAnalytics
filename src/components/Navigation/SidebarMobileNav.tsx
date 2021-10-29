@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { useStores } from '../../stores';
-import { ICategorizedNavigationList, INavigationList } from '../../interfaces/ui';
+import { ICategorizedNavigationList, INavigationList } from '@/interfaces/ui';
 
 export const MobileNav = () => {
   const { navigationStore } = useStores();
@@ -35,32 +35,34 @@ export const MobileNav = () => {
       </div>
 
       <div className="px-2 space-y-1">
-        {navigationStore.secondaryNavigation.map((item: ICategorizedNavigationList) => (
-          <React.Fragment key={item.heading}>
-            <h3
-              className="px-3 text-xs font-semibold tracking-wider text-gray-500 uppercase"
-              id="projects-headline"
-            >
-              {item.heading}
-            </h3>
-            {item.list.map((item: INavigationList) => (
-              <div
-                key={item.name}
-                className="space-y-1"
-                role="group"
-                aria-labelledby="projects-headline"
+        {navigationStore.secondaryNavigation.map(
+          (item: ICategorizedNavigationList) => (
+            <React.Fragment key={item.heading}>
+              <h3
+                className="px-3 text-xs font-semibold tracking-wider text-gray-500 uppercase"
+                id="projects-headline"
               >
-                <a
+                {item.heading}
+              </h3>
+              {item.list.map((item: INavigationList) => (
+                <div
                   key={item.name}
-                  href={item.href}
-                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md group hover:text-gray-900 hover:bg-gray-50"
+                  className="space-y-1"
+                  role="group"
+                  aria-labelledby="projects-headline"
                 >
-                  <span className="truncate">{item.name}</span>
-                </a>
-              </div>
-            ))}
-          </React.Fragment>
-        ))}
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md group hover:text-gray-900 hover:bg-gray-50"
+                  >
+                    <span className="truncate">{item.name}</span>
+                  </a>
+                </div>
+              ))}
+            </React.Fragment>
+          )
+        )}
       </div>
     </nav>
   );

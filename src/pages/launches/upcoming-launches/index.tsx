@@ -1,7 +1,7 @@
-import { ThreeColumnLayout } from '../../../components/Layout/ThreeColumnLayout';
-import { LaunchesPanel } from '../../../components/Panel';
 import { useQuery } from 'urql';
 import { LaunchesUpcomingDocument } from '../../../generated/graphql';
+import { ThreeColumnLayout } from '@/components/Layout/ThreeColumnLayout';
+import { LaunchesPanel } from '@/components/Panel';
 
 export default function UpcomingLaunches() {
   const [result] = useQuery({

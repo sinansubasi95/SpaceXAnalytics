@@ -1,6 +1,6 @@
-import { INavigationList } from ".";
+import { INavigationList } from '@/interfaces/ui';
 
 export interface ICategorizedNavigationList {
-    heading: string;
-    list: Array<INavigationList>
-};
+  heading: string;
+  list: Array<INavigationList>;
+}

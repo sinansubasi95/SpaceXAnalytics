@@ -1,10 +1,11 @@
-1) Should I separate Launches file/page into two different files/pages?
-2) Create GraphQL Query to fetch id specific launch.
-3) Create table component for id specific launch page.
+[DONE]1) Should I separate Launches file/page into two different files/pages?
+[DONE]2) Create GraphQL Query to fetch id specific launch.
+[DONE]3) Create table component for id specific launch page.
 4) SpaceX patch placeholder
-5) index.tsx must be .ts
-6) Should layouts have ui attr or not? Alternatively, components can be created in children.
+[DONE]5) index.tsx must be .ts
+[DONE]6) Should layouts have ui attr or not? Alternatively, components can be created in children.
 The reason that I asked this question is related to ThreeColumnLayout component and its header.
-7) Multiple queries in one request
-7.1) Or call query from a service or component?
-8) '@/utils/*' Use @ as shown in the example for components, interfaces, utils and maybe stores
+[DONE]7) Multiple queries in one request.
+[DONE]7.1) Or call query from a service or component?
+[PARTIALL DONE]8) '@/utils/*' Use @ as shown in the example for components, interfaces, utils and maybe stores.
+- Now, I must manually import each component.

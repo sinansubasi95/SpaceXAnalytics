@@ -1,3 +1,3 @@
 export interface ILogo {
-    src: string;
-};
+  src: string;
+}

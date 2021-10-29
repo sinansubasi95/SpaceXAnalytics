@@ -1,5 +1,5 @@
 import React from 'react';
-import { ILaunchTable } from '../../interfaces/ui/ILaunchTable';
+import { ILaunchTable } from '@/interfaces/ui/ILaunchTable';
 import moment from 'moment';
 import isNil from 'lodash/isNil';
 
@@ -64,7 +64,9 @@ export const LaunchTable = ({ data }: ILaunchTable) => {
                 Launch Status
               </th>
               <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                {data?.launch_success ? 'SUCCESS' : isNil(data?.launch_success) || 'FAILURE'}
+                {data?.launch_success
+                  ? 'SUCCESS'
+                  : isNil(data?.launch_success) || 'FAILURE'}
               </td>
             </tr>
             <tr>
@@ -234,10 +236,14 @@ export const LaunchTable = ({ data }: ILaunchTable) => {
                   {item?.block}
                 </td>
                 <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.landing_intent ? 'YES' : isNil(item?.landing_intent) || 'NO'}
+                  {item?.landing_intent
+                    ? 'YES'
+                    : isNil(item?.landing_intent) || 'NO'}
                 </td>
                 <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.land_success ? 'SUCCESS' : isNil(item?.land_success) || 'FAILURE'}
+                  {item?.land_success
+                    ? 'SUCCESS'
+                    : isNil(item?.land_success) || 'FAILURE'}
                 </td>
                 <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
                   {item?.landing_vehicle}

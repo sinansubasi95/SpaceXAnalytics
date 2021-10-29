@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { Logo } from '../Logo';
+import { Logo } from '@/components/Logo';
 import { useStores } from '../../stores';
 import { observer } from 'mobx-react';
 import { XIcon } from '@heroicons/react/outline';
-import { DesktopNav, MobileNav } from '../Navigation';
+import { DesktopNav, MobileNav } from '@/components/Navigation';
 
 export const SidebarWithSecondaryNavigation = observer(() => {
   const { sidebarStore } = useStores();

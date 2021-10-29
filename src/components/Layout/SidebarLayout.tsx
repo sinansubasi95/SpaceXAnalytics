@@ -2,9 +2,9 @@ import React from 'react';
 import { MenuIcon } from '@heroicons/react/outline';
 import { useStores } from '../../stores';
 import { observer } from 'mobx-react';
-import { SidebarWithSecondaryNavigation } from '../Sidebar';
-import { ISidebarLayout } from '../../interfaces/ui';
-import { Logo } from '../Logo';
+import { ISidebarLayout } from '@/interfaces/ui';
+import { SidebarWithSecondaryNavigation } from '@/components/Sidebar';
+import { Logo } from '@/components/Logo';
 
 export const SidebarLayout = observer((props: ISidebarLayout) => {
   const { sidebarStore } = useStores();
