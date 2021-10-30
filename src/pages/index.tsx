@@ -8,29 +8,3 @@ export default function Index() {
     </SidebarLayout>
   )
 }
-
-/*
-
-{
-  heading: string,
-  summary: {
-    launched: string,
-    location: string,
-    mission: string,
-    orbit: string,
-    launch_status: string,
-    rocket: string,
-    booster: string,
-    booster_landing: string,
-    landing_location: string
-  },
-  details: string,
-  images: [
-    {
-      id: string,
-      url: string
-    }
-  ]
-}
-
-*/

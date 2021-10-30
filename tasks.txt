@@ -3,9 +3,8 @@
 [DONE]3) Create table component for id specific launch page.
 4) SpaceX patch placeholder
 [DONE]5) index.tsx must be .ts
-[DONE]6) Should layouts have ui attr or not? Alternatively, components can be created in children.
-The reason that I asked this question is related to ThreeColumnLayout component and its header.
+[DONE]6) Should layouts have ui attr or not? Alternatively, components can be created in children. The reason that I asked this question is related to ThreeColumnLayout component and its header.
 [DONE]7) Multiple queries in one request.
 [DONE]7.1) Or call query from a service or component?
-[PARTIALL DONE]8) '@/utils/*' Use @ as shown in the example for components, interfaces, utils and maybe stores.
-- Now, I must manually import each component.
+[DONE]8) '@/utils/*' Use @ as shown in the example for components, interfaces, utils and maybe stores. - Now, I must manually import each component.
+9) Loading component
