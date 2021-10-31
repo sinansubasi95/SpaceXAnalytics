@@ -7,4 +7,14 @@
 [DONE]7) Multiple queries in one request.
 [DONE]7.1) Or call query from a service or component?
 [DONE]8) '@/utils/*' Use @ as shown in the example for components, interfaces, utils and maybe stores. - Now, I must manually import each component.
-9) Loading component
+[DONE]9) Loading component
+10) Dashboard page
+- Next Launch Countdown
+- Next Milestones?
+
+-- Number of Launches Per Year
+-- Number of Launches Per Rocket
+-- Number of Launches Per Launchpad
+-- Success Rate
+
+-- Landing

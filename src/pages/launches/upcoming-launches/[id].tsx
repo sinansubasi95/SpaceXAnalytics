@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import { ThreeColumnLayout } from '@/components/Layout/ThreeColumnLayout';
 import { LaunchesPanel } from '@/components/Panel';
 import { LaunchTable } from '@/components/Table';
+import { LoadingLaunchesPanel } from '@/components/Loading';
+import { LoadingLaunchTable } from '@/components/Loading';
 
 export default function UpcomingLaunches() {
   const router = useRouter();
@@ -16,7 +18,16 @@ export default function UpcomingLaunches() {
 
   const { data, fetching, error } = result;
 
-  if (fetching) return 'Fetching';
+  if (fetching) {
+    return (
+      <ThreeColumnLayout
+        leftPanel={<LoadingLaunchesPanel ui={{ heading: 'Past Launches' }} />}
+      >
+        <LoadingLaunchTable/>
+      </ThreeColumnLayout>
+    );
+  }
+
   if (error) return 'Error';
 
   return (

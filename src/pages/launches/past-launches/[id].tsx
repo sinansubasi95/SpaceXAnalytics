@@ -1,9 +1,11 @@
 import { useQuery } from 'urql';
 import { LaunchAndPastLaunchesDocument } from '../../../generated/graphql';
 import { useRouter } from 'next/router';
-import { ThreeColumnLayout } from '@/components/Layout/ThreeColumnLayout';
+import { ThreeColumnLayout } from '@/components/Layout';
 import { LaunchesPanel } from '@/components/Panel';
 import { LaunchTable } from '@/components/Table';
+import { LoadingLaunchesPanel } from '@/components/Loading';
+import { LoadingLaunchTable } from '@/components/Loading';
 
 export default function PastLaunches() {
   const router = useRouter();
@@ -16,8 +18,16 @@ export default function PastLaunches() {
 
   const { data, fetching, error } = result;
 
-  // Use same layout for fetching and error
-  if (fetching) return 'Fetching';
+  if (fetching) {
+    return (
+      <ThreeColumnLayout
+        leftPanel={<LoadingLaunchesPanel ui={{ heading: 'Past Launches' }} />}
+      >
+        <LoadingLaunchTable/>
+      </ThreeColumnLayout>
+    );
+  }
+
   if (error) return 'Error';
 
   return (

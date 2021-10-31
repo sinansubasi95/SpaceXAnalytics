@@ -1,5 +1,5 @@
-import { ThreeColumnLayout } from '@/components/Layout/ThreeColumnLayout';
-import { LoadingLaunchesPanel } from '@/components/Loading/Panel/LoadingLaunchesPanel';
+import { ThreeColumnLayout } from '@/components/Layout';
+import { LoadingLaunchesPanel } from '@/components/Loading';
 import { LaunchesPanel } from '@/components/Panel';
 import React from 'react';
 import { useQuery } from 'urql';
@@ -16,11 +16,7 @@ export default function PastLaunches() {
   if (fetching) {
     return (
       <ThreeColumnLayout
-        leftPanel={
-          <LoadingLaunchesPanel
-            ui={{ heading: 'Past Launches' }}
-          />
-        }
+        leftPanel={<LoadingLaunchesPanel ui={{ heading: 'Past Launches' }} />}
       >
         <div>Past Launch</div>
       </ThreeColumnLayout>
