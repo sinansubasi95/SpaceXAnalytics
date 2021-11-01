@@ -13,6 +13,8 @@
     "@babel/plugin-transform-react-jsx": "^7.14.9",
     "@headlessui/react": "^1.4.0",
     "@heroicons/react": "^1.0.3",
+    "@nivo/core": "^0.74.0",
+    "@nivo/pie": "^0.74.0",
     "clsx": "^1.1.1",
     "graphql": "^15.6.0",
     "lodash": "^4.17.21",

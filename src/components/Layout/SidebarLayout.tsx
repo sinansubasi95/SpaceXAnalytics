@@ -36,7 +36,7 @@ export const SidebarLayout = observer((props: ISidebarLayout) => {
         <div className="relative z-0 flex flex-1 overflow-hidden">
           {/*main content*/}
           <main className="relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last">
-            <div className="absolute inset-0 px-4 py-6 sm:px-6 lg:px-8">
+            <div className="inset-0 px-6 py-5">
               {props.children}
             </div>
           </main>

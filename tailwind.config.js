@@ -67,7 +67,15 @@ module.exports = {
       },
       height: {
         '18': '4.5rem'
-      }
+      },
+      gridTemplateColumns: {
+        'auto-fit': 'repeat(auto-fit, minmax(340px, 1fr))',
+        'auto-fill': 'repeat(auto-fill, minmax(340px, 1fr))',
+      },
+      gridTemplateRows: {
+        'auto-fit': 'repeat(auto-fit, minmax(340px, 1fr))',
+        'auto-fill': 'repeat(auto-fill, minmax(340px, 1fr))',
+      },
     },
   },
   variants: {
