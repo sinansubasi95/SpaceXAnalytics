@@ -3,7 +3,7 @@ import { LaunchAndPastLaunchesDocument } from '../../../generated/graphql';
 import { useRouter } from 'next/router';
 import { ThreeColumnLayout } from '@/components/Layout';
 import { LaunchesPanel } from '@/components/Panel';
-import { LaunchTable } from '@/components/Table';
+import { LaunchContent } from '@/components/Content';
 import { LoadingLaunchesPanel } from '@/components/Loading';
 import { LoadingLaunchTable } from '@/components/Loading';
 
@@ -23,7 +23,7 @@ export default function PastLaunches() {
       <ThreeColumnLayout
         leftPanel={<LoadingLaunchesPanel ui={{ heading: 'Past Launches' }} />}
       >
-        <LoadingLaunchTable/>
+        <LoadingLaunchTable />
       </ThreeColumnLayout>
     );
   }
@@ -48,7 +48,7 @@ export default function PastLaunches() {
         />
       }
     >
-      <LaunchTable data={data?.launch} />
+      <LaunchContent data={data?.launch} />
     </ThreeColumnLayout>
   );
 }

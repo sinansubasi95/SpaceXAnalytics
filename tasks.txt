@@ -25,29 +25,10 @@
 
 -- Launch Success, ex: 72 success, 4 failure
 
-const MyResponsivePie = ({ data /* see data tab */ }) => (
-    <ResponsivePie
-        data={data}
-        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-        innerRadius={0.5}
-        padAngle={2}
-        activeOuterRadiusOffset={8}
-        colors={{ scheme: 'paired' }}
-        borderColor={{ theme: 'background' }}
-        arcLinkLabelsSkipAngle={10}
-        arcLinkLabelsTextColor="#ffffff"
-        arcLinkLabelsDiagonalLength={13}
-        arcLinkLabelsThickness={2}
-        arcLinkLabelsColor={{ from: 'color' }}
-        arcLabelsTextColor={{ from: 'color', modifiers: [ [ 'darker', '3' ] ] }}
-        isInteractive={false}
-        animate={false}
-        legends={[]}
-    />
-)
-
 11) Add images to launch page(with slide feature)
 13) Testing(use jest?)
 14) Add filter feature to launch pages
 15) Vehicles pages should explain and introduce vehicles
 16) Make table components reusable
+17) Language Support
+18) Add favicon

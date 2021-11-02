@@ -1,5 +1,5 @@
 import { LaunchAndPastLaunchesQuery } from '../../generated/graphql';
 
-export interface ILaunchTable {
+export interface ILaunchContent {
   data: LaunchAndPastLaunchesQuery['launch'];
 }

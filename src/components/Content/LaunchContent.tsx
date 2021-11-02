@@ -1,9 +1,10 @@
 import React from 'react';
-import { ILaunchTable } from '@/interfaces/ui/ILaunchTable';
+import { ILaunchContent } from '@/interfaces/ui';
 import moment from 'moment';
 import isNil from 'lodash/isNil';
+import { HorizontalTable } from '../Table/HorizontalTable';
 
-export const LaunchTable = ({ data }: ILaunchTable) => {
+export const LaunchContent = ({ data }: ILaunchContent) => {
   return (
     <>
       <div className="overflow-x-auto">
@@ -362,6 +363,33 @@ export const LaunchTable = ({ data }: ILaunchTable) => {
           </tbody>
         </table>
       </div>
+      <HorizontalTable
+        title="Heading"
+        columns={[
+          {
+            Header: 'Core',
+            accessor: 'core',
+          },
+          {
+            Header: 'Block',
+            accessor: 'block',
+          },
+        ]}
+        data={[
+          {
+            core: 'B1051',
+            block: '5',
+          },
+          {
+            core: 'B2051',
+            block: '6',
+          },
+          {
+            core: 'B3051',
+            block: '7',
+          },
+        ]}
+      />
     </>
   );
 };

@@ -1,1 +1,1 @@
-export * from './LaunchTable';
+export * from './HorizontalTable';
