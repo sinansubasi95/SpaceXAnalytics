@@ -2,393 +2,157 @@ import React from 'react';
 import { ILaunchContent } from '@/interfaces/ui';
 import moment from 'moment';
 import isNil from 'lodash/isNil';
-import { HorizontalTable } from '../Table/HorizontalTable';
+import { HorizontalTable } from '../Table';
+import { VerticalTable } from '../Table';
 
 export const LaunchContent = ({ data }: ILaunchContent) => {
   return (
     <>
-      <div className="overflow-x-auto">
-        <div className="flex flex-col justify-center flex-shrink-0 mb-3 font-medium">
-          <h2 className="text-base text-anti-flash-white">Mission Overview</h2>
-        </div>
-        <table className="min-w-full mb-3 border-collapse table-auto">
-          {/* <thead className="font-medium border-2 text-metallic-silver bg-onyx border-chinese-black-900">
-            <tr>
-              <th
-                scope="col"
-                colSpan={2}
-                className="px-4 py-2 text-sm text-left "
-              >
-                General Launch Information
-              </th>
-            </tr>
-          </thead> */}
-          <tbody>
-            <tr>
-              <th
-                scope="row"
-                className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-              >
-                Static Fire (UTC)
-              </th>
-              <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                {moment(data?.static_fire_date_utc).format('LLLL')}
-              </td>
-            </tr>
-            <tr>
-              <th
-                scope="row"
-                className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-              >
-                Launched (UTC)
-              </th>
-              <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                {moment(data?.launch_date_utc).format('LLLL')}
-              </td>
-            </tr>
-            <tr>
-              <th
-                scope="row"
-                className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-              >
-                Location
-              </th>
-              <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                {data?.launch_site?.site_name_long}
-              </td>
-            </tr>
-            <tr>
-              <th
-                scope="row"
-                className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-              >
-                Launch Status
-              </th>
-              <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                {data?.launch_success
-                  ? 'SUCCESS'
-                  : isNil(data?.launch_success) || 'FAILURE'}
-              </td>
-            </tr>
-            <tr>
-              <th
-                scope="row"
-                className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-              >
-                Details
-              </th>
-              <td className="w-10/12 px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                {data?.details}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div className="overflow-x-auto">
-        <div className="flex flex-col justify-center flex-shrink-0 h-12 font-medium">
-          <h2 className="text-base text-anti-flash-white">Rocket Used</h2>
-        </div>
-        <table className="min-w-full mb-3 border-collapse table-auto">
-          <tbody>
-            <tr>
-              <th
-                scope="row"
-                className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-              >
-                Rocket Name
-              </th>
-              <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                {data?.rocket?.rocket_name}
-              </td>
-            </tr>
-            <tr>
-              <th
-                scope="row"
-                className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-              >
-                Engine Type
-              </th>
-              <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                {data?.rocket?.rocket?.engines?.type}
-              </td>
-            </tr>
-            <tr>
-              <th
-                scope="row"
-                className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-              >
-                Engine Version
-              </th>
-              <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                {data?.rocket?.rocket?.engines?.version}
-              </td>
-            </tr>
-            <tr>
-              <th
-                scope="row"
-                className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-              >
-                Engine Number
-              </th>
-              <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                {data?.rocket?.rocket?.engines?.number}
-              </td>
-            </tr>
-            <tr>
-              <th
-                scope="row"
-                className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-              >
-                Engine Layout
-              </th>
-              <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                {data?.rocket?.rocket?.engines?.layout}
-              </td>
-            </tr>
-            <tr>
-              <th
-                scope="row"
-                className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-              >
-                Cost Per Launch
-              </th>
-              <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                {data?.rocket?.rocket?.cost_per_launch}$
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div className="overflow-x-auto">
-        <div className="flex flex-col justify-center flex-shrink-0 h-12 font-medium">
-          <h2 className="text-base text-anti-flash-white">Cores Used</h2>
-        </div>
-        <table className="min-w-full mb-3 border-collapse table-auto">
-          <thead className="font-medium border-2 text-metallic-silver bg-onyx border-chinese-black-900">
-            <tr>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Core
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Block
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Landing Intent
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Land Success
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Landing Vehicle
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Landing Type
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Reused
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Reuse Count
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {data?.rocket?.first_stage?.cores?.map((item, i) => (
-              <tr key={i}>
-                <th
-                  scope="row"
-                  className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-                >
-                  {item?.core?.id}
-                </th>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.block}
-                </td>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.landing_intent
-                    ? 'YES'
-                    : isNil(item?.landing_intent) || 'NO'}
-                </td>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.land_success
-                    ? 'SUCCESS'
-                    : isNil(item?.land_success) || 'FAILURE'}
-                </td>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.landing_vehicle}
-                </td>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.landing_type}
-                </td>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.reused ? 'YES' : isNil(item?.reused) || 'NO'}
-                </td>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.core?.reuse_count}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div className="overflow-x-auto">
-        <div className="flex flex-col justify-center flex-shrink-0 h-12 font-medium">
-          <h2 className="text-base text-anti-flash-white">Payloads</h2>
-        </div>
-        <table className="min-w-full mb-3 border-collapse table-auto">
-          <thead className="font-medium border-2 text-metallic-silver bg-onyx border-chinese-black-900">
-            <tr>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Payload Type
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Payload Mass (KG)
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Manufacturer
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Customers
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Nationality
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Orbit
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Reused
-              </th>
-              <th
-                scope="col"
-                colSpan={1}
-                className="px-4 py-2 text-sm text-left"
-              >
-                Block
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {data?.rocket?.second_stage?.payloads?.map((item, i) => (
-              <tr key={i}>
-                <th
-                  scope="row"
-                  className="px-4 py-2 text-sm font-medium text-left border-2 border-chinese-black-900 text-metallic-silver"
-                >
-                  {item?.payload_type}
-                </th>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.payload_mass_kg}
-                </td>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.manufacturer}
-                </td>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.customers?.join()}
-                </td>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.nationality}
-                </td>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.orbit}
-                </td>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {item?.reused ? 'YES' : isNil(item?.reused) || 'NO'}
-                </td>
-                <td className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
-                  {data?.rocket?.second_stage?.block}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
       <HorizontalTable
-        title="Heading"
+        title="Mission Overview"
         columns={[
           {
-            Header: 'Core',
-            accessor: 'core',
+            header: 'Static Fire (UTC)',
+            accessor: 'static_fire_date_utc',
+            cell: (props: any) => props ? moment(props).format('LLLL') : null,
           },
           {
-            Header: 'Block',
-            accessor: 'block',
+            header: 'Launched (UTC)',
+            accessor: 'launch_date_utc',
+            cell: (props: any) => props ? moment(props).format('LLLL') : null,
+          },
+          {
+            header: 'Location',
+            accessor: 'launch_site_name',
+          },
+          {
+            header: 'Launch Status',
+            accessor: 'launch_success',
+            cell: (props: any) =>
+              props ? 'SUCCESS' : isNil(props) || 'FAILURE',
+          },
+          {
+            header: 'Details',
+            accessor: 'details',
           },
         ]}
         data={[
           {
-            core: 'B1051',
-            block: '5',
-          },
-          {
-            core: 'B2051',
-            block: '6',
-          },
-          {
-            core: 'B3051',
-            block: '7',
+            static_fire_date_utc: data?.static_fire_date_utc,
+            launch_date_utc: data?.launch_date_utc,
+            launch_site_name: data?.launch_site?.site_name_long,
+            launch_success: data?.launch_success,
+            details: data?.details,
           },
         ]}
+      />
+      <HorizontalTable
+        title="Rocket Used"
+        columns={[
+          {
+            header: 'Rocket Name',
+            accessor: 'rocket_name',
+          },
+          {
+            header: 'Engine Type',
+            accessor: 'rocket.engines.type',
+          },
+          {
+            header: 'Engine Version',
+            accessor: 'rocket.engines.version',
+          },
+          {
+            header: 'Engine Number',
+            accessor: 'rocket.engines.number',
+          },
+          {
+            header: 'Engine Layout',
+            accessor: 'rocket.engines.layout',
+          },
+          {
+            header: 'Cost Per Launch',
+            accessor: 'rocket.cost_per_launch',
+          },
+        ]}
+        data={[data?.rocket]}
+      />
+      <VerticalTable
+        title="Cores Used"
+        columns={[
+          {
+            header: 'Core',
+            accessor: 'core.id',
+          },
+          {
+            header: 'Block',
+            accessor: 'block',
+          },
+          {
+            header: 'Landing Intent',
+            accessor: 'landing_intent',
+            cell: (props: any) => (props ? 'YES' : isNil(props) || 'NO'),
+          },
+          {
+            header: 'Land Success',
+            accessor: 'land_success',
+            cell: (props: any) =>
+              props ? 'SUCCESS' : isNil(props) || 'FAILURE',
+          },
+          {
+            header: 'Landing Vehicle',
+            accessor: 'landing_vehicle',
+          },
+          {
+            header: 'Landing Type',
+            accessor: 'landing_type',
+          },
+          {
+            header: 'Reused',
+            accessor: 'reused',
+            cell: (props: any) => (props ? 'YES' : isNil(props) || 'NO'),
+          },
+          {
+            header: 'Reuse Count',
+            accessor: 'core.reuse_count',
+          },
+        ]}
+        data={data?.rocket?.first_stage?.cores}
+      />
+      <VerticalTable
+        title="Payloads"
+        columns={[
+          {
+            header: 'Payload Type',
+            accessor: 'payload_type',
+          },
+          {
+            header: 'Payload Mass (KG)',
+            accessor: 'payload_mass_kg',
+          },
+          {
+            header: 'Manufacturer',
+            accessor: 'manufacturer',
+          },
+          {
+            header: 'Customers',
+            accessor: 'customers',
+            cell: (props: any) => props.join(),
+          },
+          {
+            header: 'Nationality',
+            accessor: 'nationality',
+          },
+          {
+            header: 'Orbit',
+            accessor: 'orbit',
+          },
+          {
+            header: 'Reused',
+            accessor: 'reused',
+            cell: (props: any) => (props ? 'YES' : isNil(props) || 'NO'),
+          },
+        ]}
+        data={data?.rocket?.second_stage?.payloads}
       />
     </>
   );
