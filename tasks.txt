@@ -32,3 +32,4 @@
 16) Make table components reusable
 17) Language Support
 18) Add favicon
+19) Create NPM package for table component - https://www.youtube.com/watch?v=J4b_T-qH3BY

@@ -14,12 +14,12 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
           {
             header: 'Static Fire (UTC)',
             accessor: 'static_fire_date_utc',
-            cell: (props: any) => props ? moment(props).format('LLLL') : null,
+            cell: props => props ? moment(props).format('LLLL') : null,
           },
           {
             header: 'Launched (UTC)',
             accessor: 'launch_date_utc',
-            cell: (props: any) => props ? moment(props).format('LLLL') : null,
+            cell: props => props ? moment(props).format('LLLL') : null,
           },
           {
             header: 'Location',
@@ -28,7 +28,7 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
           {
             header: 'Launch Status',
             accessor: 'launch_success',
-            cell: (props: any) =>
+            cell: props =>
               props ? 'SUCCESS' : isNil(props) || 'FAILURE',
           },
           {
@@ -90,12 +90,12 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
           {
             header: 'Landing Intent',
             accessor: 'landing_intent',
-            cell: (props: any) => (props ? 'YES' : isNil(props) || 'NO'),
+            cell: props => (props ? 'YES' : isNil(props) || 'NO'),
           },
           {
             header: 'Land Success',
             accessor: 'land_success',
-            cell: (props: any) =>
+            cell: props =>
               props ? 'SUCCESS' : isNil(props) || 'FAILURE',
           },
           {
@@ -109,7 +109,7 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
           {
             header: 'Reused',
             accessor: 'reused',
-            cell: (props: any) => (props ? 'YES' : isNil(props) || 'NO'),
+            cell: props => (props ? 'YES' : isNil(props) || 'NO'),
           },
           {
             header: 'Reuse Count',
@@ -136,7 +136,7 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
           {
             header: 'Customers',
             accessor: 'customers',
-            cell: (props: any) => props.join(),
+            cell: props => props.join(),
           },
           {
             header: 'Nationality',
@@ -149,7 +149,7 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
           {
             header: 'Reused',
             accessor: 'reused',
-            cell: (props: any) => (props ? 'YES' : isNil(props) || 'NO'),
+            cell: props => (props ? 'YES' : isNil(props) || 'NO'),
           },
         ]}
         data={data?.rocket?.second_stage?.payloads}
