@@ -29,7 +29,7 @@
 13) Testing(use jest?)
 14) Add filter feature to launch pages
 15) Vehicles pages should explain and introduce vehicles
-16) Make table components reusable
+[DONE]16) Make table components reusable
 17) Language Support
 18) Add favicon
 19) Create NPM package for table component - https://www.youtube.com/watch?v=J4b_T-qH3BY

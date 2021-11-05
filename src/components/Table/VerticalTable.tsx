@@ -1,6 +1,18 @@
 import _ from 'lodash';
 
-export const VerticalTable = ({ title, columns, data }: any) => {
+interface IColumn {
+  header: string,
+  accessor: string,
+  cell?: any
+}
+
+interface IVerticalTable<T> {
+  title: string,
+  columns: Array<IColumn>,
+  data: T[]
+}
+
+export const VerticalTable = <T extends null>({ title, columns, data }: IVerticalTable<T>) => {
   return (
     <div className="overflow-x-auto">
       <div className="flex flex-col justify-center flex-shrink-0 h-12 font-medium">

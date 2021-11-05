@@ -14,12 +14,12 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
           {
             header: 'Static Fire (UTC)',
             accessor: 'static_fire_date_utc',
-            cell: props => props ? moment(props).format('LLLL') : null,
+            cell: (props: moment.MomentInput) => props ? moment(props).format('LLLL') : null,
           },
           {
             header: 'Launched (UTC)',
             accessor: 'launch_date_utc',
-            cell: props => props ? moment(props).format('LLLL') : null,
+            cell: (props: moment.MomentInput) => props ? moment(props).format('LLLL') : null,
           },
           {
             header: 'Location',
@@ -28,7 +28,7 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
           {
             header: 'Launch Status',
             accessor: 'launch_success',
-            cell: props =>
+            cell: (props: any) =>
               props ? 'SUCCESS' : isNil(props) || 'FAILURE',
           },
           {
@@ -90,12 +90,12 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
           {
             header: 'Landing Intent',
             accessor: 'landing_intent',
-            cell: props => (props ? 'YES' : isNil(props) || 'NO'),
+            cell: (props: any) => (props ? 'YES' : isNil(props) || 'NO'),
           },
           {
             header: 'Land Success',
             accessor: 'land_success',
-            cell: props =>
+            cell: (props: any) =>
               props ? 'SUCCESS' : isNil(props) || 'FAILURE',
           },
           {
@@ -109,14 +109,14 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
           {
             header: 'Reused',
             accessor: 'reused',
-            cell: props => (props ? 'YES' : isNil(props) || 'NO'),
+            cell: (props: any) => (props ? 'YES' : isNil(props) || 'NO'),
           },
           {
             header: 'Reuse Count',
             accessor: 'core.reuse_count',
           },
         ]}
-        data={data?.rocket?.first_stage?.cores}
+        data={Array.isArray(data?.rocket?.first_stage?.cores) ? data?.rocket?.first_stage?.cores : []}
       />
       <VerticalTable
         title="Payloads"
@@ -136,7 +136,7 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
           {
             header: 'Customers',
             accessor: 'customers',
-            cell: props => props.join(),
+            cell: (props: any[]) => props.join(),
           },
           {
             header: 'Nationality',
@@ -149,7 +149,7 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
           {
             header: 'Reused',
             accessor: 'reused',
-            cell: props => (props ? 'YES' : isNil(props) || 'NO'),
+            cell: (props: any) => (props ? 'YES' : isNil(props) || 'NO'),
           },
         ]}
         data={data?.rocket?.second_stage?.payloads}
