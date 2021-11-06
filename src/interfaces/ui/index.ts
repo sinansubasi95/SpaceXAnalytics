@@ -6,3 +6,5 @@ export * from './ISidebarLayout';
 export * from './ILaunchContent';
 export * from './ILoadingLaunchesPanel';
 export * from './ILaunchesPanel';
+export * from './IVerticalTable';
+export * from './IHorizontalTable';

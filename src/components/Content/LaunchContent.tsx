@@ -14,12 +14,14 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
           {
             header: 'Static Fire (UTC)',
             accessor: 'static_fire_date_utc',
-            cell: (props: moment.MomentInput) => props ? moment(props).format('LLLL') : null,
+            cell: (props: moment.MomentInput) =>
+              props ? moment(props).format('LLLL') : null,
           },
           {
             header: 'Launched (UTC)',
             accessor: 'launch_date_utc',
-            cell: (props: moment.MomentInput) => props ? moment(props).format('LLLL') : null,
+            cell: (props: moment.MomentInput) =>
+              props ? moment(props).format('LLLL') : null,
           },
           {
             header: 'Location',
@@ -116,7 +118,7 @@ export const LaunchContent = ({ data }: ILaunchContent) => {
             accessor: 'core.reuse_count',
           },
         ]}
-        data={Array.isArray(data?.rocket?.first_stage?.cores) ? data?.rocket?.first_stage?.cores : []}
+        data={data?.rocket?.first_stage?.cores}
       />
       <VerticalTable
         title="Payloads"

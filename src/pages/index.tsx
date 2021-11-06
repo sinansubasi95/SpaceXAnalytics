@@ -94,13 +94,48 @@ export default function Index() {
               <div className="px-5 py-3 border-t-2 bg-gunmetal border-chinese-black-900">
                 {/* <h2 className="mb-3 font-normal text-md text-anti-flash-white"> */}
                 <div className="flex flex-wrap gap-x-4 gap-y-2">
-                  <div className="flex items-center gap-x-2"><div className="w-3 h-3 bg-red-500"/><span className="text-sm font-normal text-anti-flash-white">Cooling: 14</span></div>
-                  <div className="flex items-center gap-x-2"><div className="w-3 h-3 bg-red-500"/><span className="text-sm font-normal text-anti-flash-white">Programming: 711</span></div>
-                  <div className="flex items-center gap-x-2"><div className="w-3 h-3 bg-red-500"/><span className="text-sm font-normal text-anti-flash-white">Deisgn: 888</span></div>
-                  <div className="flex items-center gap-x-2"><div className="w-3 h-3 bg-red-500"/><span className="text-sm font-normal text-anti-flash-white">Engineering: 19238</span></div>
-                  <div className="flex items-center gap-x-2"><div className="w-3 h-3 bg-red-500"/><span className="text-sm font-normal text-anti-flash-white">Zen: 1</span></div>
-                  <div className="flex items-center gap-x-2"><div className="w-3 h-3 bg-red-500"/><span className="text-sm font-normal text-anti-flash-white">Dynamic Fluid Simulation: 14</span></div>
-                  <div className="flex items-center gap-x-2"><div className="w-3 h-3 bg-red-500"/><span className="text-sm font-normal text-anti-flash-white">Cooling: 21</span></div>
+                  <div className="flex items-center gap-x-2">
+                    <div className="w-3 h-3 bg-red-500" />
+                    <span className="text-sm font-normal text-anti-flash-white">
+                      Cooling: 14
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-x-2">
+                    <div className="w-3 h-3 bg-red-500" />
+                    <span className="text-sm font-normal text-anti-flash-white">
+                      Programming: 711
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-x-2">
+                    <div className="w-3 h-3 bg-red-500" />
+                    <span className="text-sm font-normal text-anti-flash-white">
+                      Deisgn: 888
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-x-2">
+                    <div className="w-3 h-3 bg-red-500" />
+                    <span className="text-sm font-normal text-anti-flash-white">
+                      Engineering: 19238
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-x-2">
+                    <div className="w-3 h-3 bg-red-500" />
+                    <span className="text-sm font-normal text-anti-flash-white">
+                      Zen: 1
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-x-2">
+                    <div className="w-3 h-3 bg-red-500" />
+                    <span className="text-sm font-normal text-anti-flash-white">
+                      Dynamic Fluid Simulation: 14
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-x-2">
+                    <div className="w-3 h-3 bg-red-500" />
+                    <span className="text-sm font-normal text-anti-flash-white">
+                      Cooling: 21
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
