@@ -10,20 +10,10 @@
 [DONE]9) Loading component
 10) Dashboard page
 - Next Launch Countdown
-- Next Milestones? 
+- Next Milestones?
 - List of SpaceX Programs
+- Heavies Payload
 
--- Number of Launches Per Year
--- Number of Launches Per Rocket
--- Number of Launches Per Launchpad(Location)
-
--- Landing Types(with explanation)
-
--- Heavies Payload
-
--- Customers
-
--- Launch Success, ex: 72 success, 4 failure
 
 11) Add images to launch page(with slide feature)
 13) Testing(use jest?)
