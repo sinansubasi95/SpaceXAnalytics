@@ -1,6 +1,6 @@
 import { ResponsivePie } from '@nivo/pie';
 
-export const PieChartCard = ({ title, description, data, legends }: any) => {
+export const PieChartCard = ({ title, description, data, legends, total }: any) => {
   return (
     <div className="overflow-hidden border-2 rounded-md border-chinese-black-900 bg-gunmetal">
       <div className="px-5 py-3 border-b-2 bg-gunmetal border-chinese-black-900">
@@ -13,8 +13,8 @@ export const PieChartCard = ({ title, description, data, legends }: any) => {
       <div className="p-5">
         <div className="relative h-72">
           <div className="absolute text-lg font-normal text-center transform left-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4 text-anti-flash-white">
-            <div className="mb-2 text-4xl">$ 63,395</div>
-            <div>Avarage Budget</div>
+            <div className="mb-2 text-4xl">{total}</div>
+            <div>In Total</div>
           </div>
           <ResponsivePie
             data={data}

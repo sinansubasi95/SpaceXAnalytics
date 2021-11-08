@@ -1,7 +1,7 @@
 import {
   boosterLandings,
   launchOutcomes,
-  numberOfLaunchesPerLaunchpad,
+  launchSites,
   customers,
   numberOfLaunchesPerYear,
   rocketConfigurations,
@@ -30,13 +30,15 @@ export const DashboardContent = () => {
           description="SpaceX is privately funded. SpaceX launched the first commercial mission for a private customer in 2013. SpaceX's low launch prices, especially for communication satellites flying to GTO, have resulted in market pressure on its competitors to lower their own prices."
           data={customers.data}
           legends={customers.legends}
+          total={customers.total}
         />
 
         <PieChartCard
           title="Launch Sites"
           description="As of 2020, SpaceX operates four launch facilities: SLC-40, SLC-4E, LC-39A, and Starbase. Space Launch Complex 40 was damaged in the Amos-6 accident on September 2016 and repair work was completed by December 2017."
-          data={numberOfLaunchesPerLaunchpad.data}
-          legends={numberOfLaunchesPerLaunchpad.legends}
+          data={launchSites.data}
+          legends={launchSites.legends}
+          total={launchSites.total}
         />
       </div>
       <div className="grid gap-5 mt-5 grid-cols-auto-fit">

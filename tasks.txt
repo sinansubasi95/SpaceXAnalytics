@@ -24,3 +24,18 @@
 18) Add favicon
 19) Create NPM package for table component - https://www.youtube.com/watch?v=J4b_T-qH3BY
 20) Error handling
+
+https://old.reddit.com/r/reactjs/comments/qn7b2e/creating_a_react_component_with_tdd/
+https://old.reddit.com/r/reactjs/comments/qmmb53/interactive_stories_beta_powered_by_testing/
+https://react-spectrum.adobe.com/react-aria/
+https://blueprintjs.com/docs/versions/4/#core/components/dialog.multistep-dialog
+https://www.youtube.com/watch?v=9zySeP5vH9c
+https://old.reddit.com/r/reactjs/comments/qn9ra5/what_to_expect_for_my_first_interview/
+https://mui.com/customization/palette/
+https://redux.js.org/usage/deriving-data-selectors
+https://learngitbranching.js.org/
+https://www.youtube.com/watch?v=ML5egqL3YFE
+https://www.youtube.com/watch?v=OVNjsIto9xM
+https://www.reddit.com/r/reactjs/comments/n21ukp/tailwind_uikits_and_using_material_with_tailwind/
+
+https://www.youtube.com/watch?v=oHbvm1BDmh0

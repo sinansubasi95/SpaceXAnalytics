@@ -295,6 +295,7 @@ export const numberOfLaunchesPerYear = {
 };
 
 export const customers = {
+  total: 160,
   legends: [
     {
       name: 'NASA',
@@ -351,7 +352,8 @@ export const customers = {
   ],
 };
 
-export const numberOfLaunchesPerLaunchpad = {
+export const launchSites = {
+  total: 135,
   legends: [
     {
       name: 'Kwajaleinn Atoll',
