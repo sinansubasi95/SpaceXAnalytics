@@ -10,8 +10,9 @@ export const VerticalTable = ({ title, columns, data }: IVerticalTable) => {
       <table className="min-w-full mb-3 border-collapse table-auto">
         <thead className="font-medium border-2 text-metallic-silver bg-onyx border-chinese-black-900">
           <tr>
-            {columns.map((column: any) => (
+            {columns.map((column: any, i: any) => (
               <th
+                key={i}
                 scope="col"
                 colSpan={1}
                 className="px-4 py-2 text-sm text-left"
@@ -23,12 +24,15 @@ export const VerticalTable = ({ title, columns, data }: IVerticalTable) => {
         </thead>
         <tbody>
           {data.map((item: any, i: any) => (
-            <tr>
-              {columns.map((column: any) => {
+            <tr key={i}>
+              {columns.map((column: any, i: any) => {
                 const TableCellComponent = i === 1 ? `th` : `td`;
 
                 return (
-                  <TableCellComponent className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
+                  <TableCellComponent
+                    key={i}
+                    className="px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver"
+                  >
                     {column.cell
                       ? column.cell(_.get(item, column.accessor))
                       : _.get(item, column.accessor)}
