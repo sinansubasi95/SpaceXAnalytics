@@ -35,7 +35,7 @@ export const numberOfLaunchesPerYear = {
       color: 'rgb(54, 144, 192)',
     },
   ],
-  data: [
+  content: [
     {
       year: '2006',
       'Falcon 1': 0,
@@ -318,7 +318,7 @@ export const customers = {
       color: 'rgb(116, 169, 207)',
     },
   ],
-  data: [
+  content: [
     {
       id: 'NASA',
       label: 'NASA',
@@ -376,7 +376,7 @@ export const launchSites = {
       color: 'rgb(166, 189, 219)',
     },
   ],
-  data: [
+  content: [
     {
       id: 'Kwajaleinn Atoll',
       label: 'Kwajaleinn Atoll',
@@ -418,7 +418,7 @@ export const rocketConfigurations = {
     'Falcon 9 FT (reused)',
     'Falcon 9 Block 5',
     'Falcon 9 B5 (reused)',
-    'Falcon Heavy'
+    'Falcon Heavy',
   ],
   legends: [
     {
@@ -450,7 +450,7 @@ export const rocketConfigurations = {
       color: 'rgb(5, 112, 176)',
     },
   ],
-  data: [
+  content: [
     {
       year: '2010',
       'Falcon 9 v1.0': 2,
@@ -666,7 +666,7 @@ export const launchOutcomes = {
     'Success (commercial and government)',
     'Success (Starlink)',
     'Planned (commercial and government)',
-    'Planned (Starlink)'
+    'Planned (Starlink)',
   ],
   legends: [
     {
@@ -698,7 +698,7 @@ export const launchOutcomes = {
       color: 'rgb(5, 112, 176)',
     },
   ],
-  data: [
+  content: [
     {
       year: '2010',
       'Loss before launch': 0,
@@ -932,7 +932,7 @@ export const boosterLandings = {
     'Ground-pad success',
     'Drone-ship success',
     'Ocean test success',
-    'No attempt'
+    'No attempt',
   ],
   legends: [
     {
@@ -968,7 +968,7 @@ export const boosterLandings = {
       color: 'rgb(4, 90, 141)',
     },
   ],
-  data: [
+  content: [
     {
       year: '2010',
       'Ground-pad failure': 0,
@@ -1198,4 +1198,13 @@ export const boosterLandings = {
       'No attemptColor': 'rgb(4, 90, 141)',
     },
   ],
+};
+
+export const data = {
+  numberOfLaunchesPerYear: numberOfLaunchesPerYear,
+  customers: customers,
+  launchSites: launchSites,
+  rocketConfigurations: rocketConfigurations,
+  launchOutcomes: launchOutcomes,
+  boosterLandings: boosterLandings,
 };

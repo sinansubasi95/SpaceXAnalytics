@@ -1,6 +1,6 @@
 import { ResponsiveBar } from '@nivo/bar';
 
-export const BarChartCard = ({ title, description, data, legends, keys }: any) => {
+export const BarChartCard = ({ title, description, data }: any) => {
   return (
     <div className="overflow-hidden border-2 rounded-md border-chinese-black-900 bg-gunmetal">
       <div className="px-5 py-3 border-b-2 bg-gunmetal border-chinese-black-900">
@@ -13,11 +13,11 @@ export const BarChartCard = ({ title, description, data, legends, keys }: any) =
       <div className="p-5">
         <div className="relative h-72">
           <ResponsiveBar
-            data={data}
+            data={data.content}
             enableGridX={true}
             enableGridY={false}
             layout="horizontal"
-            keys={keys}
+            keys={data.keys}
             indexBy="year"
             padding={0.3}
             valueScale={{ type: 'linear' }}
@@ -48,7 +48,7 @@ export const BarChartCard = ({ title, description, data, legends, keys }: any) =
               modifiers: [['darker', 1.6]],
             }}
             legends={[]}
-            animate={false}
+            animate={true}
             role="application"
             isFocusable={true}
             ariaLabel="Nivo bar chart demo"
@@ -86,7 +86,7 @@ export const BarChartCard = ({ title, description, data, legends, keys }: any) =
       <div className="px-5 py-3 border-t-2 bg-gunmetal border-chinese-black-900">
         {/* <h2 className="mb-3 font-normal text-md text-anti-flash-white"> */}
         <div className="flex flex-wrap gap-x-4 gap-y-2">
-          {legends.map((legend: any) => (
+          {data.legends.map((legend: any) => (
             <div className="flex items-center gap-x-2">
               <div
                 className="w-3 h-3"

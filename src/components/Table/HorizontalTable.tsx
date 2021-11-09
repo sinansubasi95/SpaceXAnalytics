@@ -9,7 +9,7 @@ export const HorizontalTable = ({ title, columns, data }: IHorizontalTable) => {
       </div>
       <table className="min-w-full mb-3 border-collapse table-auto">
         <tbody>
-          {columns.map(column => (
+          {columns.map((column) => (
             <tr>
               <th
                 scope="row"
@@ -17,7 +17,7 @@ export const HorizontalTable = ({ title, columns, data }: IHorizontalTable) => {
               >
                 {column.header}
               </th>
-              {data.map(item => (
+              {data.map((item: any) => (
                 <td className="w-10/12 px-4 py-2 text-sm font-normal text-left border-2 border-chinese-black-900 text-metallic-silver">
                   {column.cell
                     ? column.cell(_.get(item, column.accessor))
