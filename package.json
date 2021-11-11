@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gen": "graphql-codegen --config codegen.yml"
+    "gen": "graphql-codegen --config codegen.yml",
+    "test": "jest"
   },
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.14.9",
@@ -37,11 +38,15 @@
     "@graphql-codegen/typescript": "2.2.2",
     "@graphql-codegen/typescript-operations": "2.1.6",
     "@graphql-codegen/typescript-urql": "^3.2.0",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
     "@types/lodash": "^4.14.176",
     "@types/react": "17.0.15",
     "autoprefixer": "^10.3.1",
+    "babel-jest": "^27.3.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.0.1",
+    "jest": "^27.3.1",
     "postcss": "^8.3.6",
     "tailwind-scrollbar": "^1.3.1",
     "tailwindcss": "^2.2.7"

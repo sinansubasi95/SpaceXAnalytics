@@ -8,8 +8,8 @@
 [DONE]7.1) Or call query from a service or component?
 [DONE]8) '@/utils/*' Use @ as shown in the example for components, interfaces, utils and maybe stores. - Now, I must manually import each component.
 [DONE]9) Loading component
-10) Dashboard page
-- Next Launch Countdown
+[PARTIALLY DONE]10) Dashboard page
+- Next Launch Countdown(data is out of date)
 - Next Milestones?
 - List of SpaceX Programs
 - Heavies Payload
@@ -38,6 +38,13 @@ https://www.youtube.com/watch?v=ML5egqL3YFE
 https://www.youtube.com/watch?v=OVNjsIto9xM
 https://www.reddit.com/r/reactjs/comments/n21ukp/tailwind_uikits_and_using_material_with_tailwind/
 
-https://www.youtube.com/watch?v=FiEoF5-RBQw
-https://www.youtube.com/watch?v=urcbTWgituM
-https://www.youtube.com/watch?v=mYsyTq8pF2g
+ost: https://www.youtube.com/watch?v=PbmG47n-Hr8
+https://www.youtube.com/watch?v=JseV6WH3ufk
+
+https://www.youtube.com/watch?v=5E8CF729wwg
+https://www.youtube.com/watch?v=10PV25ybG7U
+https://www.youtube.com/watch?v=Cy0v1scOmLw
+https://www.youtube.com/watch?v=yT_y4NX2jJk
+
+https://date-fns.org/
+https://dinerojs.com/
