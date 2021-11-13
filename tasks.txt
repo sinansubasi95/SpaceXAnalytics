@@ -38,13 +38,5 @@ https://www.youtube.com/watch?v=ML5egqL3YFE
 https://www.youtube.com/watch?v=OVNjsIto9xM
 https://www.reddit.com/r/reactjs/comments/n21ukp/tailwind_uikits_and_using_material_with_tailwind/
 
-ost: https://www.youtube.com/watch?v=PbmG47n-Hr8
-https://www.youtube.com/watch?v=JseV6WH3ufk
-
-https://www.youtube.com/watch?v=5E8CF729wwg
-https://www.youtube.com/watch?v=10PV25ybG7U
-https://www.youtube.com/watch?v=Cy0v1scOmLw
-https://www.youtube.com/watch?v=yT_y4NX2jJk
-
 https://date-fns.org/
 https://dinerojs.com/

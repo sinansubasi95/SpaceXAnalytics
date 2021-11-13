@@ -7,7 +7,7 @@ import { LaunchContent } from '@/components/Content';
 import { LoadingLaunchesPanel } from '@/components/Loading';
 import { LoadingLaunchTable } from '@/components/Loading';
 
-export default function UpcomingLaunches() {
+export default function UpcomingLaunch() {
   const router = useRouter();
   const { id } = router.query;
 

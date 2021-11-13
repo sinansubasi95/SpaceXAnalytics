@@ -7,7 +7,7 @@ import { LaunchContent } from '@/components/Content';
 import { LoadingLaunchesPanel } from '@/components/Loading';
 import { LoadingLaunchTable } from '@/components/Loading';
 
-export default function PastLaunches() {
+export default function PastLaunch() {
   const router = useRouter();
   const { id } = router.query;
 
