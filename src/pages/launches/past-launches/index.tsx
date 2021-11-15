@@ -1,6 +1,6 @@
-import { ThreeColumnLayout } from '@/components/Layout';
-import { LoadingLaunchesPanel } from '@/components/Loading';
-import { LaunchesPanel } from '@/components/Panel';
+import { ThreeColumnLayout } from '@components/Layout';
+import { LoadingLaunchesPanel } from '@components/Loading';
+import { LaunchesPanel } from '@components/Panel';
 import React from 'react';
 import { useQuery } from 'urql';
 import { LaunchesPastDocument } from '../../../generated/graphql';

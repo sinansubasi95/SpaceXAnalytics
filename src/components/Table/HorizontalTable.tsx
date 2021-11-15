@@ -1,4 +1,4 @@
-import { IHorizontalTable } from '@/interfaces/ui';
+import { IHorizontalTable } from '@interfaces/ui';
 import _ from 'lodash';
 
 export const HorizontalTable = ({ title, columns, data }: IHorizontalTable) => {

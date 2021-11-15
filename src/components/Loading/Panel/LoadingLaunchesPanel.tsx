@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-import { ILoadingLaunchesPanel } from '@/interfaces/ui/ILoadingLaunchesPanel';
+import { ILoadingLaunchesPanel } from '@interfaces/ui/ILoadingLaunchesPanel';
 
 export const LoadingLaunchesPanel = ({ ui }: ILoadingLaunchesPanel) => {
   return (

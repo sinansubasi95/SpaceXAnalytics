@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { useStores } from '../../stores';
-import { ICategorizedNavigationList, INavigationList } from '@/interfaces/ui';
+import { ICategorizedNavigationList, INavigationList } from '@interfaces/ui';
 
 export const MobileNav = () => {
   const { navigationStore } = useStores();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ILaunchContent } from '@/interfaces/ui';
+import { ILaunchContent } from '@interfaces/ui';
 import moment from 'moment';
 import isNil from 'lodash/isNil';
 import { HorizontalTable } from '../Table';

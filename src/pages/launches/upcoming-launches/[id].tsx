@@ -1,11 +1,11 @@
 import { useQuery } from 'urql';
 import { LaunchAndUpcomingLaunchesDocument } from '../../../generated/graphql';
 import { useRouter } from 'next/router';
-import { ThreeColumnLayout } from '@/components/Layout/ThreeColumnLayout';
-import { LaunchesPanel } from '@/components/Panel';
-import { LaunchContent } from '@/components/Content';
-import { LoadingLaunchesPanel } from '@/components/Loading';
-import { LoadingLaunchTable } from '@/components/Loading';
+import { ThreeColumnLayout } from '@components/Layout/ThreeColumnLayout';
+import { LaunchesPanel } from '@components/Panel';
+import { LaunchContent } from '@components/Content';
+import { LoadingLaunchesPanel } from '@components/Loading';
+import { LoadingLaunchTable } from '@components/Loading';
 
 export default function UpcomingLaunch() {
   const router = useRouter();

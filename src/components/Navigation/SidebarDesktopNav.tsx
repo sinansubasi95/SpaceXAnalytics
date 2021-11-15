@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useStores } from '../../stores';
-import { ICategorizedNavigationList, INavigationList } from '@/interfaces/ui';
+import { ICategorizedNavigationList, INavigationList } from '@interfaces/ui';
 
 export const DesktopNav = () => {
   const { navigationStore } = useStores();

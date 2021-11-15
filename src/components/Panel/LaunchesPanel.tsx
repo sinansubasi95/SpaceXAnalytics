@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import moment from 'moment';
 import React from 'react';
-import { ILaunchesPanel } from '@/interfaces/ui/ILaunchesPanel';
+import { ILaunchesPanel } from '@interfaces/ui/ILaunchesPanel';
 import Link from 'next/link';
 
 export const LaunchesPanel = ({ ui, data }: ILaunchesPanel) => {

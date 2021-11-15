@@ -1,4 +1,4 @@
-import { IVerticalTable } from '@/interfaces/ui';
+import { IVerticalTable } from '@interfaces/ui';
 import _ from 'lodash';
 
 export const VerticalTable = ({ title, columns, data }: IVerticalTable) => {

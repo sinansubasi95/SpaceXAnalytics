@@ -6,7 +6,7 @@
 [DONE]6) Should layouts have ui attr or not? Alternatively, components can be created in children. The reason that I asked this question is related to ThreeColumnLayout component and its header.
 [DONE]7) Multiple queries in one request.
 [DONE]7.1) Or call query from a service or component?
-[DONE]8) '@/utils/*' Use @ as shown in the example for components, interfaces, utils and maybe stores. - Now, I must manually import each component.
+[DONE]8) '@utils/*' Use @ as shown in the example for components, interfaces, utils and maybe stores. - Now, I must manually import each component.
 [DONE]9) Loading component
 [PARTIALLY DONE]10) Dashboard page
 - Next Launch Countdown(data is out of date)

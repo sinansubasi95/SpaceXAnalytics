@@ -2,9 +2,9 @@ import React from 'react';
 import { MenuIcon } from '@heroicons/react/outline';
 import { useStores } from '../../stores';
 import { observer } from 'mobx-react';
-import { SidebarWithSecondaryNavigation } from '@/components/Sidebar';
-import { IThreeColumnLayout } from '@/interfaces/ui';
-import { Logo } from '@/components/Logo';
+import { SidebarWithSecondaryNavigation } from '@components/Sidebar';
+import { IThreeColumnLayout } from '@interfaces/ui';
+import { Logo } from '@components/Logo';
 
 // define function like defining variable?
 // Formidable - RENATUR - physics based animation https://formidable.com/open-source/renature/
