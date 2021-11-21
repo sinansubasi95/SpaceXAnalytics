@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "gen": "graphql-codegen --config codegen.yml",
-    "test": "jest --env=jsdom"
+    "test": "jest --env=jsdom",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.14.9",
