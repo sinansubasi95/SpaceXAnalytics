@@ -16,6 +16,7 @@ export const VerticalTable = ({ title, columns, data }: IVerticalTable) => {
                 scope="col"
                 colSpan={1}
                 className="px-4 py-2 text-sm text-left"
+                data-testid="tableHeader"
               >
                 {column.header}
               </th>
